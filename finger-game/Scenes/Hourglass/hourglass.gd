@@ -4,7 +4,6 @@ const TRANSFER_RATE := 20.0
 
 class HourglassPart:
 	var time: float
-
 	func _init(starting_time: float) -> void:
 		time = starting_time
 
@@ -19,10 +18,11 @@ func _process(delta: float) -> void:
 	var upper := part_1 if part_1_is_up else part_2
 	var lower := part_2 if part_1_is_up else part_1
 	var transferred_time: float = min(delta * TRANSFER_RATE, upper.time)
-
 	upper.time -= transferred_time
 	lower.time += transferred_time
-
+	if part_1.time <=0 or part_2.time>=100:
+		print("GAME OVER HOURGLASS")
+		queue_free()
 	print_timer += delta
 	if print_timer >= 0.5:
 		print_timer -= 0.5

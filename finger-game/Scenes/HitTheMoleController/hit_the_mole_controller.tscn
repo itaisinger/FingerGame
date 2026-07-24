@@ -25,6 +25,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.15091, 20.107807, 0)
 
 [node name="LED5" parent="." unique_id=1448617924 instance=ExtResource("2_70227")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.850315, 24.247662, 0)
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=57331037]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 84.24194)
