@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cxw51oamein6e"]
+
+[ext_resource type="Script" uid="uid://cym6f86mge84w" path="res://Scenes/Runner/runner.gd" id="1_ud8ht"]
+
+[node name="Runner" type="Node3D" unique_id=529656939]
+script = ExtResource("1_ud8ht")

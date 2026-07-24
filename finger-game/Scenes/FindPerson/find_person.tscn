@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dpwrvrr2dqc2c"]
+
+[ext_resource type="Script" uid="uid://cb748w6dlovnc" path="res://Scenes/FindPerson/find_person.gd" id="1_find_person"]
+
+[node name="FindPerson" type="Node3D" unique_id=1705497192]
+script = ExtResource("1_find_person")

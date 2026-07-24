@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c0bb3qk3isyu4"]
+
+[ext_resource type="Script" uid="uid://cgkta2o4w42i3" path="res://Scenes/Hourglass/hourglass.gd" id="1_6cmny"]
+
+[node name="Hourglass" type="Node3D" unique_id=2108876289]
+script = ExtResource("1_6cmny")
