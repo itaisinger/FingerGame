@@ -14,20 +14,20 @@
 
 [node name="finger 5R" parent="." unique_id=2129092436 instance=ExtResource("2_okp60")]
 script = ExtResource("3_okp60")
-index = "Button_3"
+index = "Button_10"
 
 [node name="finger 1R" parent="." unique_id=1234267081 instance=ExtResource("3_xde54")]
 script = ExtResource("3_okp60")
-index = "Button_3"
+index = "Button_6"
 
 [node name="finger 3R" parent="." unique_id=279750246 instance=ExtResource("5_ba5vm")]
 script = ExtResource("3_okp60")
-index = "Button_3"
+index = "Button_8"
 
 [node name="finger 4R" parent="." unique_id=2107943955 instance=ExtResource("6_fhpbj")]
 script = ExtResource("3_okp60")
-index = "Button_3"
+index = "Button_9"
 
 [node name="finger 2R" parent="." unique_id=428096050 instance=ExtResource("4_edgbx")]
 script = ExtResource("3_okp60")
-index = "Button_3"
+index = "Button_7"

@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://depvgeexxvrb7" path="res://Placeholderss/Floor.jpg" id="7_imbg2"]
 [ext_resource type="PackedScene" uid="uid://ccdv0tkot24ta" path="res://Scenes/itai stuff/hand.tscn" id="7_xlvfx"]
 [ext_resource type="PackedScene" uid="uid://ktx8eb0n0hdu" path="res://Scenes/itai stuff/handR.tscn" id="9_hryqi"]
+[ext_resource type="PackedScene" uid="uid://bsvatjaf1r0iu" path="res://Scenes/PermutationScreen/permutation_screen.tscn" id="11_hfg1r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hryqi"]
 albedo_texture = ExtResource("6_y3v7k")
@@ -109,13 +110,7 @@ transform = Transform3D(0.042505953, 0.86555195, -0.830068, 1.1767551, -0.190210
 transform = Transform3D(1, 1.4901161e-08, 0, 0, 0.99999994, -2.9802322e-08, -1.4901161e-08, -5.9604645e-08, 1, -0.026261032, 0.004244864, 0.0030815303)
 
 [node name="HandR" parent="." unique_id=774035066 instance=ExtResource("9_hryqi")]
-transform = Transform3D(-4.2803947e-08, -0.9792403, -0.69360554, 1.2000002, -5.2453675e-08, 2.5208073e-15, -3.031846e-08, -0.69360554, 0.9792403, 0.5077291, 0.6, 0.16141851)
-
-[node name="finger 5R" parent="HandR" index="1" unique_id=2129092436]
-index = "Button_10"
-
-[node name="finger 4R" parent="HandR" index="5" unique_id=2107943955]
-index = "Button_9"
+transform = Transform3D(-4.2803947e-08, -0.9792403, -0.69360554, 1.2000002, -5.2453675e-08, 2.5208073e-15, -3.031846e-08, -0.69360554, 0.9792403, 0.5077291, 0.6103209, 0.16141851)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=876399380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.015629, 4.8964443)
@@ -130,6 +125,9 @@ fov = 89.1
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2126286946]
 transform = Transform3D(1, 0, 0, 0, -0.60722923, -0.7945267, 0, 0.7945267, -0.60722923, 0, -1.2799486, 3.2805026)
 light_energy = 0.05
+
+[node name="PermutationScreen" parent="." unique_id=1958407118 instance=ExtResource("11_hfg1r")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 3.4765153, -5.7790036)
 
 [editable path="HitTheMoleController"]
 [editable path="Hand"]

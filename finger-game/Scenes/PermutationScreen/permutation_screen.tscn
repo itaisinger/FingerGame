@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bsvatjaf1r0iu"]
+
+[ext_resource type="Script" uid="uid://txt7cgfni3q6" path="res://Scenes/PermutationScreen/permutation_screen.gd" id="1_vuvxw"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pdjk7"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wu2lu"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_pdjk7")
+albedo_texture_force_srgb = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_t2cyj"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_wu2lu")
+size = Vector2(2, 1)
+
+[node name="PermutationScreen" type="Node3D" unique_id=1958407118]
+script = ExtResource("1_vuvxw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=977322606]
+mesh = SubResource("PlaneMesh_t2cyj")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=526609156]
+size = Vector2i(800, 400)
+
+[node name="Label" type="Label" parent="SubViewport" unique_id=2037226617]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.9764706, 0.06666667, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 250
+text = "  0101
+"
