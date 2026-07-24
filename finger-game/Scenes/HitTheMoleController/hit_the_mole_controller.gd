@@ -1,0 +1,140 @@
+extends Node3D
+
+const BUTTON_COUNT := 6
+
+@export var time_between_buttons := 4.0
+@export var button_timeout := 5.0
+
+var active_buttons: Array[int] = [0, 0, 0, 0, 0, 0]
+var button_timers: Array[Timer] = []
+
+var random := RandomNumberGenerator.new()
+var turn_on_timer: Timer
+
+
+func _ready() -> void:
+	random.randomize()
+
+	turn_on_timer = Timer.new()
+	turn_on_timer.wait_time = time_between_buttons
+	turn_on_timer.timeout.connect(_turn_on_random_button)
+	add_child(turn_on_timer)
+
+	for index in range(BUTTON_COUNT):
+		var timer := Timer.new()
+		timer.one_shot = true
+		timer.wait_time = button_timeout
+		timer.timeout.connect(_button_failed.bind(index))
+		add_child(timer)
+		button_timers.append(timer)
+
+	_print_active_buttons()
+	turn_on_timer.start()
+
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("MoleButton_1"):
+		button1()
+	elif Input.is_action_just_pressed("MoleButton_2"):
+		button2()
+	elif Input.is_action_just_pressed("MoleButton_3"):
+		button3()
+	elif Input.is_action_just_pressed("MoleButton_4"):
+		button4()
+	elif Input.is_action_just_pressed("MoleButton_5"):
+		button5()
+	elif Input.is_action_just_pressed("MoleButton_6"):
+		button6()
+
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if not event.pressed or event.echo:
+		return
+
+	var button_number: int = int(event.keycode) - int(KEY_0)
+
+	if button_number >= 1 and button_number <= BUTTON_COUNT:
+		press_button(button_number)
+
+
+func press_button(button_number: int) -> void:
+	var index := button_number - 1
+
+	if active_buttons[index] == 1:
+		active_buttons[index] = 0
+		button_timers[index].stop()
+
+		var led = get_node_or_null("LED" + str(index))
+		if led != null:
+			led.turn_off()
+
+		print("success button ", button_number)
+		_print_active_buttons()
+	else:
+		print("did nothing button ", button_number)
+
+
+func _button_failed(index: int) -> void:
+	if active_buttons[index] == 0:
+		return
+	active_buttons[index] = 0
+	var led = get_node_or_null("LED" + str(index))
+	if led != null:
+		led.turn_off()
+	print("failed button ", index + 1)
+	_print_active_buttons()
+
+
+func _turn_on_random_button() -> void:
+	var turned_off_buttons: Array[int] = []
+
+	for button_index in range(BUTTON_COUNT):
+		if active_buttons[button_index] == 0:
+			turned_off_buttons.append(button_index)
+
+	if turned_off_buttons.is_empty():
+		return
+
+	var position := random.randi_range(0, turned_off_buttons.size() - 1)
+	var button_index := turned_off_buttons[position]
+
+	active_buttons[button_index] = 1
+	turn_on_button(button_index)
+	button_timers[button_index].start()
+
+	_print_active_buttons()
+
+
+func turn_on_button(index: int) -> void:
+	var led = get_node_or_null("LED" + str(index))
+
+	if led != null:
+		led.turn_on()
+
+
+func button1() -> void:
+	press_button(1)
+
+
+func button2() -> void:
+	press_button(2)
+
+
+func button3() -> void:
+	press_button(3)
+
+
+func button4() -> void:
+	press_button(4)
+
+
+func button5() -> void:
+	press_button(5)
+
+
+func button6() -> void:
+	press_button(6)
+
+
+func _print_active_buttons() -> void:
+	print(active_buttons)

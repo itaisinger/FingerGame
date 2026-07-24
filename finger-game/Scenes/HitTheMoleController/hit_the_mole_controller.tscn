@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://w7b1435udr6y"]
+
+[ext_resource type="Script" uid="uid://rimiugw2vwpc" path="res://Scenes/HitTheMoleController/hit_the_mole_controller.gd" id="1_ogwy0"]
+[ext_resource type="PackedScene" uid="uid://r6xgd2q1vgpe" path="res://Scenes/LED/led.tscn" id="2_70227"]
+
+[node name="HitTheMoleController" type="Node3D" unique_id=295308992]
+script = ExtResource("1_ogwy0")
+time_between_buttons = 3.0
+button_timeout = 4.0
+
+[node name="LED0" parent="." unique_id=1973460018 instance=ExtResource("2_70227")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.49033, 25.92564, 0)
+
+[node name="LED1" parent="." unique_id=683433083 instance=ExtResource("2_70227")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.702658, 21.493065, 0)
+
+[node name="LED2" parent="." unique_id=944750498 instance=ExtResource("2_70227")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.998184, 0, 0)
+
+[node name="LED3" parent="." unique_id=133037123 instance=ExtResource("2_70227")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.166878, 0, 0)
+
+[node name="LED4" parent="." unique_id=1411609314 instance=ExtResource("2_70227")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.15091, 20.107807, 0)
+
+[node name="LED5" parent="." unique_id=1448617924 instance=ExtResource("2_70227")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.850315, 24.247662, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=57331037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 84.24194)

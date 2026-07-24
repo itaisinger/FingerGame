@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://r6xgd2q1vgpe"]
+
+[ext_resource type="Script" uid="uid://dayfr3w1ihe2x" path="res://Scenes/LED/led.gd" id="1_1cjai"]
+[ext_resource type="Texture2D" uid="uid://btnvhqxeyisyx" path="res://Placeholderss/RED.jpg" id="2_g40wi"]
+[ext_resource type="Texture2D" uid="uid://b6im1a3jmrawn" path="res://Placeholderss/green.jpg" id="3_7kyhn"]
+
+[node name="LED" type="Node3D" unique_id=1973460018]
+script = ExtResource("1_1cjai")
+red = ExtResource("2_g40wi")
+green = ExtResource("3_7kyhn")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=356068257]
+billboard = 1
+texture = ExtResource("2_g40wi")

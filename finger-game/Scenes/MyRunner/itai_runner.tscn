@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://btenx7jvn4urc"]
+
+[ext_resource type="Script" uid="uid://c8xjh3v2x0afh" path="res://itai_runner.gd" id="1_f3moc"]
+
+[node name="Itai_runner" type="Node3D" unique_id=1084586411]
+script = ExtResource("1_f3moc")
