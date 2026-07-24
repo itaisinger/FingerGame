@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://brdp6e03ylmmi"]
+
+[ext_resource type="PackedScene" uid="uid://b2x58ps8uruae" path="res://assets/finger 2.glb" id="1_sslg4"]
+[ext_resource type="Script" uid="uid://btc55x5lc3ep8" path="res://Scenes/itai stuff/finger_anim.gd" id="2_nv5ii"]
+
+[node name="finger 2" unique_id=1922095107 instance=ExtResource("1_sslg4")]
+script = ExtResource("2_nv5ii")
