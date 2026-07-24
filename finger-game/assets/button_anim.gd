@@ -22,7 +22,7 @@ func _process(delta) -> void:
 		
 	# Multiply 0-1 progress by total length to get the correct time
 	var _p = max(0,(progress - 0.5)*2)
-	anim_player.seek(progress * anim_length, true)
+	anim_player.seek(_p * anim_length, true)
 	
 func finger_pressed():
 	var ret = Input.is_action_pressed(index)

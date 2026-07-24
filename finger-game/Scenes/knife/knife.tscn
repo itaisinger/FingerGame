@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cpfkbyfe1d6t3"]
+
+[ext_resource type="Script" uid="uid://cles7a7fxaqkt" path="res://Scenes/knife/knife_anim.gd" id="1_qx1sp"]
+[ext_resource type="PackedScene" uid="uid://bu1rlbxe7akbk" path="res://assets/knife.glb" id="2_intxb"]
+
+[node name="Knife" type="Node3D" unique_id=2039925576]
+
+[node name="knife" parent="." unique_id=1657471252 instance=ExtResource("2_intxb")]
+script = ExtResource("1_qx1sp")
+start_height = 2
+my_prec = 0.95
+
+[node name="Skeleton3D" parent="knife/L bone" parent_id_path=PackedInt32Array(1657471252, 2087096271) index="0" unique_id=2103598048]
+bones/1/rotation = Quaternion(4.128638e-09, -3.4756198e-08, 0.080736816, 0.99673545)
+bones/2/rotation = Quaternion(9.481889e-09, -1.4253803e-07, 0.02985704, 0.9995543)
+
+[node name="Bone_001" parent="knife/L bone/Skeleton3D" index="0" unique_id=64067593]
+transform = Transform3D(0.07713629, 0.9970206, 1.2751524e-07, -0.9970207, 0.07713629, 5.665553e-08, 4.6650676e-08, -1.315055e-07, 1, 0.66525793, -0.056306023, -9.08823e-08)
+
+[node name="Bone_002" parent="knife/L bone/Skeleton3D" index="1" unique_id=638124669]
+transform = Transform3D(-0.02471111, 0.99969476, 1.3213618e-07, -0.99969476, -0.02471111, 2.7279984e-07, 2.7598176e-07, -1.2535466e-07, 1, 0.66525793, -0.056306023, -9.08823e-08)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1698344346]
+transform = Transform3D(-0.98748624, 0, -0.15770522, 0, 1, 0, 0.15770522, 0, -0.98748624, -0.058301, 0, -0.98751605)
+
+[editable path="knife"]
