@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bii8oc2j82sxm"]
+
+[ext_resource type="PackedScene" uid="uid://bbm8qt0wstyon" path="res://assets/TV.glb" id="1_ta7m2"]
+[ext_resource type="PackedScene" uid="uid://bsvatjaf1r0iu" path="res://Scenes/PermutationScreen/permutation_screen.tscn" id="2_3ag66"]
+
+[node name="TV_WithPermutations" unique_id=2092431692 instance=ExtResource("1_ta7m2")]
+
+[node name="PermutationScreen" parent="." index="1" unique_id=1958407118 instance=ExtResource("2_3ag66")]
+transform = Transform3D(-1.8585808e-08, 0.9999999, -3.0099315e-08, 0, -4.3711385e-08, -0.6885921, -0.42519373, -4.3711385e-08, 1.3156828e-15, 0.24765325, 0.46964347, 0)

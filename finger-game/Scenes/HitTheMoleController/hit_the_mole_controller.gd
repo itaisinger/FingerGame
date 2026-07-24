@@ -59,7 +59,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 func press_button(button_number: int) -> void:
 	var index := button_number - 1
-
 	if active_buttons[index] == 1:
 		active_buttons[index] = 0
 		button_timers[index].stop()

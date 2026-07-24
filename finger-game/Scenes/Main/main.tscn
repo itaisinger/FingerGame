@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dopwjndwmn03i" path="res://Scenes/Main/main.gd" id="1_main"]
 [ext_resource type="PackedScene" uid="uid://c0bb3qk3isyu4" path="res://Scenes/Hourglass/hourglass.tscn" id="2_5yls4"]
-[ext_resource type="PackedScene" uid="uid://dpwrvrr2dqc2c" path="res://Scenes/FindPerson/find_person.tscn" id="3_p6jpk"]
 [ext_resource type="PackedScene" uid="uid://w7b1435udr6y" path="res://Scenes/HitTheMoleController/hit_the_mole_controller.tscn" id="4_2a143"]
 [ext_resource type="PackedScene" uid="uid://btenx7jvn4urc" path="res://Scenes/MyRunner/itai_runner.tscn" id="5_p6jpk"]
 [ext_resource type="PackedScene" uid="uid://bpl2wns1xcgbv" path="res://Scenes/Button/Button.tscn" id="6_2a143"]
@@ -10,13 +9,19 @@
 [ext_resource type="Texture2D" uid="uid://depvgeexxvrb7" path="res://Placeholderss/Floor.jpg" id="7_imbg2"]
 [ext_resource type="PackedScene" uid="uid://ccdv0tkot24ta" path="res://Scenes/itai stuff/hand.tscn" id="7_xlvfx"]
 [ext_resource type="PackedScene" uid="uid://ktx8eb0n0hdu" path="res://Scenes/itai stuff/handR.tscn" id="9_hryqi"]
+[ext_resource type="PackedScene" uid="uid://blg2aa8koac0h" path="res://Scenes/TV_WithGame/tv_with_game.tscn" id="11_4e4y2"]
 [ext_resource type="PackedScene" uid="uid://bsvatjaf1r0iu" path="res://Scenes/PermutationScreen/permutation_screen.tscn" id="11_hfg1r"]
+[ext_resource type="PackedScene" uid="uid://bii8oc2j82sxm" path="res://Scenes/TV_With_Permutations/tv_with_permutations.tscn" id="12_4e4y2"]
+[ext_resource type="PackedScene" uid="uid://c4p8jjrr852hh" path="res://assets/chair.glb" id="13_6t3k2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hryqi"]
 albedo_texture = ExtResource("6_y3v7k")
 
 [sub_resource type="BoxMesh" id="BoxMesh_t2cyj"]
 size = Vector3(3, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t2cyj"]
+size = Vector3(3, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hfg1r"]
 albedo_texture = ExtResource("7_imbg2")
@@ -34,10 +39,6 @@ size = Vector3(14, 10, 1)
 script = ExtResource("1_main")
 
 [node name="Hourglass" parent="." unique_id=2108876289 instance=ExtResource("2_5yls4")]
-
-[node name="FindPerson" parent="." unique_id=1705497192 instance=ExtResource("3_p6jpk")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -8.577332, 45.857452, -75.06557)
-round_duration = 5.0
 
 [node name="HitTheMoleController" parent="." unique_id=295308992 instance=ExtResource("4_2a143")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -69,13 +70,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41917714, 0)
 material_override = SubResource("StandardMaterial3D_hryqi")
 mesh = SubResource("BoxMesh_t2cyj")
 
-[node name="Floor" type="MeshInstance3D" parent="Room" unique_id=1745832363]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-material_override = SubResource("StandardMaterial3D_hfg1r")
-mesh = SubResource("BoxMesh_p6jpk")
+[node name="tableBody" type="StaticBody3D" parent="Room" unique_id=654182915]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/tableBody" unique_id=1392744295]
+transform = Transform3D(1, 0, 0, 0, 0.11123639, 0, 0, 0, 1, 0.014953613, 0.41917714, 0)
+shape = SubResource("BoxShape3D_t2cyj")
 
 [node name="Floor2" type="MeshInstance3D" parent="Room" unique_id=2020271787]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.0620513, 0)
+material_override = SubResource("StandardMaterial3D_hfg1r")
+mesh = SubResource("BoxMesh_p6jpk")
+
+[node name="Floor" type="MeshInstance3D" parent="Room" unique_id=1745832363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 material_override = SubResource("StandardMaterial3D_hfg1r")
 mesh = SubResource("BoxMesh_p6jpk")
 
@@ -104,7 +111,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 10.5, -2.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49057582, 0.47, -0.07047111)
 
 [node name="Hand" parent="." unique_id=166837078 instance=ExtResource("7_xlvfx")]
-transform = Transform3D(0.042505953, 0.86555195, -0.830068, 1.1767551, -0.19021095, -0.13808309, -0.23117183, -0.8090978, -0.85552335, -0.5010772, 0.6, 0.2)
+transform = Transform3D(0.042505953, 0.86555195, -0.830068, 1.1767551, -0.19021095, -0.13808309, -0.23117183, -0.8090978, -0.85552335, -0.5010772, 0.736068, 0.2)
+throw_vector = Vector3(0.01, 0.3, 0.01)
+throw_speed = 4.0
 
 [node name="hand palm" parent="Hand" index="0" unique_id=116127469]
 transform = Transform3D(1, 1.4901161e-08, 0, 0, 0.99999994, -2.9802322e-08, -1.4901161e-08, -5.9604645e-08, 1, -0.026261032, 0.004244864, 0.0030815303)
@@ -113,7 +122,7 @@ transform = Transform3D(1, 1.4901161e-08, 0, 0, 0.99999994, -2.9802322e-08, -1.4
 transform = Transform3D(-4.2803947e-08, -0.9792403, -0.69360554, 1.2000002, -5.2453675e-08, 2.5208073e-15, -3.031846e-08, -0.69360554, 0.9792403, 0.5077291, 0.6103209, 0.16141851)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=876399380]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.015629, 4.8964443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.015629, 2.6727896)
 light_energy = 16.0
 light_indirect_energy = 16.0
 omni_range = 16.292
@@ -128,6 +137,16 @@ light_energy = 0.05
 
 [node name="PermutationScreen" parent="." unique_id=1958407118 instance=ExtResource("11_hfg1r")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 3.4765153, -5.7790036)
+visible = false
+
+[node name="TV_WithGame" parent="." unique_id=2092431692 instance=ExtResource("11_4e4y2")]
+transform = Transform3D(0.25398755, 0, -1.172813, 0, 1.2, 0, 1.172813, 0, 0.25398755, -1.2187755, 0.37874234, -3.436286)
+
+[node name="chair2" parent="TV_WithGame" unique_id=1666695269 instance=ExtResource("13_6t3k2")]
+transform = Transform3D(0.99764305, 0, -0.06861739, 0, 1, 0, 0.06861739, 0, 0.99764305, 2.4789174, -0.5407518, -0.22571611)
+
+[node name="TV_WithPermutations" parent="." unique_id=682999096 instance=ExtResource("12_4e4y2")]
+transform = Transform3D(-8.742278e-08, 0, -3.8039358, 0, 2, 0, 2, 0, -1.6627531e-07, 0, 2.227273, -4.9701977)
 
 [editable path="HitTheMoleController"]
 [editable path="Hand"]

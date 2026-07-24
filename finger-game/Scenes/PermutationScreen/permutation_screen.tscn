@@ -28,7 +28,7 @@ size = Vector2i(800, 400)
 [node name="Label" type="Label" parent="SubViewport" unique_id=2037226617]
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.9764706, 0.06666667, 0, 1)
+theme_override_colors/font_color = Color(0.92044914, 0.97640556, 0.99909884, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 250
 text = "  0101
