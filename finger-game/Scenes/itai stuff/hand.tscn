@@ -28,15 +28,18 @@ script = SubResource("GDScript_7aret")
 [node name="hand palm" parent="." unique_id=116127469 instance=ExtResource("2_610yf")]
 
 [node name="finger 2" parent="." unique_id=1922095107 instance=ExtResource("2_y6t2t")]
+index = "Button_4"
 
 [node name="finger 3" parent="." unique_id=1722894744 instance=ExtResource("2_mn63p")]
-script = null
 
 [node name="finger 4" parent="." unique_id=1909896133 instance=ExtResource("4_0fcll")]
 script = ExtResource("5_5k6su")
+index = "Button_2"
 
 [node name="finger 5" parent="." unique_id=888112693 instance=ExtResource("6_71v7i")]
 script = ExtResource("5_5k6su")
+index = "Button_1"
 
 [node name="finger 1" parent="." unique_id=825521593 instance=ExtResource("7_1adxn")]
 script = ExtResource("5_5k6su")
+index = "Button_5"

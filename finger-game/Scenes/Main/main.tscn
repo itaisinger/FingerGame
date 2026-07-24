@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://btenx7jvn4urc" path="res://Scenes/MyRunner/itai_runner.tscn" id="5_p6jpk"]
 [ext_resource type="PackedScene" uid="uid://bpl2wns1xcgbv" path="res://Scenes/Button/Button.tscn" id="6_2a143"]
 [ext_resource type="Texture2D" uid="uid://du3aenhy64ehq" path="res://Placeholderss/DirtyTable.jpg" id="6_y3v7k"]
+[ext_resource type="Texture2D" uid="uid://depvgeexxvrb7" path="res://Placeholderss/Floor.jpg" id="7_imbg2"]
 [ext_resource type="PackedScene" uid="uid://ccdv0tkot24ta" path="res://Scenes/itai stuff/hand.tscn" id="7_xlvfx"]
+[ext_resource type="PackedScene" uid="uid://ktx8eb0n0hdu" path="res://Scenes/itai stuff/handR.tscn" id="9_hryqi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hryqi"]
 albedo_texture = ExtResource("6_y3v7k")
@@ -15,8 +17,17 @@ albedo_texture = ExtResource("6_y3v7k")
 [sub_resource type="BoxMesh" id="BoxMesh_t2cyj"]
 size = Vector3(3, 0.1, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hfg1r"]
+albedo_texture = ExtResource("7_imbg2")
+
 [sub_resource type="BoxMesh" id="BoxMesh_p6jpk"]
 size = Vector3(8, 1, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x6t36"]
+size = Vector3(8, 10, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_imbg2"]
+size = Vector3(14, 10, 1)
 
 [node name="Main" type="Node3D" unique_id=1211374868]
 script = ExtResource("1_main")
@@ -48,9 +59,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1.5)
 [node name="Button8" parent="HitTheMoleController" index="5" unique_id=1445881453]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -2.5)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=648909123]
-transform = Transform3D(1, 0, 0, 0, 0.94543326, 0.32581577, 0, -0.32581577, 0.94543326, 0, 1.6405313, 0.933148)
-
 [node name="Itai_runner" parent="." unique_id=1084586411 instance=ExtResource("5_p6jpk")]
 
 [node name="Room" type="Node3D" parent="." unique_id=1129812981]
@@ -62,14 +70,25 @@ mesh = SubResource("BoxMesh_t2cyj")
 
 [node name="Floor" type="MeshInstance3D" parent="Room" unique_id=1745832363]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+material_override = SubResource("StandardMaterial3D_hfg1r")
 mesh = SubResource("BoxMesh_p6jpk")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=876399380]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 89.50493, 0)
-light_energy = 16.0
-light_indirect_energy = 16.0
-omni_range = 4096.0
-omni_attenuation = 0.786
+[node name="Floor2" type="MeshInstance3D" parent="Room" unique_id=2020271787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.0620513, 0)
+material_override = SubResource("StandardMaterial3D_hfg1r")
+mesh = SubResource("BoxMesh_p6jpk")
+
+[node name="Backwall" type="MeshInstance3D" parent="Room" unique_id=159033135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.4216294)
+mesh = SubResource("BoxMesh_x6t36")
+
+[node name="Leftwall" type="MeshInstance3D" parent="Room" unique_id=1406132971]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.4623914, 0, -4.4703712)
+mesh = SubResource("BoxMesh_imbg2")
+
+[node name="Rightwall" type="MeshInstance3D" parent="Room" unique_id=1490028477]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.400396, 0, -4.4703712)
+mesh = SubResource("BoxMesh_imbg2")
 
 [node name="Button2" parent="." unique_id=427806359 instance=ExtResource("6_2a143")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4457187, 0.47, -0.13331962)
@@ -80,10 +99,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 10.5, -2.5)
 [node name="Button4" parent="." unique_id=1937948633 instance=ExtResource("6_2a143")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 10.5, -2.5)
 
-[node name="Hand" parent="." unique_id=166837078 instance=ExtResource("7_xlvfx")]
-transform = Transform3D(-0.116542645, 0, -0.9931857, 0.9806293, -0.15850918, -0.115069255, -0.15742904, -0.9873575, 0.018473078, -0.364, 0.5971118, 0.122)
-
 [node name="Button" parent="." unique_id=60498444 instance=ExtResource("6_2a143")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49057582, 0.47, -0.07047111)
 
+[node name="Hand" parent="." unique_id=166837078 instance=ExtResource("7_xlvfx")]
+transform = Transform3D(0.042505953, 0.86555195, -0.830068, 1.1767551, -0.19021095, -0.13808309, -0.23117183, -0.8090978, -0.85552335, -0.5010772, 0.6, 0.2)
+
+[node name="hand palm" parent="Hand" index="0" unique_id=116127469]
+transform = Transform3D(1, 1.4901161e-08, 0, 0, 0.99999994, -2.9802322e-08, -1.4901161e-08, -5.9604645e-08, 1, -0.026261032, 0.004244864, 0.0030815303)
+
+[node name="HandR" parent="." unique_id=774035066 instance=ExtResource("9_hryqi")]
+transform = Transform3D(-4.2803947e-08, -0.9792403, -0.69360554, 1.2000002, -5.2453675e-08, 2.5208073e-15, -3.031846e-08, -0.69360554, 0.9792403, 0.5077291, 0.6, 0.16141851)
+
+[node name="finger 5R" parent="HandR" index="1" unique_id=2129092436]
+index = "Button_10"
+
+[node name="finger 4R" parent="HandR" index="5" unique_id=2107943955]
+index = "Button_9"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=876399380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.015629, 4.8964443)
+light_energy = 16.0
+light_indirect_energy = 16.0
+omni_range = 16.292
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=648909123]
+transform = Transform3D(0.99968225, -0.010682802, 0.022831848, 0.0021160818, 0.9381257, 0.34628838, -0.025118472, -0.34613, 0.9378503, -0.07397768, 1.6008989, 0.89931726)
+fov = 89.1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2126286946]
+transform = Transform3D(1, 0, 0, 0, -0.60722923, -0.7945267, 0, 0.7945267, -0.60722923, 0, -1.2799486, 3.2805026)
+light_energy = 0.05
+
 [editable path="HitTheMoleController"]
+[editable path="Hand"]
+[editable path="HandR"]

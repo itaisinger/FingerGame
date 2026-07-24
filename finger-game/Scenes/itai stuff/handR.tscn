@@ -32,3 +32,4 @@ script = ExtResource("3_okp60")
 [node name="finger 4R" parent="." unique_id=2107943955 instance=ExtResource("6_fhpbj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 script = ExtResource("3_okp60")
+index = "Button_3"
