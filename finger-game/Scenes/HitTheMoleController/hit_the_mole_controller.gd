@@ -33,17 +33,17 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("MoleButton_1"):
+	if Input.is_action_just_pressed("Button_3"):
 		button1()
-	elif Input.is_action_just_pressed("MoleButton_2"):
+	elif Input.is_action_just_pressed("Button_4"):
 		button2()
-	elif Input.is_action_just_pressed("MoleButton_3"):
+	elif Input.is_action_just_pressed("Button_5"):
 		button3()
-	elif Input.is_action_just_pressed("MoleButton_4"):
+	elif Input.is_action_just_pressed("Button_6"):
 		button4()
-	elif Input.is_action_just_pressed("MoleButton_5"):
+	elif Input.is_action_just_pressed("Button_7"):
 		button5()
-	elif Input.is_action_just_pressed("MoleButton_6"):
+	elif Input.is_action_just_pressed("Button_8"):
 		button6()
 
 
@@ -64,7 +64,7 @@ func press_button(button_number: int) -> void:
 		active_buttons[index] = 0
 		button_timers[index].stop()
 
-		var led = get_node_or_null("LED" + str(index))
+		var led = get_node_or_null("Button" + str(index +3))
 		if led != null:
 			led.turn_off()
 
@@ -78,7 +78,7 @@ func _button_failed(index: int) -> void:
 	if active_buttons[index] == 0:
 		return
 	active_buttons[index] = 0
-	var led = get_node_or_null("LED" + str(index))
+	var led = get_node_or_null("Button" + str(index +3 ))
 	if led != null:
 		led.turn_off()
 	print("failed button ", index + 1)
@@ -106,7 +106,7 @@ func _turn_on_random_button() -> void:
 
 
 func turn_on_button(index: int) -> void:
-	var led = get_node_or_null("LED" + str(index))
+	var led = get_node_or_null("Button" + str(index+3))
 
 	if led != null:
 		led.turn_on()

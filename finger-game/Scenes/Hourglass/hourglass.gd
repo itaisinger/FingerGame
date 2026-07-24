@@ -15,6 +15,8 @@ var print_timer := 0.0
 
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Button_1"):
+		part_1_is_up = not part_1_is_up
 	var upper := part_1 if part_1_is_up else part_2
 	var lower := part_2 if part_1_is_up else part_1
 	var transferred_time: float = min(delta * TRANSFER_RATE, upper.time)
@@ -27,8 +29,3 @@ func _process(delta: float) -> void:
 	if print_timer >= 0.5:
 		print_timer -= 0.5
 		print("Part 1: ", part_1.time, " | Part 2: ", part_2.time, " | Up: ", 1 if part_1_is_up else 2)
-
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		part_1_is_up = not part_1_is_up

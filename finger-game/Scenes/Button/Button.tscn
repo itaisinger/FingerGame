@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bpl2wns1xcgbv"]
+
+[ext_resource type="Script" uid="uid://v66alptqr76r" path="res://Scenes/Button/button.gd" id="1_crnpg"]
+[ext_resource type="Texture2D" uid="uid://b6im1a3jmrawn" path="res://Placeholderss/green.jpg" id="2_thrj7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdaww"]
+albedo_texture = ExtResource("2_thrj7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crnpg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t2cyj"]
+material = SubResource("StandardMaterial3D_crnpg")
+
+[node name="Button" type="Node3D" unique_id=1658878431]
+script = ExtResource("1_crnpg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1459265773]
+material_override = SubResource("StandardMaterial3D_jdaww")
+mesh = SubResource("BoxMesh_t2cyj")

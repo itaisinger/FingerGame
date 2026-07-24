@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	time_left -= delta
-	if Input.is_action_just_pressed("PersonImageButton"):
+	if Input.is_action_just_pressed("Button_2"):
 		pressed()
 	if time_left <= 0.0 :
 		_finish_round()
