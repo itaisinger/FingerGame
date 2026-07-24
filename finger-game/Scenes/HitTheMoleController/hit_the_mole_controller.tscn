@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://w7b1435udr6y"]
+
+[ext_resource type="Script" uid="uid://rimiugw2vwpc" path="res://Scenes/HitTheMoleController/hit_the_mole_controller.gd" id="1_ogwy0"]
+
+[node name="HitTheMoleController" type="Node3D" unique_id=295308992]
+script = ExtResource("1_ogwy0")
+time_between_buttons = 3.0
