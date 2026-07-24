@@ -10,6 +10,7 @@ albedo_texture = ExtResource("2_thrj7")
 
 [sub_resource type="BoxMesh" id="BoxMesh_t2cyj"]
 material = SubResource("StandardMaterial3D_crnpg")
+size = Vector3(0.085, 0.05, 0.05)
 
 [node name="Button" type="Node3D" unique_id=1658878431]
 script = ExtResource("1_crnpg")

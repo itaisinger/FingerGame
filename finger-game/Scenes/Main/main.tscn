@@ -6,12 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://w7b1435udr6y" path="res://Scenes/HitTheMoleController/hit_the_mole_controller.tscn" id="4_2a143"]
 [ext_resource type="PackedScene" uid="uid://btenx7jvn4urc" path="res://Scenes/MyRunner/itai_runner.tscn" id="5_p6jpk"]
 [ext_resource type="PackedScene" uid="uid://bpl2wns1xcgbv" path="res://Scenes/Button/Button.tscn" id="6_2a143"]
+[ext_resource type="Texture2D" uid="uid://du3aenhy64ehq" path="res://Placeholderss/DirtyTable.jpg" id="6_y3v7k"]
+[ext_resource type="PackedScene" uid="uid://ccdv0tkot24ta" path="res://Scenes/itai stuff/hand.tscn" id="7_xlvfx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hryqi"]
+albedo_texture = ExtResource("6_y3v7k")
 
 [sub_resource type="BoxMesh" id="BoxMesh_t2cyj"]
-size = Vector3(30, 1, 10)
+size = Vector3(3, 0.1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_p6jpk"]
-size = Vector3(100, 1, 100)
+size = Vector3(8, 1, 12)
 
 [node name="Main" type="Node3D" unique_id=1211374868]
 script = ExtResource("1_main")
@@ -23,16 +28,16 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -8.577332, 45.857452, -75.
 round_duration = 5.0
 
 [node name="HitTheMoleController" parent="." unique_id=295308992 instance=ExtResource("4_2a143")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Button3" parent="HitTheMoleController" index="0" unique_id=1658878431]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36871487, -0.029999733, -0.16152024)
 
 [node name="Button4" parent="HitTheMoleController" index="1" unique_id=1641990739]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28157377, -0.030000001, -0.126)
 
 [node name="Button5" parent="HitTheMoleController" index="2" unique_id=631352668]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19996136, -0.029798508, 0.05252239)
 
 [node name="Button6" parent="HitTheMoleController" index="3" unique_id=1456664243]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -44,17 +49,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -2.5)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=648909123]
-transform = Transform3D(1, 0, 0, 0, 0.9848702, 0.17329365, 0, -0.17329365, 0.9848702, 0, 22.957115, 16.30514)
+transform = Transform3D(1, 0, 0, 0, 0.94543326, 0.32581577, 0, -0.32581577, 0.94543326, 0, 1.6405313, 0.933148)
 
 [node name="Itai_runner" parent="." unique_id=1084586411 instance=ExtResource("5_p6jpk")]
 
 [node name="Room" type="Node3D" parent="." unique_id=1129812981]
 
 [node name="Table" type="MeshInstance3D" parent="Room" unique_id=1298851474]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41917714, 0)
+material_override = SubResource("StandardMaterial3D_hryqi")
 mesh = SubResource("BoxMesh_t2cyj")
 
-[node name="Table2" type="MeshInstance3D" parent="Room" unique_id=1745832363]
+[node name="Floor" type="MeshInstance3D" parent="Room" unique_id=1745832363]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_p6jpk")
 
@@ -65,16 +71,19 @@ light_indirect_energy = 16.0
 omni_range = 4096.0
 omni_attenuation = 0.786
 
-[node name="Button" parent="." unique_id=60498444 instance=ExtResource("6_2a143")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 10.5, -2.5)
-
 [node name="Button2" parent="." unique_id=427806359 instance=ExtResource("6_2a143")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 10.5, -2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4457187, 0.47, -0.13331962)
 
 [node name="Button3" parent="." unique_id=1999223228 instance=ExtResource("6_2a143")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 10.5, -2.5)
 
 [node name="Button4" parent="." unique_id=1937948633 instance=ExtResource("6_2a143")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 10.5, -2.5)
+
+[node name="Hand" parent="." unique_id=166837078 instance=ExtResource("7_xlvfx")]
+transform = Transform3D(-0.116542645, 0, -0.9931857, 0.9806293, -0.15850918, -0.115069255, -0.15742904, -0.9873575, 0.018473078, -0.364, 0.5971118, 0.122)
+
+[node name="Button" parent="." unique_id=60498444 instance=ExtResource("6_2a143")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49057582, 0.47, -0.07047111)
 
 [editable path="HitTheMoleController"]
