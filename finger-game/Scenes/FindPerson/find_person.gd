@@ -1,5 +1,5 @@
 extends Node3D
-
+signal cutfinger(index)
 @export_dir var people := "res://images/people"
 @export_dir var notPeople := "res://images/not_people"
 
@@ -40,14 +40,15 @@ func _start_round() -> void:
 	select_image(has_person)
 	clicked_this_round = false
 	time_left = round_duration
-	FindPersonHasPerson.emit(has_person)
 	#print("Person: ", "YES" if has_person else "NO")
 
 
 func _finish_round() -> void:
 	var succeeded := has_person == clicked_this_round
-	round_finished.emit(succeeded, has_person, clicked_this_round)
-	print("FIND_PERSON == SUCCESS" if succeeded else "FIND_PERSON == FAIL")
+	if not succeeded:
+		cutfinger.emit(2)
+	#round_finished.emit(succeeded, has_person, clicked_this_round)
+	#print("FIND_PERSON == SUCCESS" if succeeded else "FIND_PERSON == FAIL")
 
 
 func select_image(is_person: bool) -> void:

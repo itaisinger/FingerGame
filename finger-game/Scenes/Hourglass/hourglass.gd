@@ -1,7 +1,7 @@
 extends Node3D
 
 const TRANSFER_RATE := 20.0
-
+signal cutFinger(index)
 class HourglassPart:
 	var time: float
 	func _init(starting_time: float) -> void:
@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 	lower.time += transferred_time
 	if upper.time <=1 or lower.time>=99:
 		print("GAME OVER HOURGLASS")
+		cutFinger.emit(1)
 		queue_free()
 	print_timer += delta
 	if print_timer >= 0.5:
