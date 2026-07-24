@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b1j30i5chvbil"]
+
+[ext_resource type="PackedScene" uid="uid://c3lnhymaqyaom" path="res://assets/finger 1.glb" id="1_nv5ii"]
+[ext_resource type="Script" uid="uid://btc55x5lc3ep8" path="res://Scenes/itai stuff/finger_anim.gd" id="2_cwggy"]
+
+[node name="finger 1" unique_id=825521593 instance=ExtResource("1_nv5ii")]
+script = ExtResource("2_cwggy")
+
+[node name="Armature_003" parent="." index="0" unique_id=1870746823]
+transform = Transform3D(0.16149175, 0, 0, 0, 0.16149175, 0, 0, 0, 0.16149175, -0.016966704, 0.06851952, -0.037467714)
+
+[node name="Skeleton3D" parent="Armature_003" index="0" unique_id=1170421474]
+bones/0/position = Vector3(0, 0, 0)
+bones/0/rotation = Quaternion(-0.41224334, 0.025448205, 0.05611309, 0.908988)
+bones/1/rotation = Quaternion(0.13178182, -0.016208436, -0.0009183615, 0.9911459)
+bones/2/rotation = Quaternion(0.1620366, -0.023911979, 0.024719516, 0.98618525)
