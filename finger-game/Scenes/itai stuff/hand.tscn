@@ -15,12 +15,20 @@ script/source = "extends Node3D
 @export var throw_speed: float = 3.0
 @export var flip_speed: float = 18.0
 
+@export var finger_hitbox: Shape3D
+@export var hitbox_position: Vector3 = Vector3.ZERO
+@export var hitbox_rotation: Vector3 = Vector3(0.0, 0.0, 90.0)
+
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed(\"Button_1\"):
 		cut_finger(1)
 		cut_finger(2)
 		cut_finger(3)
+		cut_finger(4)
+		cut_finger(5)
+
+
 
 
 func cut_finger(i: int) -> void:
@@ -38,6 +46,10 @@ func cut_finger(i: int) -> void:
 		push_warning(\"throw_vector cannot be zero.\")
 		return
 
+	if finger_hitbox == null:
+		push_warning(\"finger_hitbox has not been assigned.\")
+		return
+
 	finger.set_meta(\"cut\", true)
 
 	var saved_transform := finger.global_transform
@@ -53,43 +65,32 @@ func cut_finger(i: int) -> void:
 	finger.reparent(body, true)
 
 	var collider := CollisionShape3D.new()
-	var shape := CapsuleShape3D.new()
-
-	shape.radius = 0.08
-	shape.height = 0.5
-
-	collider.shape = shape
-	collider.rotation_degrees.z = 90.0
+	collider.shape = finger_hitbox.duplicate()
+	collider.position = hitbox_position
+	collider.rotation_degrees = hitbox_rotation
 	body.add_child(collider)
 
-	# Converts the exported local vector into a world-space direction.
 	var throw_direction := (
 		global_transform.basis * throw_vector.normalized()
 	).normalized()
 
-	# Creates an end-over-end flipping axis perpendicular to the throw.
 	var flip_axis := Vector3.UP.cross(throw_direction).normalized()
 
-	# Fallback when throwing almost directly upward or downward.
 	if flip_axis.is_zero_approx():
 		flip_axis = body.global_transform.basis.x.normalized()
 
 	body.linear_velocity = throw_direction * throw_speed
 	body.angular_velocity = flip_axis * flip_speed
-
-	print(
-		\"Finger %d | throw: %s | flip axis: %s | velocity: %s\"
-		% [
-			i,
-			throw_direction,
-			flip_axis,
-			body.linear_velocity
-		]
-	)
 "
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t2cyj"]
+size = Vector3(0.2, 0.8, 0.2)
 
 [node name="Hand" type="Node3D" unique_id=166837078]
 script = SubResource("GDScript_7aret")
+throw_vector = Vector3(0, -0.1, 0)
+throw_speed = 0.0
+finger_hitbox = SubResource("BoxShape3D_t2cyj")
 
 [node name="hand palm" parent="." unique_id=116127469 instance=ExtResource("2_610yf")]
 

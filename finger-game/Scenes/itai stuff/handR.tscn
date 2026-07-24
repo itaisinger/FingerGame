@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ktx8eb0n0hdu"]
 
 [ext_resource type="PackedScene" uid="uid://bfah30a5oqhb7" path="res://assets/hand palm R.glb" id="1_miq5y"]
+[ext_resource type="Script" uid="uid://dqh5penc0two2" path="res://Scenes/HandRScript/itai_runner.gd" id="1_xde54"]
 [ext_resource type="PackedScene" uid="uid://dpm8hiigbyspu" path="res://assets/finger 5R.glb" id="2_okp60"]
 [ext_resource type="Script" uid="uid://btc55x5lc3ep8" path="res://Scenes/itai stuff/finger_anim.gd" id="3_okp60"]
 [ext_resource type="PackedScene" uid="uid://d0gnioe2k6d13" path="res://assets/finger 1R.glb" id="3_xde54"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://qsaa3gxvvdq3" path="res://assets/finger 4R.glb" id="6_fhpbj"]
 
 [node name="HandR" type="Node3D" unique_id=774035066]
+script = ExtResource("1_xde54")
 
 [node name="hand palm R" parent="." unique_id=1124762062 instance=ExtResource("1_miq5y")]
 

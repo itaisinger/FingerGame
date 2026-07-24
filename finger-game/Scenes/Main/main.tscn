@@ -35,6 +35,9 @@ size = Vector3(8, 10, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_imbg2"]
 size = Vector3(14, 10, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6t3k2"]
+size = Vector3(0.6, 0.2, 0.2)
+
 [node name="Main" type="Node3D" unique_id=1211374868]
 script = ExtResource("1_main")
 
@@ -112,8 +115,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49057582, 0.47, -0.0704711
 
 [node name="Hand" parent="." unique_id=166837078 instance=ExtResource("7_xlvfx")]
 transform = Transform3D(0.042505953, 0.86555195, -0.830068, 1.1767551, -0.19021095, -0.13808309, -0.23117183, -0.8090978, -0.85552335, -0.5010772, 0.736068, 0.2)
-throw_vector = Vector3(0.01, 0.3, 0.01)
-throw_speed = 4.0
+throw_vector = Vector3(0, 1, 0)
+throw_speed = 3.0
+flip_speed = 12.0
+finger_hitbox = SubResource("BoxShape3D_6t3k2")
 
 [node name="hand palm" parent="Hand" index="0" unique_id=116127469]
 transform = Transform3D(1, 1.4901161e-08, 0, 0, 0.99999994, -2.9802322e-08, -1.4901161e-08, -5.9604645e-08, 1, -0.026261032, 0.004244864, 0.0030815303)
