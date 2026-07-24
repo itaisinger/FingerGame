@@ -4,7 +4,7 @@ extends Node3D
 var anim_name = "press" # Update to match your animation name in Godot
 var anim_length = 0.0
 var progress = 0.0
-@export var speed = 2.0 # Adjust this to change how fast it presses/releases
+@export var speed = 12.0 # Adjust this to change how fast it presses/releases
 @export var index = "finger2"
 
 func _ready():
