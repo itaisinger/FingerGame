@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cmo0a7rpdcjrg"]
+
+[ext_resource type="PackedScene" uid="uid://bnbl6n0af6q2l" path="res://assets/TV high.glb" id="1_pi3ey"]
+[ext_resource type="PackedScene" uid="uid://btenx7jvn4urc" path="res://Scenes/MyRunner/itai_runner.tscn" id="2_o7p01"]
+
+[node name="TVHighWithRunner" unique_id=744876569 instance=ExtResource("1_pi3ey")]
+
+[node name="Itai_runner" parent="." index="1" unique_id=1084586411 instance=ExtResource("2_o7p01")]
+transform = Transform3D(-3.4969112e-08, 0.8, -3.4969112e-08, 0, -3.4969112e-08, -0.8, -0.8, -3.4969112e-08, 1.5285484e-15, 0.21555185, 1.0900232, 0)

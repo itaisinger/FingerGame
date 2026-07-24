@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bsvatjaf1r0iu" path="res://Scenes/PermutationScreen/permutation_screen.tscn" id="11_hfg1r"]
 [ext_resource type="PackedScene" uid="uid://bii8oc2j82sxm" path="res://Scenes/TV_With_Permutations/tv_with_permutations.tscn" id="12_4e4y2"]
 [ext_resource type="PackedScene" uid="uid://c4p8jjrr852hh" path="res://assets/chair.glb" id="13_6t3k2"]
+[ext_resource type="PackedScene" uid="uid://bnbl6n0af6q2l" path="res://assets/TV high.glb" id="14_vk4q2"]
+[ext_resource type="PackedScene" uid="uid://cmo0a7rpdcjrg" path="res://Scenes/TvWithRunner/tv_high_with_runner.tscn" id="15_wliom"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hryqi"]
 albedo_texture = ExtResource("6_y3v7k")
@@ -152,6 +154,12 @@ transform = Transform3D(0.99764305, 0, -0.06861739, 0, 1, 0, 0.06861739, 0, 0.99
 
 [node name="TV_WithPermutations" parent="." unique_id=682999096 instance=ExtResource("12_4e4y2")]
 transform = Transform3D(-8.742278e-08, 0, -3.8039358, 0, 2, 0, 2, 0, -1.6627531e-07, 0, 2.227273, -4.9701977)
+
+[node name="TV high" parent="." unique_id=744876569 instance=ExtResource("14_vk4q2")]
+transform = Transform3D(-8.742278e-08, 0, -3.8039358, 0, 2, 0, 2, 0, -1.6627531e-07, 0, 2.227273, -4.9701977)
+
+[node name="TVHighWithRunner" parent="." unique_id=1338397414 instance=ExtResource("15_wliom")]
+transform = Transform3D(-8.742278e-08, 0, -3.8039358, 0, 2, 0, 2, 0, -1.6627531e-07, 2.0489535, -0.16685772, -3.5309525)
 
 [editable path="HitTheMoleController"]
 [editable path="Hand"]

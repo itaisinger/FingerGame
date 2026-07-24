@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://btenx7jvn4urc"]
 
 [ext_resource type="Script" uid="uid://c8xjh3v2x0afh" path="res://itai_runner.gd" id="1_f3moc"]
-[ext_resource type="FontFile" uid="uid://du8meo6bor3xo" path="res://Fonts/fonts/ttf/JetBrainsMonoNL-ExtraBold.ttf" id="2_efw7t"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_efw7t"]
 viewport_path = NodePath("SubViewport")
@@ -14,7 +13,6 @@ albedo_texture_force_srgb = true
 [sub_resource type="PlaneMesh" id="PlaneMesh_f3moc"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_f3moc")
-size = Vector2(1, 2)
 
 [node name="Itai_runner" type="Node3D" unique_id=1084586411]
 script = ExtResource("1_f3moc")
@@ -23,21 +21,10 @@ script = ExtResource("1_f3moc")
 mesh = SubResource("PlaneMesh_f3moc")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1952054273]
-size = Vector2i(212, 512)
 
 [node name="Label" type="Label" parent="SubViewport" unique_id=1917435652]
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("2_efw7t")
-theme_override_font_sizes/font_size = 32
-text = "
-  [0,0,0]
-  [0,0,0]
-  [0,0,0]
-  [0,0,0]
-  [0,0,0]
-  [0,0,0]
-  [0,0,0]
-  [0,0,0]
-  [0,0,0]
-  [0,0,0]"
+text = "111111111
+111111111
+11111111"
