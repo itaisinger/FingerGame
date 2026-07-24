@@ -13,9 +13,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_left"):
+	if Input.is_action_just_pressed("RunnerLeftButton"):
 		press2()
-	elif Input.is_action_just_pressed("ui_right"):
+	elif Input.is_action_just_pressed("RunnerRightButton"):
 		press1()
 	timer += delta
 	if timer >= 1.0:
