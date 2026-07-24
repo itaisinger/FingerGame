@@ -30,6 +30,7 @@ script = SubResource("GDScript_7aret")
 [node name="finger 2" parent="." unique_id=1922095107 instance=ExtResource("2_y6t2t")]
 
 [node name="finger 3" parent="." unique_id=1722894744 instance=ExtResource("2_mn63p")]
+script = null
 
 [node name="finger 4" parent="." unique_id=1909896133 instance=ExtResource("4_0fcll")]
 script = ExtResource("5_5k6su")
