@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ccdv0tkot24ta"]
+
+[ext_resource type="PackedScene" uid="uid://dtfkn6jkonib2" path="res://Scenes/itai stuff/finger_2.tscn" id="1_610yf"]
+[ext_resource type="PackedScene" uid="uid://bpe26gd2qsvkn" path="res://Scenes/itai stuff/finger_3.tscn" id="2_mn63p"]
+
+[node name="Hand" type="Node3D" unique_id=166837078]
+
+[node name="finger2" parent="." unique_id=854572984 instance=ExtResource("1_610yf")]
+
+[node name="finger 32" parent="." unique_id=2140564075 instance=ExtResource("2_mn63p")]

@@ -5,6 +5,7 @@ var anim_name = "press" # Update to match your animation name in Godot
 var anim_length = 0.0
 var progress = 0.0
 @export var speed = 2.0 # Adjust this to change how fast it presses/releases
+@export var index = "finger2"
 
 func _ready():
 	anim_player.play(anim_name)
@@ -16,11 +17,11 @@ func _process(delta) -> void:
 	if finger_pressed():
 		progress = min(progress + (speed * delta), 1.0)
 	else:
-		progress = max(progress - (speed * delta), 0.0)
+		progress = max(progress - (speed * delta * 0.5), 0.0)
 		
 	# Multiply 0-1 progress by total length to get the correct time
 	anim_player.seek(progress * anim_length, true)
 	
 func finger_pressed():
-	var ret = Input.is_action_pressed("finger2")
+	var ret = Input.is_action_pressed(index)
 	return ret
