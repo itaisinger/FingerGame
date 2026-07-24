@@ -45,7 +45,8 @@ func _process(_delta: float) -> void:
 		print("99999999999999999999999999")
 		print("Correct permutation: ", binary_number)
 		print("99999999999999999999999999")
-		turn_off()
+		generate_binary(4)
+		#turn_off()
 	was_matching = matching
 
 func turn_off():
