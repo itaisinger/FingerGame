@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://ktx8eb0n0hdu"]
+
+[ext_resource type="PackedScene" uid="uid://bfah30a5oqhb7" path="res://assets/hand palm R.glb" id="1_miq5y"]
+[ext_resource type="PackedScene" uid="uid://dpm8hiigbyspu" path="res://assets/finger 5R.glb" id="2_okp60"]
+[ext_resource type="Script" uid="uid://btc55x5lc3ep8" path="res://Scenes/itai stuff/finger_anim.gd" id="3_okp60"]
+[ext_resource type="PackedScene" uid="uid://d0gnioe2k6d13" path="res://assets/finger 1R.glb" id="3_xde54"]
+[ext_resource type="PackedScene" uid="uid://woljy51tfb8m" path="res://assets/finger 2R.glb" id="4_edgbx"]
+[ext_resource type="PackedScene" uid="uid://dc6vsisp4cjdh" path="res://assets/finger 3R.glb" id="5_ba5vm"]
+[ext_resource type="PackedScene" uid="uid://qsaa3gxvvdq3" path="res://assets/finger 4R.glb" id="6_fhpbj"]
+
+[node name="HandR" type="Node3D" unique_id=774035066]
+
+[node name="hand palm R" parent="." unique_id=1124762062 instance=ExtResource("1_miq5y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+
+[node name="finger 5R" parent="." unique_id=2129092436 instance=ExtResource("2_okp60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+script = ExtResource("3_okp60")
+
+[node name="finger 1R" parent="." unique_id=1234267081 instance=ExtResource("3_xde54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+script = ExtResource("3_okp60")
+
+[node name="finger 2R" parent="." unique_id=390711280 instance=ExtResource("4_edgbx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+script = ExtResource("3_okp60")
+
+[node name="finger 3R" parent="." unique_id=279750246 instance=ExtResource("5_ba5vm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+script = ExtResource("3_okp60")
+
+[node name="finger 4R" parent="." unique_id=2107943955 instance=ExtResource("6_fhpbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+script = ExtResource("3_okp60")
