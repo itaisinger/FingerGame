@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://r63qnig8f3rf"]
+
+[ext_resource type="PackedScene" uid="uid://wqt6hboie0iw" path="res://assets/button.glb" id="1_gmly2"]
+[ext_resource type="Script" uid="uid://bvqfn2nevpqvn" path="res://assets/button_anim.gd" id="2_mj5e7"]
+
+[node name="Button" type="Node3D" unique_id=1005044419]
+
+[node name="button" parent="." unique_id=2066741022 instance=ExtResource("1_gmly2")]
+script = ExtResource("2_mj5e7")
