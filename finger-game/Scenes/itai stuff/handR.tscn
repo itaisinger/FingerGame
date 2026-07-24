@@ -16,6 +16,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 [node name="finger 5R" parent="." unique_id=2129092436 instance=ExtResource("2_okp60")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 script = ExtResource("3_okp60")
+index = "MoleButton_1"
 
 [node name="finger 1R" parent="." unique_id=1234267081 instance=ExtResource("3_xde54")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
@@ -32,3 +33,6 @@ script = ExtResource("3_okp60")
 [node name="finger 4R" parent="." unique_id=2107943955 instance=ExtResource("6_fhpbj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 script = ExtResource("3_okp60")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2025762238]
+transform = Transform3D(0.10104769, 0, 0.9948816, 0, 1, 0, -0.9948816, 0, 0.10104769, 0.418294, 0, 0)
