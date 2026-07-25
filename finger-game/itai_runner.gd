@@ -68,9 +68,10 @@ func gen_next_row() -> Array:
 			return [0, 0, 0]    # No obstacles in this row
 
 #call every second
-func update():
-	grid.append(gen_next_row())
-	grid.pop_front()
+func update(gen_new_tile=true):
+	if(gen_new_tile):
+		grid.append(gen_next_row())
+		grid.pop_front()
 	if(grid[0][pos] == 1): 
 		print("Game Over!")
 		hit()
@@ -83,8 +84,10 @@ func hit():
 	hp-=1
 	grid[0][pos]=4
 	if hp==1:
+		$sfxDie1.play()
 		cutfinger.emit(9)
 	else:
+		$sfxDie2.play()
 		cutfinger.emit(10)
 #func printgrid():
 	#print("#-----------------")
@@ -129,11 +132,16 @@ func printgrid():
 #PUBLIC
 #move
 func press1():
-	pos+=1
-	if(pos>2): pos = 0
-	update()
+	move(1)
 
 func press2():
-	pos-=1
+	move(-1)
+
+func move(add):
+	grid[0][pos] = 0
+	pos+=add
+	if(pos>2): pos = 0
 	if(pos<0): pos = 2
-	update()
+	if(grid[0][pos] == 1): hit()
+	grid[0][pos] = 3
+	update(false)

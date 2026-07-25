@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://btenx7jvn4urc"]
 
 [ext_resource type="Script" uid="uid://c8xjh3v2x0afh" path="res://itai_runner.gd" id="1_f3moc"]
+[ext_resource type="AudioStream" uid="uid://c5k3hgbjhitwo" path="res://assets/sounds/runner first death.wav" id="2_wtdsh"]
+[ext_resource type="AudioStream" uid="uid://fwu0j00t5pq8" path="res://assets/sounds/runner die.wav" id="3_j8u4h"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_efw7t"]
 viewport_path = NodePath("SubViewport")
@@ -65,7 +67,9 @@ data = PackedByteArray("AAEAAAAPADAAAwDAT1MvMoQPdFgAAI7wAAAATlBDTFRlmbKCAACPQAAA
 font_name = "Arcade Interlaced"
 style_name = "Regular"
 font_style = 4
+subpixel_positioning = 0
 msdf_pixel_range = 8
+msdf_size = 128
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -295,27 +299,27 @@ cache/0/1/0/underline_thickness = 0.015625
 cache/0/1/0/scale = 1.0
 cache/0/1/0/textures/0/offsets = PackedInt32Array(20, 0, 236, 5)
 cache/0/1/0/textures/0/image = SubResource("Image_f3moc")
-cache/0/1/0/glyphs/3/advance = Vector2(0.984375, 1)
+cache/0/1/0/glyphs/3/advance = Vector2(1, 1)
 cache/0/1/0/glyphs/3/offset = Vector2(0, 0)
 cache/0/1/0/glyphs/3/size = Vector2(0, 0)
 cache/0/1/0/glyphs/3/uv_rect = Rect2(0, 0, 0, 0)
 cache/0/1/0/glyphs/3/texture_idx = -1
-cache/0/1/0/glyphs/62/advance = Vector2(0.984375, 1)
+cache/0/1/0/glyphs/62/advance = Vector2(1, 1)
 cache/0/1/0/glyphs/62/offset = Vector2(-1, -2)
 cache/0/1/0/glyphs/62/size = Vector2(3, 3)
 cache/0/1/0/glyphs/62/uv_rect = Rect2(1, 1, 3, 3)
 cache/0/1/0/glyphs/62/texture_idx = 0
-cache/0/1/0/glyphs/19/advance = Vector2(0.984375, 1)
+cache/0/1/0/glyphs/19/advance = Vector2(1, 1)
 cache/0/1/0/glyphs/19/offset = Vector2(-1, -2)
 cache/0/1/0/glyphs/19/size = Vector2(3, 3)
 cache/0/1/0/glyphs/19/uv_rect = Rect2(6, 1, 3, 3)
 cache/0/1/0/glyphs/19/texture_idx = 0
-cache/0/1/0/glyphs/15/advance = Vector2(0.984375, 1)
+cache/0/1/0/glyphs/15/advance = Vector2(1, 1)
 cache/0/1/0/glyphs/15/offset = Vector2(-1, -2)
 cache/0/1/0/glyphs/15/size = Vector2(3, 3)
 cache/0/1/0/glyphs/15/uv_rect = Rect2(11, 1, 3, 3)
 cache/0/1/0/glyphs/15/texture_idx = 0
-cache/0/1/0/glyphs/64/advance = Vector2(0.984375, 1)
+cache/0/1/0/glyphs/64/advance = Vector2(1, 1)
 cache/0/1/0/glyphs/64/offset = Vector2(-1, -2)
 cache/0/1/0/glyphs/64/size = Vector2(3, 3)
 cache/0/1/0/glyphs/64/uv_rect = Rect2(16, 1, 3, 3)
@@ -337,3 +341,9 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = SubResource("FontFile_xiouh")
 theme_override_font_sizes/font_size = 32
+
+[node name="sfxDie1" type="AudioStreamPlayer3D" parent="." unique_id=1142907860]
+stream = ExtResource("2_wtdsh")
+
+[node name="sfxDie2" type="AudioStreamPlayer3D" parent="." unique_id=1333426634]
+stream = ExtResource("3_j8u4h")

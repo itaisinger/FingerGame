@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bsvatjaf1r0iu"]
 
 [ext_resource type="Script" uid="uid://txt7cgfni3q6" path="res://Scenes/PermutationScreen/permutation_screen.gd" id="1_vuvxw"]
+[ext_resource type="AudioStream" uid="uid://cirul8atym3nk" path="res://assets/sounds/permutation win.wav" id="2_w4gs7"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_pdjk7"]
 viewport_path = NodePath("SubViewport")
@@ -33,3 +34,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 250
 text = "  0101
 "
+
+[node name="sfxWin" type="AudioStreamPlayer3D" parent="." unique_id=22123263]
+stream = ExtResource("2_w4gs7")

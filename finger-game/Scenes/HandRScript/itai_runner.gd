@@ -7,9 +7,9 @@ extends Node3D
 @export var flip_speed: float = 9.0
 
 @export_group("Finger Hitbox")
-@export var finger_hitbox: Shape3D = create_default_hitbox()
+@export var finger_hitbox: BoxShape3D = create_default_hitbox()
 @export var hitbox_position: Vector3 = Vector3.ZERO
-@export var hitbox_rotation: Vector3 = Vector3(0.0, 90.0, 0.0)
+@export var hitbox_rotation: Vector3 = Vector3(0.0, 0.0, 90.0)
 
 
 static func create_default_hitbox() -> BoxShape3D:
@@ -23,9 +23,6 @@ static func create_default_hitbox() -> BoxShape3D:
 
 
 func _process(_delta: float) -> void:
-	#if Input.is_action_just_pressed("Button_1"):
-		#for i in range(1, 6):
-			#cut_finger(i)
 	pass
 
 
