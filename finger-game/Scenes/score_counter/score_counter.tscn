@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dpexp25ukrj1s"]
+
+[ext_resource type="PackedScene" uid="uid://bbm8qt0wstyon" path="res://assets/TV.glb" id="1_cx6sf"]
+[ext_resource type="Script" uid="uid://4kiowlgw6ap8" path="res://Scenes/score_counter/score_counter.gd" id="1_gyqlq"]
+[ext_resource type="AudioStream" uid="uid://djcskf3bm5ys0" path="res://assets/sounds/clock tick.wav" id="3_kkni5"]
+
+[node name="ScoreCounter" type="Node3D" unique_id=214095391]
+script = ExtResource("1_gyqlq")
+
+[node name="TV" parent="." unique_id=727913060 instance=ExtResource("1_cx6sf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3399048, 0)
+
+[node name="tickSfx" type="AudioStreamPlayer3D" parent="." unique_id=1009746426]
+stream = ExtResource("3_kkni5")
