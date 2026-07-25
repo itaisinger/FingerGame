@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b7nlhxx5wb7so"]
+
+[ext_resource type="PackedScene" uid="uid://ds1f706a6w475" path="res://Scenes/Blood/blood.tscn" id="1_ifo2b"]
+[ext_resource type="Script" uid="uid://860ic52pw6vl" path="res://Scenes/Blood/blood_burst.gd" id="1_yy2i1"]
+
+[node name="BloodBurst" type="Node3D" unique_id=1116063497]
+script = ExtResource("1_yy2i1")
+
+[node name="Blood" parent="." unique_id=127417039 instance=ExtResource("1_ifo2b")]
