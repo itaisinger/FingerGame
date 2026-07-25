@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://bnbl6n0af6q2l" path="res://assets/TV high.glb" id="14_vk4q2"]
 [ext_resource type="PackedScene" uid="uid://cpfkbyfe1d6t3" path="res://Scenes/knife/knife.tscn" id="15_2ok46"]
 [ext_resource type="PackedScene" uid="uid://cmo0a7rpdcjrg" path="res://Scenes/TvWithRunner/tv_high_with_runner.tscn" id="15_wliom"]
+[ext_resource type="PackedScene" uid="uid://dcpl55f13ymuq" path="res://Scenes/ost_player.tscn" id="17_koken"]
+[ext_resource type="PackedScene" uid="uid://dpexp25ukrj1s" path="res://Scenes/score_counter/score_counter.tscn" id="18_es6iu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hryqi"]
 albedo_texture = ExtResource("6_y3v7k")
@@ -43,6 +45,9 @@ size = Vector3(0.6, 0.15, 0.15)
 
 [node name="Main" type="Node3D" unique_id=1211374868]
 script = ExtResource("1_main")
+
+[node name="OstPlayer_Camera3D#ScoreCounter" parent="." unique_id=214095391 instance=ExtResource("18_es6iu")]
+transform = Transform3D(0.29, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -0.12365794, 0.41141605, -2.1949415)
 
 [node name="HourglassLogic" type="Node3D" parent="." unique_id=504920833]
 script = ExtResource("2_2ok46")
@@ -211,6 +216,8 @@ transform = Transform3D(0.15541083, -7.360055e-09, -0.9878499, 1.4901161e-08, 0.
 [node name="knife" parent="Knife5" index="0" unique_id=1657471252 node_paths=PackedStringArray("StartFinger")]
 transform = Transform3D(0.903279, 7.834648e-09, -0.42905337, -4.9521383e-09, 0.99999964, 7.834642e-09, 0.42905325, -4.9521383e-09, 0.903279, 0.029536963, -0.01906395, 0.07624689)
 StartFinger = NodePath("../../Hand/finger 5")
+
+[node name="OstPlayer" parent="." unique_id=692608484 instance=ExtResource("17_koken")]
 
 [editable path="HitTheMoleController"]
 [editable path="HandR"]

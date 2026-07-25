@@ -7,5 +7,3 @@
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1861520512]
 stream = ExtResource("1_tm1sx")
 autoplay = true
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1387183546]

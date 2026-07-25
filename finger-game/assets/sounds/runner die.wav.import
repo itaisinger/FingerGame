@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fwu0j00t5pq8"
+path="res://.godot/imported/runner die.wav-321a4ef3bd9ca1807a7da3f29aaaffd3.sample"
+
+[deps]
+
+source_file="res://assets/sounds/runner die.wav"
+dest_files=["res://.godot/imported/runner die.wav-321a4ef3bd9ca1807a7da3f29aaaffd3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
