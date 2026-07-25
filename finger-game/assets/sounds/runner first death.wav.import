@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5k3hgbjhitwo"
+path="res://.godot/imported/runner first death.wav-81403306b54af20c80ed66656470f696.sample"
+
+[deps]
+
+source_file="res://assets/sounds/runner first death.wav"
+dest_files=["res://.godot/imported/runner first death.wav-81403306b54af20c80ed66656470f696.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
