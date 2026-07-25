@@ -13,7 +13,7 @@ var was_matching := false
 var rest_time_remain: float
 
 func get_timer_text():
-	var str = "O"
+	var str ="\n\n\n\n\nO"
 	for i in range(floor(SolveTimeRemain)):
 		str += "_"
 	str += "x"
@@ -38,8 +38,7 @@ func generate_binary(length: int) -> void:
 	if displayed_number == "0000":
 		generate_binary(length)
 		return
-
-	label.text = "\n " + displayed_number
+	label.text =  "\n "+ displayed_number
 
 func get_finger_pattern() -> String:
 	var fingers := ""
@@ -75,7 +74,7 @@ func _process(delta: float) -> void:
 		turn_off()
 		schedule_next_activation()
 	timerlabel.text = get_timer_text()
-	label.text = binary_number
+	#label.text = "\n  "+binary_number
 	SolveTimeRemain = max(0.0, SolveTimeRemain-delta);
 	if(SolveTimeRemain <= 0 and !binary_number.is_empty()):
 		cutfinger.emit()
