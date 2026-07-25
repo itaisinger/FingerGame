@@ -73,7 +73,6 @@ func update(gen_new_tile=true):
 		grid.append(gen_next_row())
 		grid.pop_front()
 	if(grid[0][pos] == 1): 
-		print("Game Over!")
 		hit()
 	else:
 		grid[0][pos]=3
