@@ -31,10 +31,8 @@ func _process(_delta: float) -> void:
 func cut_finger(i: int) -> void:
 	var finger_name := "finger %dR" % i
 	var finger := get_node_or_null(finger_name) as Node3D
-
 	if finger == null:
 		return
-
 	if finger.get_meta("cut", false):
 		return
 

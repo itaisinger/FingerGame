@@ -32,15 +32,11 @@ func _process(delta: float) -> void:
 
 func cut_finger(i: int) -> void:
 	var finger := get_node_or_null(\"finger %d\" % i) as Node3D
-
 	if finger == null:
-		print(\"Finger %d was not found.\" % i)
 		return
-
 	if finger.get_meta(\"cut\", false):
 		print(\"Finger %d was already cut.\" % i)
 		return
-
 	if throw_vector.is_zero_approx():
 		push_warning(\"throw_vector cannot be zero.\")
 		return
