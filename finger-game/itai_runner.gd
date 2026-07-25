@@ -1,5 +1,5 @@
 extends Node3D
-var GRID_ROWS = 10
+var GRID_ROWS = 13
 var pos = 0
 var rows_since_last_obstacle = 0
 var grid = []
@@ -58,18 +58,37 @@ func update():
 		#print(row)
 	#print("#-----------------")
 
+#func printgrid():
+	#var lines: Array[String] = [""]
+	#for row in grid:
+		#var cells: Array[String] = []
+		#for cell in row:
+			#if cell==3:
+				#cells.append(str(player_char))
+			#if cell==1:
+				#cells.append(obstacle_char)
+			#if cell==0:
+				#cells.append(empty_char)
+		#lines.append("[" + "|".join(cells) + "]")
+	#$SubViewport/Label.text = "\n".join(lines)
+
 func printgrid():
-	var lines: Array[String] = [""]
-	for row in grid:
+	var lines: Array[String] = []
+
+	for row_index in range(grid.size() - 1, -1, -1):
 		var cells: Array[String] = []
-		for cell in row:
-			if cell==3:
+
+		for cell in grid[row_index]:
+			if cell == 3:
 				cells.append(str(player_char))
-			cells.append(str(cell))
-		lines.append("[" + "|".join(cells) + "]")
+			elif cell == 1:
+				cells.append(obstacle_char)
+			elif cell == 0:
+				cells.append(empty_char)
+		#lines.append("[" + "|".join(cells) + "]")
+		lines.append(" " + " ".join(cells) + " ")
+
 	$SubViewport/Label.text = "\n".join(lines)
-
-
 
 #PUBLIC
 #move
