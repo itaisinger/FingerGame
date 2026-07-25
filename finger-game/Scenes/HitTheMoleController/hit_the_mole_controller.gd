@@ -112,7 +112,9 @@ func _turn_on_random_button() -> void:
 
 	var position := random.randi_range(0, turned_off_buttons.size() - 1)
 	var button_index := turned_off_buttons[position]
-
+	if(!PlayerData.FingerActive[button_index+3]):
+		return
+	
 	active_buttons[button_index] = 1
 	turn_on_button(button_index)
 	button_timers[button_index].start()
