@@ -64,6 +64,11 @@ func is_permutation_shown() -> bool:
 	return false
 
 func _process(delta: float) -> void:
+	
+	if(PlayerData.gg):
+		label.text = ""
+		timerlabel.text = ""
+	
 	if binary_number.is_empty():
 		rest_time_remain -= delta
 		if rest_time_remain <= 0.0:

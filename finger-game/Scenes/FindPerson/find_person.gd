@@ -19,7 +19,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	time_left -= delta
+	if(!PlayerData.gg):
+		time_left -= delta
 	if Input.is_action_just_pressed("Button_2") and PlayerData.FingerActive[1]:
 		pressed()
 	if time_left <= 0.0 :

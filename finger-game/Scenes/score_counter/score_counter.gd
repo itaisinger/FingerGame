@@ -13,7 +13,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	current_remain -= delta*spd
+	if(!PlayerData.gg):
+		current_remain -= delta*spd
 	if(current_remain <= 0):
 	#progress
 		current_remain += 1

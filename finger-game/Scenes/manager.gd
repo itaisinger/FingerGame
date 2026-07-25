@@ -15,9 +15,8 @@ func _process(delta: float) -> void:
 	if(finger_count == 0 and !done):
 		print("game over")
 		done = true
-		await get_tree().create_timer(3.0).timeout
+		PlayerData.gg = true;
+		await get_tree().create_timer(6.0).timeout
 		for i in range((PlayerData.FingerActive.size())):
 			PlayerData.FingerActive[i]=true
-		get_tree().get_root().get_node("ScoreCounter").spd = 0;
-		PlayerData.gg = true;
 		get_tree().reload_current_scene()
