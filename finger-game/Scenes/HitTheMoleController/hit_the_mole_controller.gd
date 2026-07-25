@@ -2,7 +2,7 @@ extends Node3D
 
 const BUTTON_COUNT := 6
 signal cutfinger(index)
-@export var time_between_buttons := 6.0
+@export var time_between_buttons := 9.0
 @export var button_timeout := 7.0
 @export var scisor1:Node3D
 @export var scisor2:Node3D
@@ -112,7 +112,9 @@ func _turn_on_random_button() -> void:
 
 	var position := random.randi_range(0, turned_off_buttons.size() - 1)
 	var button_index := turned_off_buttons[position]
-
+	if(!PlayerData.FingerActive[position+3]):
+		return
+	
 	active_buttons[button_index] = 1
 	turn_on_button(button_index)
 	button_timers[button_index].start()
