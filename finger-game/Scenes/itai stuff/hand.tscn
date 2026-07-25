@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dgppqhsewprky" path="res://assets/hand palm.glb" id="2_610yf"]
 [ext_resource type="PackedScene" uid="uid://bpe26gd2qsvkn" path="res://Scenes/itai stuff/finger_3.tscn" id="2_mn63p"]
 [ext_resource type="PackedScene" uid="uid://brdp6e03ylmmi" path="res://Scenes/itai stuff/finger 2.tscn" id="2_y6t2t"]
+[ext_resource type="PackedScene" uid="uid://jm0mf0nsri5d" path="res://Scenes/Blood/blood_manager.tscn" id="3_0fcll"]
 [ext_resource type="PackedScene" uid="uid://clo6tnee808se" path="res://assets/finger 4.glb" id="4_0fcll"]
 [ext_resource type="Script" uid="uid://btc55x5lc3ep8" path="res://Scenes/itai stuff/finger_anim.gd" id="5_5k6su"]
 [ext_resource type="PackedScene" uid="uid://yd1mlgsqcese" path="res://assets/finger 5.glb" id="6_71v7i"]
@@ -93,6 +94,8 @@ index = "Button_4"
 
 [node name="marker" type="Node3D" parent="finger 2" unique_id=1201275988]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09523848, 0.04217817)
+
+[node name="BloodManager" parent="finger 2/marker" unique_id=1113331797 instance=ExtResource("3_0fcll")]
 
 [node name="finger 3" parent="." unique_id=1722894744 instance=ExtResource("2_mn63p")]
 

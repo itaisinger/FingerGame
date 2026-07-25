@@ -7,6 +7,7 @@ func _ready() -> void:
 	pass
 
 func cut_finger(index):
+	PlayerData.FingerActive[index-1]=false
 	if index>5:
 		$HandR.cut_finger((index-5))
 	else:

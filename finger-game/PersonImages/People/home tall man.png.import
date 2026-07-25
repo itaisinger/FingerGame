@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://03djjhtxm8u0"
-path="res://.godot/imported/home sofa.png-4b0d238823e44798dda6d7d522202229.ctex"
+uid="uid://ghnxk1ew2g2j"
+path="res://.godot/imported/home tall man.png-df88d207c46d2cf5a4b5ab351148942e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pictures/home sofa.png"
-dest_files=["res://.godot/imported/home sofa.png-4b0d238823e44798dda6d7d522202229.ctex"]
+source_file="res://PersonImages/People/home tall man.png"
+dest_files=["res://.godot/imported/home tall man.png-df88d207c46d2cf5a4b5ab351148942e.ctex"]
 
 [params]
 

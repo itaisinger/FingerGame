@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cos8f6235k3sh"
-path="res://.godot/imported/texas empty.png-c06cb89cc4f88f91b6446f0641a318f5.ctex"
+uid="uid://b4ir5sr42daho"
+path="res://.godot/imported/tunnel side.png-43073e426e865c2fb13cbb2d83e6a569.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pictures/texas empty.png"
-dest_files=["res://.godot/imported/texas empty.png-c06cb89cc4f88f91b6446f0641a318f5.ctex"]
+source_file="res://PersonImages/People/tunnel side.png"
+dest_files=["res://.godot/imported/tunnel side.png-43073e426e865c2fb13cbb2d83e6a569.ctex"]
 
 [params]
 
