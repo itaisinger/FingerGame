@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dcpl55f13ymuq"]
+
+[ext_resource type="AudioStream" uid="uid://c27gxty67s2oy" path="res://assets/sounds/violin.wav" id="1_tm1sx"]
+
+[node name="OstPlayer" type="Node3D" unique_id=692608484]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1861520512]
+stream = ExtResource("1_tm1sx")
+autoplay = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1387183546]

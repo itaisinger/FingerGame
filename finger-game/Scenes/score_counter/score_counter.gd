@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 		
 		#sfx
 		$tickSfx.play();
-		
+
 func done():
 	print("win")
 	
