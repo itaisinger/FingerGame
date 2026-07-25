@@ -15,9 +15,9 @@ var is_retract = false
 var progress = 0;
 
 func _ready():
-	if StartFinger!=null:
-		global_position=StartFinger.get_node("marker").global_position
-		#rotation = StartFinger.rotation+Vector3(0,90,0)
+	#if StartFinger!=null:
+		#global_position=StartFinger.get_node("marker").global_position
+		#rotation = StartFinger.get_node("marker").rotation
 	anim_player.play(anim_name)
 	anim_player.pause()
 	anim_length = anim_player.get_animation(anim_name).length
