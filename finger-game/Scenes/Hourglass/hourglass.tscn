@@ -49,18 +49,18 @@ shadow_mesh = SubResource("ArrayMesh_refxs")
 script = ExtResource("2_8rehe")
 tex_xspd = 0.015
 
-[node name="glass" parent="." index="0" unique_id=1238898997]
+[node name="glass" parent="." index="0" unique_id=1783568100]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0033358783, 0)
 
-[node name="lid" parent="." index="1" unique_id=711580297]
+[node name="lid" parent="." index="1" unique_id=1008832472]
 transform = Transform3D(1.0290599, 0, 0, 0, 1, 0, 0, 0, 1.0290599, 0, -0.0033358783, 0)
 
-[node name="poles" parent="." index="2" unique_id=2040182625]
+[node name="poles" parent="." index="2" unique_id=134495557]
 transform = Transform3D(1.7736545, 0, 0, 0, 1, 0, 0, 0, 0.8109563, -0.00071503595, -0.26632798, 0.03342244)
 
-[node name="sand" parent="." index="3" unique_id=1468458838]
+[node name="sand" parent="." index="3" unique_id=1955665839]
 transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, 0, -0.0033358783, 0)
 mesh = SubResource("ArrayMesh_pkr3h")
 
-[node name="sand_top" parent="." index="4" unique_id=1331896319]
+[node name="sand_top" parent="." index="4" unique_id=174834668]
 transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, 0, -0.0033358783, 0)

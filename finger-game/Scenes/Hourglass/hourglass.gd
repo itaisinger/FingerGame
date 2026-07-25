@@ -24,7 +24,6 @@ func _process(delta: float) -> void:
 	if lower.time:
 		$Hourglass.update_prec(lower.time/100)
 	if upper.time <=1 or lower.time>=99:
-		print("GAME OVER HOURGLASS")
 		cutFinger.emit(1)
 		#queue_free()
 	#$Hourglass.update_prec(upper.time/2)
