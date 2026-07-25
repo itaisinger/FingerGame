@@ -18,7 +18,8 @@ func _process(delta: float) -> void:
 	#progress	
 		current_remain += 1
 		count -= 1
-		
+		#$SubViewport/Label.text =  " \n"+str(count)
+		$SubViewport/Label.text = "\n"+"%04d" % count
 		var vol = randf_range(0.9,1.1) 
 		#jokes
 		var pitch = randf_range(0.95,1.05) 

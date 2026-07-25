@@ -21,6 +21,7 @@ size = Vector2(1, 0.8)
 
 [node name="ScoreCounter" type="Node3D" unique_id=214095391]
 script = ExtResource("1_gyqlq")
+start_val = 50
 rolf_range = 23
 
 [node name="TV" parent="." unique_id=727913060 instance=ExtResource("1_cx6sf")]
@@ -38,6 +39,7 @@ mesh = SubResource("PlaneMesh_tmb7k")
 [node name="Label" type="Label" parent="SubViewport" unique_id=604512412]
 offset_right = 752.0
 offset_bottom = 781.0
+theme_override_colors/font_color = Color(0.84313726, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_kkni5")
 theme_override_font_sizes/font_size = 128
 text = "
