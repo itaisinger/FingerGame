@@ -10,8 +10,11 @@ var dest_height = 0;
 @export var my_prec = 0.0;
 @export var test = false;
 var trans
-
+@export var StartFinger:Node3D
 func _ready():
+	if StartFinger!=null:
+		global_position=StartFinger.get_node("marker").global_position
+		rotation = StartFinger.rotation+Vector3(0,90,0)
 	anim_player.play(anim_name)
 	anim_player.pause()
 	anim_length = anim_player.get_animation(anim_name).length

@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bii8oc2j82sxm" path="res://Scenes/TV_With_Permutations/tv_with_permutations.tscn" id="12_4e4y2"]
 [ext_resource type="PackedScene" uid="uid://c4p8jjrr852hh" path="res://assets/chair.glb" id="13_6t3k2"]
 [ext_resource type="PackedScene" uid="uid://bnbl6n0af6q2l" path="res://assets/TV high.glb" id="14_vk4q2"]
+[ext_resource type="PackedScene" uid="uid://cpfkbyfe1d6t3" path="res://Scenes/knife/knife.tscn" id="15_2ok46"]
 [ext_resource type="PackedScene" uid="uid://cmo0a7rpdcjrg" path="res://Scenes/TvWithRunner/tv_high_with_runner.tscn" id="15_wliom"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hryqi"]
@@ -44,8 +45,14 @@ script = ExtResource("1_main")
 
 [node name="Hourglass" parent="." unique_id=2108876289 instance=ExtResource("2_5yls4")]
 
-[node name="HitTheMoleController" parent="." unique_id=295308992 instance=ExtResource("4_2a143")]
+[node name="HitTheMoleController" parent="." unique_id=295308992 node_paths=PackedStringArray("scisor1", "scisor2", "scisor3", "scisor4", "scisor5", "scisor6") instance=ExtResource("4_2a143")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+scisor1 = NodePath("../Knife3/knife")
+scisor2 = NodePath("../Knife4/knife")
+scisor3 = NodePath("../Knife5/knife")
+scisor4 = NodePath("../Knife6/knife")
+scisor5 = NodePath("../Knife7/knife")
+scisor6 = NodePath("../Knife8/knife")
 
 [node name="Button3" parent="HitTheMoleController" index="0" unique_id=1658878431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36871487, -0.029999733, -0.16152024)
@@ -112,19 +119,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 10.5, -2.5)
 [node name="Button" parent="." unique_id=60498444 instance=ExtResource("6_2a143")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49057582, 0.47, -0.07047111)
 
-[node name="Hand" parent="." unique_id=166837078 instance=ExtResource("7_xlvfx")]
-transform = Transform3D(0.042505953, 0.86555195, -0.830068, 1.1767551, -0.19021095, -0.13808309, -0.23117183, -0.8090978, -0.85552335, -0.5010772, 0.736068, 0.2)
-throw_vector = Vector3(0, 1, 0)
-throw_speed = 3.0
-flip_speed = 12.0
-finger_hitbox = SubResource("BoxShape3D_6t3k2")
-
-[node name="hand palm" parent="Hand" index="0" unique_id=116127469]
-transform = Transform3D(1, 1.4901161e-08, 0, 0, 0.99999994, -2.9802322e-08, -1.4901161e-08, -5.9604645e-08, 1, -0.026261032, 0.004244864, 0.0030815303)
-
-[node name="HandR" parent="." unique_id=774035066 instance=ExtResource("9_hryqi")]
-transform = Transform3D(-4.2803947e-08, -0.9792403, -0.69360554, 1.2000002, -5.2453675e-08, 2.5208073e-15, -3.031846e-08, -0.69360554, 0.9792403, 0.5077291, 0.6103209, 0.16141851)
-
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=876399380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.015629, 2.6727896)
 light_energy = 16.0
@@ -158,6 +152,71 @@ transform = Transform3D(-8.742278e-08, 0, -3.8039358, 0, 2, 0, 2, 0, -1.6627531e
 [node name="TVHighWithRunner" parent="." unique_id=1338397414 instance=ExtResource("15_wliom")]
 transform = Transform3D(-0.88818413, 0, -1.7919624, 0, 2, 0, 1.7919624, 0, -0.88818413, 2.8878856, -0.16685772, -3.0940473)
 
+[node name="HandR" parent="." unique_id=774035066 instance=ExtResource("9_hryqi")]
+transform = Transform3D(-4.280395e-08, -0.97924036, -0.6936056, 1.2000002, -5.2453675e-08, 2.5208073e-15, -3.031846e-08, -0.6936056, 0.97924036, 0.50772905, 0.6103209, 0.16141844)
+
+[node name="Knife6" parent="." unique_id=1357551589 instance=ExtResource("15_2ok46")]
+transform = Transform3D(0.99999976, -9.85428e-09, -2.9802322e-08, 9.854284e-09, 0.99999964, 3.4905756e-15, 2.9802322e-08, 2.220446e-15, 0.99999976, 2.3841858e-07, 1.7881393e-07, 7.4505806e-08)
+
+[node name="knife" parent="Knife6" index="0" unique_id=1657471252 node_paths=PackedStringArray("StartFinger")]
+StartFinger = NodePath("../../HandR/finger 1R")
+
+[node name="Knife8" parent="." unique_id=896374424 instance=ExtResource("15_2ok46")]
+transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999998, 1.7881393e-07, 1.7881393e-07, 5.9604645e-08)
+top_level = true
+
+[node name="knife" parent="Knife8" index="0" unique_id=1657471252 node_paths=PackedStringArray("StartFinger")]
+StartFinger = NodePath("../../HandR/finger 3R")
+
+[node name="Knife7" parent="." unique_id=673276146 instance=ExtResource("15_2ok46")]
+transform = Transform3D(0.99999976, -9.854284e-09, 2.9802322e-08, 9.854285e-09, 0.99999976, 8.819646e-15, -2.9802322e-08, -1.7763568e-15, 0.99999976, 1.1920929e-07, 1.1920929e-07, 4.4703484e-08)
+
+[node name="knife" parent="Knife7" index="0" unique_id=1657471252 node_paths=PackedStringArray("StartFinger")]
+StartFinger = NodePath("../../HandR/finger 2R")
+
+[node name="Knife3" parent="." unique_id=2039925576 instance=ExtResource("15_2ok46")]
+transform = Transform3D(1, 0, -2.9802322e-08, -7.450581e-09, 0.9999999, 0, -2.9802322e-08, 2.2351742e-08, 1, 1.1920929e-07, 9.536743e-07, -2.8312206e-07)
+
+[node name="knife" parent="Knife3" index="0" unique_id=1657471252 node_paths=PackedStringArray("StartFinger")]
+StartFinger = NodePath("../../Hand/finger 3")
+
+[node name="Knife4" parent="." unique_id=1709126287 instance=ExtResource("15_2ok46")]
+transform = Transform3D(0.9999999, 0, -2.9802322e-08, 1.4901161e-08, 0.99999994, 1.4901161e-08, 2.9802322e-08, 7.450581e-09, 1, -5.9604645e-08, 1.1920929e-07, 1.4901161e-08)
+
+[node name="knife" parent="Knife4" index="0" unique_id=1657471252 node_paths=PackedStringArray("StartFinger")]
+StartFinger = NodePath("../../Hand/finger 4")
+
+[node name="Knife5" parent="." unique_id=253931677 instance=ExtResource("15_2ok46")]
+transform = Transform3D(0.9999999, 0, -2.9802322e-08, 1.4901161e-08, 0.99999994, 1.4901161e-08, 2.9802322e-08, 7.450581e-09, 1, -5.9604645e-08, 1.1920929e-07, 1.4901161e-08)
+
+[node name="knife" parent="Knife5" index="0" unique_id=1657471252 node_paths=PackedStringArray("StartFinger")]
+StartFinger = NodePath("../../Hand/finger 5")
+
+[node name="Hand" parent="." unique_id=166837078 instance=ExtResource("7_xlvfx")]
+transform = Transform3D(0.042505953, 0.86555195, -0.830068, 1.1767551, -0.19021095, -0.13808309, -0.23117183, -0.8090978, -0.85552335, -0.5010772, 0.736068, 0.2)
+throw_vector = Vector3(0, 1, 0)
+throw_speed = 3.0
+flip_speed = 12.0
+finger_hitbox = SubResource("BoxShape3D_6t3k2")
+
+[node name="hand palm" parent="Hand" index="0" unique_id=116127469]
+transform = Transform3D(1, 1.4901161e-08, 0, 0, 0.99999994, -2.9802322e-08, -1.4901161e-08, -5.9604645e-08, 1, -0.026261032, 0.004244864, 0.0030815303)
+
+[node name="finger 3" parent="Hand" index="2" unique_id=1722894744]
+transform = Transform3D(0.9999998, -1.4901161e-08, -4.4703484e-08, 0, 1, 2.9802322e-08, 0, 0, 1, 6.244037, -1.009288, -0.7326897)
+
 [editable path="HitTheMoleController"]
-[editable path="Hand"]
 [editable path="HandR"]
+[editable path="Knife6"]
+[editable path="Knife6/knife"]
+[editable path="Knife8"]
+[editable path="Knife8/knife"]
+[editable path="Knife7"]
+[editable path="Knife7/knife"]
+[editable path="Knife3"]
+[editable path="Knife3/knife"]
+[editable path="Knife4"]
+[editable path="Knife4/knife"]
+[editable path="Knife5"]
+[editable path="Knife5/knife"]
+[editable path="Hand"]

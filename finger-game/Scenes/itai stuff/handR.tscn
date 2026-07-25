@@ -18,18 +18,33 @@ script = ExtResource("1_xde54")
 script = ExtResource("3_okp60")
 index = "Button_10"
 
+[node name="marker" type="Node3D" parent="finger 5R" unique_id=1398279236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10888818, -0.08392522)
+
 [node name="finger 1R" parent="." unique_id=1234267081 instance=ExtResource("3_xde54")]
 script = ExtResource("3_okp60")
 index = "Button_6"
+
+[node name="marker" type="Node3D" parent="finger 1R" unique_id=231734043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.037058666, 0.07616234)
 
 [node name="finger 3R" parent="." unique_id=279750246 instance=ExtResource("5_ba5vm")]
 script = ExtResource("3_okp60")
 index = "Button_8"
 
+[node name="marker" type="Node3D" parent="finger 3R" unique_id=1879076213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12849858, -0.012906283)
+
 [node name="finger 4R" parent="." unique_id=2107943955 instance=ExtResource("6_fhpbj")]
 script = ExtResource("3_okp60")
 index = "Button_9"
 
+[node name="marker" type="Node3D" parent="finger 4R" unique_id=2121312015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12849858, -0.04831232)
+
 [node name="finger 2R" parent="." unique_id=428096050 instance=ExtResource("4_edgbx")]
 script = ExtResource("3_okp60")
 index = "Button_7"
+
+[node name="marker" type="Node3D" parent="finger 2R" unique_id=990217865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.117562115, 0.043298542)

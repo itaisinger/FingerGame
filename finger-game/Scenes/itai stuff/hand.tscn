@@ -96,16 +96,31 @@ finger_hitbox = SubResource("BoxShape3D_t2cyj")
 [node name="finger 2" parent="." unique_id=1922095107 instance=ExtResource("2_y6t2t")]
 index = "Button_4"
 
+[node name="marker" type="Node3D" parent="finger 2" unique_id=1201275988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09523848, 0.04217817)
+
 [node name="finger 3" parent="." unique_id=1722894744 instance=ExtResource("2_mn63p")]
+
+[node name="marker" type="Node3D" parent="finger 3" unique_id=944925800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11425337, -0.0012543797)
 
 [node name="finger 4" parent="." unique_id=1909896133 instance=ExtResource("4_0fcll")]
 script = ExtResource("5_5k6su")
 index = "Button_2"
 
+[node name="marker" type="Node3D" parent="finger 4" unique_id=1845575576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11425337, -0.051142216)
+
 [node name="finger 5" parent="." unique_id=888112693 instance=ExtResource("6_71v7i")]
 script = ExtResource("5_5k6su")
 index = "Button_1"
 
+[node name="marker" type="Node3D" parent="finger 5" unique_id=338188155]
+transform = Transform3D(1, 0, 0, 0, 0.8091509, 0.5876009, 0, -0.5876009, 0.8091509, 0, 0.01250352, -0.081777155)
+
 [node name="finger 1" parent="." unique_id=825521593 instance=ExtResource("7_1adxn")]
 script = ExtResource("5_5k6su")
 index = "Button_5"
+
+[node name="marker" type="Node3D" parent="finger 1" unique_id=127504323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09523848, 0.08097829)
