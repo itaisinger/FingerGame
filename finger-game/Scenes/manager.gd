@@ -18,5 +18,6 @@ func _process(delta: float) -> void:
 		await get_tree().create_timer(3.0).timeout
 		for i in range((PlayerData.FingerActive.size())):
 			PlayerData.FingerActive[i]=true
-			
+		get_tree().get_root().get_node("ScoreCounter").spd = 0;
+		PlayerData.gg = true;
 		get_tree().reload_current_scene()
