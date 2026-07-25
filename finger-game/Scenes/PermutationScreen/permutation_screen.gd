@@ -81,7 +81,6 @@ func _process(delta: float) -> void:
 		cutfinger.emit()
 		binary_number = ""
 		schedule_next_activation()
-		print("FAIL!")
 
 func turn_off() -> void:
 	binary_number = ""
