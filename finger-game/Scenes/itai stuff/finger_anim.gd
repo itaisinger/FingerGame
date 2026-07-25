@@ -23,5 +23,5 @@ func _process(delta) -> void:
 	anim_player.seek(progress * anim_length, true)
 	
 func finger_pressed():
-	var ret = Input.is_action_pressed(index)
+	var ret = Input.is_action_pressed(index) and PlayerData.FingerActive[int(index[-1])-1];
 	return ret
