@@ -24,10 +24,6 @@ static func create_default_hitbox() -> BoxShape3D:
 
 func _process(_delta: float) -> void:
 	pass
-	
-	#if Input.is_action_just_pressed("Button_1"):
-		#for i in range(1, 6):
-			#cut_finger(i)
 
 
 func cut_finger(i: int) -> void:
