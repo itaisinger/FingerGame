@@ -5,7 +5,7 @@ extends Node3D
 @export var prec = 0.0;
 var dir = 1;
 @export var upside_down = false
-
+var rot = 0;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -13,7 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	prec += delta * dir * 0.2 * (1 if upside_down else 1)
+	#prec += delta * dir * 0.2 * (1 if upside_down else 1)
 	var _children = [$sand,$sand_top]
 	for child in _children:
 		var mat = child.get_active_material(0)
@@ -29,23 +29,24 @@ func _process(delta: float) -> void:
 	
 	var top = $sand_top
 	var bottom = $sand
-	if(false and upside_down):
-		top = $sand
-		bottom = $sand_top
+	#if(false and upside_down):
+		#top = $sand
+		#bottom = $sand_top
 		
 	#top
 	var mat = top.get_active_material(0)
-	if(mat): mat.uv1_offset.y = _y_prog + (0 if upside_down else 0.1)
+	if(mat): mat.uv1_offset.y = -_y_prog + (0 if upside_down else 0.1)
 	
 	#bottom
 	mat = bottom.get_active_material(0)
-	if(mat): mat.uv1_offset.y = -_y_prog + (0.1 if upside_down else 0) #min(0.8,_y_prog + 0.1)
+	if(mat): mat.uv1_offset.y = _y_prog + (0.1 if upside_down else 0) #min(0.8,_y_prog + 0.1)
 
 func flip():
+	rot += 90
 	upside_down = !upside_down
 	print("flip")
 	var tween = create_tween()
-	tween.tween_property(self, "rotation_degrees", Vector3(rotation_degrees.x + 180,0,0), 1.0).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "rotation_degrees", Vector3(rot,rotation_degrees.y,0), 1.25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 func update_prec(new_prec):
 	prec = new_prec
