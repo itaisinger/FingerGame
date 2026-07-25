@@ -4,6 +4,7 @@ extends Node3D
 var anim_name = "press" # Update to match your animation name in Godot
 var anim_length = 0.0
 var progress = 0.0
+@export var tex_offset = 1.0
 
 @export var speed = 10.0 # Adjust this to change how fast it presses/releases
 @export var index = "finger2"
@@ -23,6 +24,11 @@ func _process(delta) -> void:
 	# Multiply 0-1 progress by total length to get the correct time
 	var _p = max(0,(progress - 0.5)*2)
 	anim_player.seek(_p * anim_length, true)
+	
+	#texture scroll
+	var mat = $out/in.get_active_material(0)
+	if mat:
+		mat.uv1_offset.x = tex_offset * progress
 	
 func finger_pressed():
 	var ret = Input.is_action_pressed(index)
