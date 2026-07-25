@@ -2,8 +2,8 @@ extends Node3D
 
 const BUTTON_COUNT := 6
 signal cutfinger(index)
-@export var time_between_buttons := 4.0
-@export var button_timeout := 5.0
+@export var time_between_buttons := 6.0
+@export var button_timeout := 7.0
 @export var scisor1:Node3D
 @export var scisor2:Node3D
 @export var scisor3:Node3D
@@ -29,7 +29,7 @@ func _ready() -> void:
 	for index in range(BUTTON_COUNT):
 		var timer := Timer.new()
 		timer.one_shot = true
-		timer.wait_time = button_timeout
+		timer.wait_time = button_timeout * randf_range(0.7, 1.3)
 		timer.timeout.connect(_button_failed.bind(index))
 		add_child(timer)
 		button_timers.append(timer)
@@ -134,7 +134,6 @@ func _turn_on_random_button() -> void:
 
 func turn_on_button(index: int) -> void:
 	var led = get_node_or_null("ButtonFinished" + str(index+3))
-
 	if led != null:
 		led.turn_on()
 
