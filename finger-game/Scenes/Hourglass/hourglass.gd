@@ -14,6 +14,7 @@ var print_timer := 0.0
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Button_1"):
+		print("hourglass flip")
 		part_1_is_up = not part_1_is_up
 		$hourglass.flip()
 	var upper := part_1 if part_1_is_up else part_2
@@ -25,7 +26,8 @@ func _process(delta: float) -> void:
 		print("GAME OVER HOURGLASS")
 		cutFinger.emit(1)
 		queue_free()
+	$hourglass.update_prec(upper.time/2)
 	print_timer += delta
 	if print_timer >= 0.5:
 		print_timer -= 0.5
-		print("Part 1: ", part_1.time, " | Part 2: ", part_2.time, " | Up: ", 1 if part_1_is_up else 2)
+		#print("Part 1: ", part_1.time, " | Part 2: ", part_2.time, " | Up: ", 1 if part_1_is_up else 2)

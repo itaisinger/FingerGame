@@ -33,7 +33,7 @@ func cut_finger(i: int) -> void:
 	var finger := get_node_or_null(finger_name) as Node3D
 
 	if finger == null:
-		push_warning("%s was not found under HandR." % finger_name)
+		#push_warning("%s was not found under HandR." % finger_name)
 		return
 
 	if finger.get_meta("cut", false):

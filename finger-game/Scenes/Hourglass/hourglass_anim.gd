@@ -14,7 +14,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#prec += delta * dir * 0.2 * (1 if upside_down else 1)
-	if(prec >= 1.0 or prec <= 0.0): flip();
+	#if(prec >= 1.0 or prec <= 0.0): flip();
 	#roll
 	var _children = [$sand,$sand_top]
 	for child in _children:
@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 	# === progress === #
 	
 	#print(prec)
-	var _y_prog = prec * 0.5
+	var _y_prog = prec * 0.5	
 	
 	var top = $sand_top
 	var bottom = $sand

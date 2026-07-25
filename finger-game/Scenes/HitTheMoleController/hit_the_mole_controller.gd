@@ -97,7 +97,8 @@ func press_button(button_number: int) -> void:
 		print("success button ", button_number)
 		_print_active_buttons()
 	else:
-		print("did nothing button ", button_number)
+		pass
+		#print("did nothing button ", button_number)
 
 
 func _button_failed(index: int) -> void:
@@ -107,7 +108,7 @@ func _button_failed(index: int) -> void:
 	var led = get_node_or_null("Button" + str(index +3 ))
 	if led != null:
 		led.turn_off()
-	print("failed button ", index + 3)
+	#print("failed button ", index + 3)
 	cutfinger.emit(index +3)
 	_print_active_buttons()
 

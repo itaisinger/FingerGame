@@ -31,11 +31,11 @@ func _process(delta: float) -> void:
 		set_prec(progress)
 
 func set_prec(prec):
-	var _rot_prog = max(0,prec*2 - 1);
+	var _rot_prog = max(0,prec*1.6 - 0.6);
 	anim_player.seek(_rot_prog * anim_length, true)
 	
 	#move
-	var _move_prog = min(max(prec*1.75,0),1)
+	var _move_prog = min(max(prec*1.45,0),1)
 	position.y = (start_height * (1-_move_prog)) + (dest_height * _move_prog);
 	
 	#done
