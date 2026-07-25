@@ -3,13 +3,44 @@
 [ext_resource type="PackedScene" uid="uid://bbm8qt0wstyon" path="res://assets/TV.glb" id="1_cx6sf"]
 [ext_resource type="Script" uid="uid://4kiowlgw6ap8" path="res://Scenes/score_counter/score_counter.gd" id="1_gyqlq"]
 [ext_resource type="AudioStream" uid="uid://djcskf3bm5ys0" path="res://assets/sounds/clock tick.wav" id="3_kkni5"]
+[ext_resource type="FontFile" uid="uid://b1lh7wtktea53" path="res://Fonts/fonts/arcade_ya/ARCADE_I.TTF" id="4_kkni5"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yg4im"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpr16"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_yg4im")
+albedo_texture_force_srgb = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tmb7k"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_lpr16")
+size = Vector2(1, 0.8)
 
 [node name="ScoreCounter" type="Node3D" unique_id=214095391]
 script = ExtResource("1_gyqlq")
 rolf_range = 23
 
 [node name="TV" parent="." unique_id=727913060 instance=ExtResource("1_cx6sf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3399048, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, -0.3399048, 0)
 
 [node name="tickSfx" type="AudioStreamPlayer3D" parent="." unique_id=1009746426]
 stream = ExtResource("3_kkni5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=852699141]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.24791843, 0.10088408, 0)
+mesh = SubResource("PlaneMesh_tmb7k")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1720815570]
+
+[node name="Label" type="Label" parent="SubViewport" unique_id=604512412]
+offset_right = 752.0
+offset_bottom = 781.0
+theme_override_fonts/font = ExtResource("4_kkni5")
+theme_override_font_sizes/font_size = 128
+text = "
+0001
+
+"

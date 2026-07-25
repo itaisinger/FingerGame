@@ -15,8 +15,7 @@ func generate_binary(t: int) -> void:
 	binary_number = ""
 	for i in range(t):
 		binary_number += str(randi_range(0, 1))
-
-	label.text = " ".repeat(6 - t) + binary_number
+	label.text = "\n " + "0".repeat(4 - t) + binary_number
 
 
 func get_finger_pattern() -> String:

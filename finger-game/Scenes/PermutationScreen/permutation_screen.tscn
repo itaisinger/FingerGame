@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bsvatjaf1r0iu"]
 
 [ext_resource type="Script" uid="uid://txt7cgfni3q6" path="res://Scenes/PermutationScreen/permutation_screen.gd" id="1_vuvxw"]
+[ext_resource type="FontFile" uid="uid://b1lh7wtktea53" path="res://Fonts/fonts/arcade_ya/ARCADE_I.TTF" id="2_nxmj4"]
 [ext_resource type="AudioStream" uid="uid://cirul8atym3nk" path="res://assets/sounds/permutation win.wav" id="2_w4gs7"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_pdjk7"]
@@ -24,15 +25,17 @@ script = ExtResource("1_vuvxw")
 mesh = SubResource("PlaneMesh_t2cyj")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=526609156]
-size = Vector2i(800, 400)
+size = Vector2i(900, 500)
 
 [node name="Label" type="Label" parent="SubViewport" unique_id=2037226617]
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0.92044914, 0.97640556, 0.99909884, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 250
-text = "  0101
+theme_override_fonts/font = ExtResource("2_nxmj4")
+theme_override_font_sizes/font_size = 156
+text = "
+ 0111
 "
 
 [node name="sfxWin" type="AudioStreamPlayer3D" parent="." unique_id=22123263]
