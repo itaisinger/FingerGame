@@ -6,10 +6,14 @@ var grid = []
 var timer := 0.0
 var roll = 0
 var ret
+var hp=2
+var GameOverOn=0
 var display: Label
+signal cutfinger(index)
 @export var player_char: String = "P"
 @export var obstacle_char: String = "X"
 @export var empty_char: String = "."
+@export var damaged_char: String="X"
 func _ready() -> void:
 	for i in range(GRID_ROWS):
 		grid.append([0, 0, 0])
@@ -23,7 +27,29 @@ func _process(delta: float) -> void:
 	timer += delta
 	if timer >= 1.0:
 		timer -= 1.0
-		update()
+		if hp>0:
+			update()
+		else:
+			deathScreen()
+
+func deathScreen():
+	if GameOverOn == 1:
+		$SubViewport/Label.text=""
+		GameOverOn=0
+		return
+	GameOverOn = 1
+	var lines: Array[String] = []
+	for row_index in range(GRID_ROWS):
+		match row_index:
+			6:
+				lines.append("  Game")
+			7:
+				lines.append("  Over")
+			8:
+				lines.append("  !!!!")
+			_:
+				lines.append("")
+	$SubViewport/Label.text = "\n".join(lines)
 
 func gen_next_row() -> Array:
 	if rows_since_last_obstacle < 2:
@@ -47,11 +73,19 @@ func update():
 	grid.pop_front()
 	if(grid[0][pos] == 1): 
 		print("Game Over!")
+		hit()
 	else:
 		grid[0][pos]=3
 	printgrid()
 	  ## die!   
 
+func hit():
+	hp-=1
+	grid[0][pos]=4
+	if hp==1:
+		cutfinger.emit(9)
+	else:
+		cutfinger.emit(10)
 #func printgrid():
 	#print("#-----------------")
 	#for row in grid:
@@ -85,6 +119,8 @@ func printgrid():
 				cells.append(obstacle_char)
 			elif cell == 0:
 				cells.append(empty_char)
+			elif cell == 4:
+				cells.append(damaged_char)
 		#lines.append("[" + "|".join(cells) + "]")
 		lines.append(" " + " ".join(cells) + " ")
 
