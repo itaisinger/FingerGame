@@ -14,19 +14,20 @@ var print_timer := 0.0
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Button_1"):
-		print("hourglass flip")
+		$Hourglass.flip()
 		part_1_is_up = not part_1_is_up
-		$hourglass.flip()
 	var upper := part_1 if part_1_is_up else part_2
 	var lower := part_2 if part_1_is_up else part_1
 	var transferred_time: float = min(delta * TRANSFER_RATE, upper.time)
 	upper.time -= transferred_time
 	lower.time += transferred_time
+	if lower.time:
+		$Hourglass.update_prec(lower.time/100)
 	if upper.time <=1 or lower.time>=99:
 		print("GAME OVER HOURGLASS")
 		cutFinger.emit(1)
-		queue_free()
-	$hourglass.update_prec(upper.time/2)
+		#queue_free()
+	#$Hourglass.update_prec(upper.time/2)
 	print_timer += delta
 	if print_timer >= 0.5:
 		print_timer -= 0.5

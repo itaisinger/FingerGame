@@ -7,6 +7,9 @@ var timer := 0.0
 var roll = 0
 var ret
 var display: Label
+@export var player_char: String = "P"
+@export var obstacle_char: String = "X"
+@export var empty_char: String = "."
 func _ready() -> void:
 	for i in range(GRID_ROWS):
 		grid.append([0, 0, 0])
@@ -45,7 +48,7 @@ func update():
 	if(grid[0][pos] == 1): 
 		print("Game Over!")
 	else:
-		grid[0][pos]="s"
+		grid[0][pos]=3
 	printgrid()
 	  ## die!   
 
@@ -60,9 +63,13 @@ func printgrid():
 	for row in grid:
 		var cells: Array[String] = []
 		for cell in row:
+			if cell==3:
+				cells.append(str(player_char))
 			cells.append(str(cell))
-		lines.append("  [" + ",".join(cells) + "]")
+		lines.append("[" + "|".join(cells) + "]")
 	$SubViewport/Label.text = "\n".join(lines)
+
+
 
 #PUBLIC
 #move
