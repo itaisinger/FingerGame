@@ -91,7 +91,7 @@ func press_button(button_number: int) -> void:
 	if active_buttons[index] == 1:
 		active_buttons[index] = 0
 		button_timers[index].stop()
-		var led = get_node_or_null("Button" + str(index +3))
+		var led = get_node_or_null("ButtonFinished" + str(index +3))
 		if led != null:
 			led.turn_off()
 		print("success button ", button_number)
@@ -105,7 +105,7 @@ func _button_failed(index: int) -> void:
 	if active_buttons[index] == 0:
 		return
 	active_buttons[index] = 0
-	var led = get_node_or_null("Button" + str(index +3 ))
+	var led = get_node_or_null("ButtonFinished" + str(index +3 ))
 	if led != null:
 		led.turn_off()
 	#print("failed button ", index + 3)
@@ -134,7 +134,7 @@ func _turn_on_random_button() -> void:
 
 
 func turn_on_button(index: int) -> void:
-	var led = get_node_or_null("Button" + str(index+3))
+	var led = get_node_or_null("ButtonFinished" + str(index+3))
 
 	if led != null:
 		led.turn_on()

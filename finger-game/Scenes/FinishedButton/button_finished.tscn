@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bwqqda36dicl7"]
+
+[ext_resource type="Script" uid="uid://cpbh6dpe3m6wg" path="res://Scenes/FinishedButton/button_finished.gd" id="1_2dgve"]
+[ext_resource type="PackedScene" uid="uid://wqt6hboie0iw" path="res://assets/button.glb" id="2_360ii"]
+
+[node name="ButtonFinished" type="Node3D" unique_id=1917701011]
+script = ExtResource("1_2dgve")
+
+[node name="button" parent="." unique_id=406116188 instance=ExtResource("2_360ii")]
+transform = Transform3D(0.4, 0, 0, 0, 1, 0, 0, 0, 0.4, 0, 0, 0)
