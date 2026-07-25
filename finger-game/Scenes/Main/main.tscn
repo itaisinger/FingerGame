@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ch0isiy6u3hoc"]
 
 [ext_resource type="Script" uid="uid://dopwjndwmn03i" path="res://Scenes/Main/main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://cgkta2o4w42i3" path="res://Scenes/Hourglass/hourglass.gd" id="2_2ok46"]
 [ext_resource type="PackedScene" uid="uid://c0bb3qk3isyu4" path="res://Scenes/Hourglass/hourglass.tscn" id="2_5yls4"]
 [ext_resource type="PackedScene" uid="uid://w7b1435udr6y" path="res://Scenes/HitTheMoleController/hit_the_mole_controller.tscn" id="4_2a143"]
 [ext_resource type="PackedScene" uid="uid://bpl2wns1xcgbv" path="res://Scenes/Button/Button.tscn" id="6_2a143"]
@@ -43,8 +44,11 @@ size = Vector3(0.6, 0.15, 0.15)
 [node name="Main" type="Node3D" unique_id=1211374868]
 script = ExtResource("1_main")
 
-[node name="Hourglass" parent="." unique_id=2108876289 instance=ExtResource("2_5yls4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1220851, 0.8070133, -0.2990197)
+[node name="HourglassLogic" type="Node3D" parent="." unique_id=504920833]
+script = ExtResource("2_2ok46")
+
+[node name="Hourglass" parent="HourglassLogic" unique_id=2108876289 instance=ExtResource("2_5yls4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013845146, 0.8070133, -0.2990197)
 
 [node name="HitTheMoleController" parent="." unique_id=295308992 node_paths=PackedStringArray("scisor1", "scisor2", "scisor3", "scisor4", "scisor5", "scisor6") instance=ExtResource("4_2a143")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -126,10 +130,6 @@ light_energy = 16.0
 light_indirect_energy = 16.0
 omni_range = 16.292
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=648909123]
-transform = Transform3D(0.99968225, -0.010682804, 0.022831839, 0.0066120913, 0.9851715, 0.17144494, -0.02432479, -0.1712395, 0.9849291, -0.07397768, 1.6440858, 1.1591719)
-fov = 89.1
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2126286946]
 transform = Transform3D(1, 0, 0, 0, -0.60722923, -0.7945267, 0, 0.7945267, -0.60722923, 0, -1.2799486, 3.2805026)
 light_energy = 0.05
@@ -138,8 +138,12 @@ light_energy = 0.05
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 3.4765153, -5.7790036)
 visible = false
 
+[node name="Camera3D" type="Camera3D" parent="." unique_id=648909123]
+transform = Transform3D(0.99968225, -0.010682804, 0.022831839, 0.0066120913, 0.9851715, 0.17144494, -0.02432479, -0.1712395, 0.9849291, -0.07397768, 1.6440858, 1.1591719)
+fov = 89.1
+
 [node name="TV_WithGame" parent="." unique_id=2092431692 instance=ExtResource("11_4e4y2")]
-transform = Transform3D(0.25398755, 0, -1.172813, 0, 1.2, 0, 1.172813, 0, 0.25398755, -1.2187755, 0.37874234, -3.436286)
+transform = Transform3D(1.2588377, 0, -1.1425096, 0, 1.7000002, 0, 1.1425096, 0, 1.2588377, -2.3344119, 0.37874234, -1.8553101)
 
 [node name="chair2" parent="TV_WithGame" unique_id=1666695269 instance=ExtResource("13_6t3k2")]
 transform = Transform3D(0.99764305, 0, -0.06861739, 0, 1, 0, 0.06861739, 0, 0.99764305, 2.4789174, -0.5407518, -0.22571611)
@@ -208,7 +212,6 @@ transform = Transform3D(0.15541083, -7.360055e-09, -0.9878499, 1.4901161e-08, 0.
 transform = Transform3D(0.903279, 7.834648e-09, -0.42905337, -4.9521383e-09, 0.99999964, 7.834642e-09, 0.42905325, -4.9521383e-09, 0.903279, 0.029536963, -0.01906395, 0.07624689)
 StartFinger = NodePath("../../Hand/finger 5")
 
-[editable path="Hourglass"]
 [editable path="HitTheMoleController"]
 [editable path="HandR"]
 [editable path="Knife6"]

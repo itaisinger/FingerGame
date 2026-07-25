@@ -14,15 +14,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	prec += delta * dir * 0.2 * (1 if upside_down else 1)
-	#if(prec >= 1.0 or prec <= 0.0): flip();
-	#roll
 	var _children = [$sand,$sand_top]
 	for child in _children:
 		var mat = child.get_active_material(0)
 		if mat:
 			mat.uv1_offset.x += tex_xspd * delta
 			if(mat.uv1_offset.x > 1): mat.uv1_offset.x -= 1
-	
+	if Input.is_action_just_pressed("Button_1"):
+		flip()
 	# === progress === #
 	
 	#print(prec)

@@ -1,6 +1,6 @@
 extends Node3D
 func _ready() -> void:
-	$Hourglass.connect("cutFinger",cut_finger)
+	$HourglassLogic.connect("cutFinger",cut_finger)
 	$TV_WithGame/FindPerson.connect("cutfinger",cut_finger)
 	$HitTheMoleController.connect("cutfinger",cut_finger)
 	pass
