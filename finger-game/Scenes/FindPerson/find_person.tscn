@@ -7,6 +7,7 @@
 script = ExtResource("1_find_person")
 people = "res://PersonImages/People/"
 notPeople = "res://PersonImages/NotPeople/"
+round_duration = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1630388591]
 texture = ExtResource("2_ammrq")

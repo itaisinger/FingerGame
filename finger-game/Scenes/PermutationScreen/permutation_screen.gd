@@ -63,22 +63,47 @@ func is_permutation_shown() -> bool:
 
 	return false
 
+#func _process(delta: float) -> void:
+	#if binary_number.is_empty():
+		#rest_time_remain -= delta
+		#if rest_time_remain <= 0.0:
+			#generate_binary(randi_range(2, 4))
+	#var matching := is_permutation_shown()
+	#if matching and not was_matching:
+		#$sfxWin.play()
+		#turn_off()
+		#schedule_next_activation()
+	#timerlabel.text = get_timer_text()
+	##label.text = "\n  "+binary_number
+	#SolveTimeRemain = max(0.0, SolveTimeRemain-delta);
+	#if(SolveTimeRemain <= 0 and !binary_number.is_empty()):
+		#cutfinger.emit()
+		#binary_number = ""
+		#schedule_next_activation()
+
 func _process(delta: float) -> void:
 	if binary_number.is_empty():
 		rest_time_remain -= delta
+
 		if rest_time_remain <= 0.0:
 			generate_binary(randi_range(2, 4))
+
+		return
+
+	SolveTimeRemain = max(0.0, SolveTimeRemain - delta)
+	timerlabel.text = get_timer_text()
+
 	var matching := is_permutation_shown()
-	if matching and not was_matching:
+
+	if matching:
 		$sfxWin.play()
 		turn_off()
 		schedule_next_activation()
-	timerlabel.text = get_timer_text()
-	#label.text = "\n  "+binary_number
-	SolveTimeRemain = max(0.0, SolveTimeRemain-delta);
-	if(SolveTimeRemain <= 0 and !binary_number.is_empty()):
+		return
+
+	if SolveTimeRemain <= 0.0:
 		cutfinger.emit()
-		binary_number = ""
+		turn_off()
 		schedule_next_activation()
 
 func turn_off() -> void:
