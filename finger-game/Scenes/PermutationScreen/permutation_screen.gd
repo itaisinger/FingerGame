@@ -20,7 +20,7 @@ func get_timer_text():
 	#print("text: ",SolveTimeRemain," ",str)
 	return str
 
-func _ready() -> void:
+func _ready2() -> void:
 	schedule_next_activation()
 
 func schedule_next_activation() -> void:
@@ -80,9 +80,13 @@ func is_permutation_shown() -> bool:
 		#cutfinger.emit()
 		#binary_number = ""
 		#schedule_next_activation()
-
+var started=false
 func _process(delta: float) -> void:
-	
+	if not PlayerData.GameStarted:
+		return
+	if not started:
+		started=true
+		_ready2()
 	if(PlayerData.gg):
 		label.text = ""
 		timerlabel.text = ""

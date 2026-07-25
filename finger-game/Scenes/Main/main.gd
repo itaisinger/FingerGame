@@ -7,7 +7,9 @@ func _ready() -> void:
 	$TVHighWithRunner/Itai_runner.connect("cutfinger",cut_finger)
 	
 	pass
-
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Toturial"):
+		PlayerData.GameStarted=true
 func cut_finger(index):
 	PlayerData.FingerActive[index-1]=false
 	if index>5:
