@@ -2,7 +2,7 @@ extends Node3D
 
 
 func _ready() -> void:
-	$button/AnimationPlayer.speed_scale = 2.0
+	$button/AnimationPlayer.speed_scale = 15.0
 	turn_off()
 
 

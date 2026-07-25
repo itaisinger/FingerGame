@@ -7,4 +7,4 @@
 script = ExtResource("1_2dgve")
 
 [node name="button" parent="." unique_id=406116188 instance=ExtResource("2_360ii")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, 0)
