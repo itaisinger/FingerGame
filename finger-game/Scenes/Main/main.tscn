@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://ktx8eb0n0hdu" path="res://Scenes/itai stuff/handR.tscn" id="9_hryqi"]
 [ext_resource type="PackedScene" uid="uid://blg2aa8koac0h" path="res://Scenes/TV_WithGame/tv_with_game.tscn" id="11_4e4y2"]
 [ext_resource type="PackedScene" uid="uid://bii8oc2j82sxm" path="res://Scenes/TV_With_Permutations/tv_with_permutations.tscn" id="12_4e4y2"]
-[ext_resource type="PackedScene" uid="uid://jm0mf0nsri5d" path="res://Scenes/Blood/blood_manager.tscn" id="13_1t20g"]
 [ext_resource type="PackedScene" uid="uid://c4p8jjrr852hh" path="res://assets/chair.glb" id="13_6t3k2"]
+[ext_resource type="Shader" uid="uid://c0jjlpifum4c" path="res://Scenes/Main/main.gdshader" id="13_c4b4r"]
 [ext_resource type="PackedScene" uid="uid://bnbl6n0af6q2l" path="res://assets/TV high.glb" id="14_vk4q2"]
 [ext_resource type="PackedScene" uid="uid://cpfkbyfe1d6t3" path="res://Scenes/knife/knife.tscn" id="15_2ok46"]
 [ext_resource type="PackedScene" uid="uid://cmo0a7rpdcjrg" path="res://Scenes/TvWithRunner/tv_high_with_runner.tscn" id="15_wliom"]
@@ -45,13 +45,16 @@ size = Vector3(14, 10, 1)
 radius = 0.1
 height = 0.5
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2on4k"]
+shader = ExtResource("13_c4b4r")
+shader_parameter/pixel_size = 2.0
+shader_parameter/color_depth = 26.0
+shader_parameter/vignette_intensity = 0.30000000447036
+shader_parameter/darkening = 0.70000001043084
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1t20g"]
 radius = 0.05
 height = 0.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4b4r"]
-resource_local_to_scene = true
-albedo_texture = ExtResource("19_c4b4r")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1t20g"]
 resource_local_to_scene = true
@@ -89,6 +92,10 @@ albedo_texture = ExtResource("19_c4b4r")
 resource_local_to_scene = true
 albedo_texture = ExtResource("19_c4b4r")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ah3if"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("19_c4b4r")
+
 [node name="Main" type="Node3D" unique_id=1211374868]
 script = ExtResource("1_main")
 
@@ -98,7 +105,7 @@ script = ExtResource("2_2ok46")
 [node name="Hourglass" parent="HourglassLogic" unique_id=2108876289 instance=ExtResource("2_5yls4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013845146, 0.8070133, -0.2990197)
 
-[node name="poles" parent="HourglassLogic/Hourglass" index="2" unique_id=2040182625]
+[node name="poles" parent="HourglassLogic/Hourglass" index="2" unique_id=134495557]
 transform = Transform3D(1.7736546, 0, 0, 0, 1, 0, 0, 0, 0.81095624, -0.00071503595, -0.26632798, 0.03342244)
 
 [node name="HitTheMoleController" parent="." unique_id=295308992 node_paths=PackedStringArray("scisor1", "scisor2", "scisor3", "scisor4", "scisor5", "scisor6") instance=ExtResource("4_2a143")]
@@ -161,13 +168,13 @@ transform = Transform3D(1, 0, 0, 0, 0.98504305, 0.17230836, 0, -0.17230836, 0.98
 fov = 90.0
 
 [node name="TV_WithGame" parent="." unique_id=2092431692 instance=ExtResource("11_4e4y2")]
-transform = Transform3D(1.2588377, 0, -1.1425096, 0, 1.7000002, 0, 1.1425096, 0, 1.2588377, -2.3344119, 0.37874234, -1.8553101)
+transform = Transform3D(1.6206737, 0, -1.1719286, 0, 2, 0, 1.1719286, 0, 1.6206737, -2.7732983, 0.37874234, -1.602863)
 
 [node name="chair2" parent="TV_WithGame" unique_id=1666695269 instance=ExtResource("13_6t3k2")]
 transform = Transform3D(0.99764305, 0, -0.06861739, 0, 1, 0, 0.06861739, 0, 0.99764305, 2.4789174, -0.5407518, -0.22571611)
 
 [node name="TV_WithPermutations" parent="." unique_id=682999096 instance=ExtResource("12_4e4y2")]
-transform = Transform3D(-8.742278e-08, 0, -3.8039358, 0, 2, 0, 2, 0, -1.6627531e-07, 0, 2.227273, -4.9701977)
+transform = Transform3D(-8.742278e-08, 0, -3.804, 0, 2.3, 0, 2, 0, -1.6627811e-07, 0, 2.227273, -4.9701977)
 
 [node name="TV high" parent="." unique_id=744876569 instance=ExtResource("14_vk4q2")]
 transform = Transform3D(-8.742278e-08, 0, -3.8039358, 0, 2, 0, 2, 0, -1.6627531e-07, 0, 7.213948, -4.9701977)
@@ -191,31 +198,24 @@ transform = Transform3D(0.9999998, -1.4901161e-08, -4.4703484e-08, 0, 1, 2.98023
 [node name="marker" parent="Hand/finger 3" index="2" unique_id=944925800]
 visible = false
 
+[node name="marker" parent="Hand/finger 4" parent_id_path=PackedInt32Array(166837078, 1909896133) index="2" unique_id=1845575576]
+visible = false
+
 [node name="marker" parent="Hand/finger 5" parent_id_path=PackedInt32Array(166837078, 888112693) index="2" unique_id=338188155]
 visible = false
 
 [node name="marker" parent="Hand/finger 1" parent_id_path=PackedInt32Array(166837078, 825521593) index="2" unique_id=127504323]
 visible = false
 
-[node name="BloodManager1" parent="Hand" unique_id=1093227747 instance=ExtResource("13_1t20g")]
-transform = Transform3D(0.99999976, 0, 1.4901161e-08, 0, 0.9999995, -8.940697e-08, 0, -2.9802322e-08, 0.99999976, 0.010010242, 0.06778374, 0.082308635)
-visible = false
+[node name="postProccess" type="CanvasLayer" parent="Hand" unique_id=414414839]
 
-[node name="BloodManager2" parent="Hand" unique_id=1113331797 instance=ExtResource("13_1t20g")]
-transform = Transform3D(0.99999976, 3.7252903e-09, 1.1175871e-08, 0, 0.9999997, 0, 0, 0, 0.99999964, 0.011883438, 0.07679817, 0.041517258)
-visible = false
-
-[node name="BloodManager3" parent="Hand" unique_id=276652138 instance=ExtResource("13_1t20g")]
-transform = Transform3D(0.99999976, -1.4901161e-08, -4.4703484e-08, 1.8626451e-08, 0.9999996, 0, 0, 0, 0.99999946, 0.016791642, 0.08834791, 0.008240417)
-visible = false
-
-[node name="BloodManager4" parent="Hand" unique_id=1494620914 instance=ExtResource("13_1t20g")]
-transform = Transform3D(0.99999976, 0, 1.8626451e-08, 0, 0.9999995, -8.940697e-08, 0, -2.9802322e-08, 0.99999976, 0.0053777695, 0.08089894, -0.034750633)
-visible = false
-
-[node name="BloodManager5" parent="Hand" unique_id=1420178954 instance=ExtResource("13_1t20g")]
-transform = Transform3D(0.99999976, 1.1641532e-08, -1.1175871e-08, 0, 0.8091506, 0.58760065, 0, -0.58760035, 0.80915076, -0.04032144, -0.004529655, -0.08138092)
-visible = false
+[node name="ColorRect" type="ColorRect" parent="Hand/postProccess" unique_id=1426800376]
+material = SubResource("ShaderMaterial_2on4k")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HandR" parent="." unique_id=774035066 instance=ExtResource("9_hryqi")]
 transform = Transform3D(-3.7598756e-08, -0.86015946, -0.83673507, 1.1999999, -5.2453665e-08, 2.6021775e-15, -3.6574846e-08, -0.83673507, 0.86015946, 0.6777705, 0.63913816, 0.20955625)
@@ -284,7 +284,7 @@ StartFinger = NodePath("../../Hand/finger 5")
 [node name="OstPlayer" parent="." unique_id=692608484 instance=ExtResource("17_koken")]
 
 [node name="ScoreCounter" parent="." unique_id=214095391 instance=ExtResource("18_es6iu")]
-transform = Transform3D(0.5064728, 0.07321803, -0.8591415, -0.13984929, 0.99017084, 0.0019420473, 0.85083914, 0.11916676, 0.51173407, -1.8390247, 2.2302454, -2.1559107)
+transform = Transform3D(0.59754467, 0.08595934, -0.7972145, -0.13984929, 0.9901709, 0.0019420647, 0.7895455, 0.110329434, 0.60369265, -2.5005102, 2.2302454, -1.9365561)
 
 [node name="buttons" type="Node" parent="." unique_id=7959829]
 
@@ -292,120 +292,97 @@ transform = Transform3D(0.5064728, 0.07321803, -0.8591415, -0.13984929, 0.990170
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.29979366, 0.4671685, 0.27283058)
 
 [node name="button" parent="buttons/Button" index="0" unique_id=2066741022]
-tresh = 0.8
-speed = 10.0
 index = "Button_5"
 finger_i = 4
 
-[node name="in" parent="buttons/Button/button/out" parent_id_path=PackedInt32Array(1005044419, 2066741022, 945601497) index="0" unique_id=1860463939]
-material_override = SubResource("StandardMaterial3D_c4b4r")
+[node name="in" parent="buttons/Button/button/out" parent_id_path=PackedInt32Array(1005044419, 2066741022, 108746461) index="0" unique_id=660064492]
+material_override = SubResource("StandardMaterial3D_1t20g")
 
 [node name="Button2" parent="buttons" unique_id=630893113 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.2614053, 0.4671685, 0.0583075)
 
 [node name="button" parent="buttons/Button2" index="0" unique_id=2066741022]
-tresh = 0.8
-speed = 10.0
 index = "Button_4"
 finger_i = 3
 
-[node name="in" parent="buttons/Button2/button/out" parent_id_path=PackedInt32Array(630893113, 2066741022, 945601497) index="0" unique_id=1860463939]
-material_override = SubResource("StandardMaterial3D_1t20g")
+[node name="in" parent="buttons/Button2/button/out" parent_id_path=PackedInt32Array(630893113, 2066741022, 108746461) index="0" unique_id=660064492]
+material_override = SubResource("StandardMaterial3D_tdwxr")
 
 [node name="Button3" parent="buttons" unique_id=1093522532 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.29189014, 0.4671685, -0.010565711)
 
 [node name="button" parent="buttons/Button3" index="0" unique_id=2066741022]
-tresh = 0.8
-speed = 10.0
 index = "Button_3"
 finger_i = 2
 
-[node name="in" parent="buttons/Button3/button/out" parent_id_path=PackedInt32Array(1093522532, 2066741022, 945601497) index="0" unique_id=1860463939]
-material_override = SubResource("StandardMaterial3D_tdwxr")
+[node name="in" parent="buttons/Button3/button/out" parent_id_path=PackedInt32Array(1093522532, 2066741022, 108746461) index="0" unique_id=660064492]
+material_override = SubResource("StandardMaterial3D_4o5wv")
 
 [node name="Button6" parent="buttons" unique_id=312969343 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.45216656, 0.4671685, 0.24686201)
 
 [node name="button" parent="buttons/Button6" index="0" unique_id=2066741022]
-tresh = 0.8
-speed = 10.0
 index = "Button_6"
 finger_i = 5
 
-[node name="in" parent="buttons/Button6/button/out" parent_id_path=PackedInt32Array(312969343, 2066741022, 945601497) index="0" unique_id=1860463939]
-material_override = SubResource("StandardMaterial3D_4o5wv")
+[node name="in" parent="buttons/Button6/button/out" parent_id_path=PackedInt32Array(312969343, 2066741022, 108746461) index="0" unique_id=660064492]
+material_override = SubResource("StandardMaterial3D_4a3kt")
 
 [node name="Button7" parent="buttons" unique_id=936132977 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.4216816, 0.4671685, 0.049274936)
 
 [node name="button" parent="buttons/Button7" index="0" unique_id=2066741022]
-tresh = 0.8
-speed = 10.0
 index = "Button_7"
 finger_i = 6
 
-[node name="in" parent="buttons/Button7/button/out" parent_id_path=PackedInt32Array(936132977, 2066741022, 945601497) index="0" unique_id=1860463939]
-material_override = SubResource("StandardMaterial3D_4a3kt")
+[node name="in" parent="buttons/Button7/button/out" parent_id_path=PackedInt32Array(936132977, 2066741022, 108746461) index="0" unique_id=660064492]
+material_override = SubResource("StandardMaterial3D_ifk88")
 
 [node name="Button8" parent="buttons" unique_id=232180434 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.4510374, 0.4671685, -0.02185642)
 
 [node name="button" parent="buttons/Button8" index="0" unique_id=2066741022]
-tresh = 0.8
-speed = 10.0
 index = "Button_8"
 finger_i = 7
 
-[node name="in" parent="buttons/Button8/button/out" parent_id_path=PackedInt32Array(232180434, 2066741022, 945601497) index="0" unique_id=1860463939]
-material_override = SubResource("StandardMaterial3D_ifk88")
+[node name="in" parent="buttons/Button8/button/out" parent_id_path=PackedInt32Array(232180434, 2066741022, 108746461) index="0" unique_id=660064492]
+material_override = SubResource("StandardMaterial3D_8sujb")
 
 [node name="Button9" parent="buttons" unique_id=1070708483 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.52442694, 0.4671685, -0.03766339)
 
 [node name="button" parent="buttons/Button9" index="0" unique_id=2066741022]
-tresh = 0.8
-speed = 10.0
 index = "Button_9"
 finger_i = 8
 
-[node name="in" parent="buttons/Button9/button/out" parent_id_path=PackedInt32Array(1070708483, 2066741022, 945601497) index="0" unique_id=1860463939]
-material_override = SubResource("StandardMaterial3D_8sujb")
+[node name="in" parent="buttons/Button9/button/out" parent_id_path=PackedInt32Array(1070708483, 2066741022, 108746461) index="0" unique_id=660064492]
+material_override = SubResource("StandardMaterial3D_tyqxl")
 
 [node name="Button10" parent="buttons" unique_id=1845216218 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.59442914, 0.4671685, -0.051212233)
 
 [node name="button" parent="buttons/Button10" index="0" unique_id=2066741022]
-tresh = 0.8
-speed = 10.0
 index = "Button_10"
 finger_i = 9
 
-[node name="in" parent="buttons/Button10/button/out" parent_id_path=PackedInt32Array(1845216218, 2066741022, 945601497) index="0" unique_id=1860463939]
-material_override = SubResource("StandardMaterial3D_tyqxl")
+[node name="in" parent="buttons/Button10/button/out" parent_id_path=PackedInt32Array(1845216218, 2066741022, 108746461) index="0" unique_id=660064492]
+material_override = SubResource("StandardMaterial3D_4ohmo")
 
 [node name="Button4" parent="buttons" unique_id=1839510992 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.36866683, 0.4671685, -0.028630821)
 
 [node name="button" parent="buttons/Button4" index="0" unique_id=2066741022]
-tresh = 0.8
-speed = 10.0
 index = "Button_2"
 finger_i = 1
 
-[node name="in" parent="buttons/Button4/button/out" parent_id_path=PackedInt32Array(1839510992, 2066741022, 945601497) index="0" unique_id=1860463939]
-material_override = SubResource("StandardMaterial3D_4ohmo")
+[node name="in" parent="buttons/Button4/button/out" parent_id_path=PackedInt32Array(1839510992, 2066741022, 108746461) index="0" unique_id=660064492]
+material_override = SubResource("StandardMaterial3D_8oboy")
 
 [node name="Button5" parent="buttons" unique_id=215435022 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.44657263, 0.4671685, -0.029759893)
 
-[node name="button" parent="buttons/Button5" index="0" unique_id=2066741022]
-tresh = 0.8
-speed = 10.0
-finger_i = 0
-
-[node name="in" parent="buttons/Button5/button/out" parent_id_path=PackedInt32Array(215435022, 2066741022, 945601497) index="0" unique_id=1860463939]
-material_override = SubResource("StandardMaterial3D_8oboy")
+[node name="in" parent="buttons/Button5/button/out" parent_id_path=PackedInt32Array(215435022, 2066741022, 108746461) index="0" unique_id=660064492]
+material_override = SubResource("StandardMaterial3D_ah3if")
 
 [editable path="HourglassLogic/Hourglass"]
 [editable path="HitTheMoleController"]
