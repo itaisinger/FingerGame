@@ -15,18 +15,18 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	current_remain -= delta*spd
 	if(current_remain <= 0):
-		#progress
+	#progress	
 		current_remain += 1
 		count -= 1
 		
 		var vol = randf_range(0.9,1.1) 
 		#jokes
 		var pitch = randf_range(0.95,1.05) 
-		if(randi_range(0,rolf_range) == 2): count += 2; print("tick 1")
-		if(randi_range(0,rolf_range) == 2): current_remain *= randf_range(0.3,0.6) ; print("tick 2")
-		if(randi_range(0,rolf_range) == 2): current_remain *= randf_range(2,4) ; print("tick 3")
-		if(randi_range(0,rolf_range) == 2): vol *= 1.2; print("tick 4")
-		if(randi_range(0,rolf_range) == 2): pitch *= 1.2 ; print("tick 5")
+		if(randi_range(0,rolf_range) == 2): count += 2;
+		if(randi_range(0,rolf_range) == 2): current_remain *= randf_range(0.3,0.6) ;
+		if(randi_range(0,rolf_range) == 2): current_remain *= randf_range(2,4) ;
+		if(randi_range(0,rolf_range) == 2): vol *= 1.2; 
+		if(randi_range(0,rolf_range) == 2): pitch *= 1.2 ;
 		
 		#sfx
 		$tickSfx.volume_db = vol

@@ -20,33 +20,33 @@ func _process(delta: float) -> void:
 		if mat:
 			mat.uv1_offset.x += tex_xspd * delta
 			if(mat.uv1_offset.x > 1): mat.uv1_offset.x -= 1
-	if Input.is_action_just_pressed("Button_1"):
-		flip()
 	# === progress === #
 	
 	#print(prec)
 	var _y_prog = prec * 0.5
 	
 	if(upside_down):
-
+		
+		_y_prog = 0.5-_y_prog
+		
 		#bottom
 		var mat = $sand_top.get_active_material(0)
-		if(mat): mat.uv1_offset.y = 1-_y_prog# + (0 if upside_down else 0.1)
+		if(mat): mat.uv1_offset.y = _y_prog# + (0 if upside_down else 0.1)
 		
 		#top
 		mat = $sand.get_active_material(0)
-		if(mat): mat.uv1_offset.y = 1+_y_prog#  + (0.1 if upside_down else 0) #min(0.8,_y_prog + 0.1)
+		if(mat): mat.uv1_offset.y = -_y_prog#  + (0.1 if upside_down else 0) #min(0.8,_y_prog + 0.1)
 	else:
 		#top
 		var mat = $sand_top.get_active_material(0)
-		if(mat): mat.uv1_offset.y = -_y_prog# + (0 if upside_down else 0.1)
+		if(mat): mat.uv1_offset.y = -_y_prog + (0 if upside_down else 0.1)
 		
 		#bottom
 		mat = $sand.get_active_material(0)
-		if(mat): mat.uv1_offset.y = _y_prog#  + (0.1 if
+		if(mat): mat.uv1_offset.y = _y_prog  + (0.1 if upside_down else 0)
 		
 func flip():
-	rot += 90
+	rot += 180
 	upside_down = !upside_down
 	print("flip: " + str(upside_down))
 	var tween = create_tween()
