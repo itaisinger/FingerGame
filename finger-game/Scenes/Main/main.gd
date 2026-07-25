@@ -3,6 +3,7 @@ func _ready() -> void:
 	$HourglassLogic.connect("cutFinger",cut_finger)
 	$TV_WithGame/FindPerson.connect("cutfinger",cut_finger)
 	$HitTheMoleController.connect("cutfinger",cut_finger)
+	$TVHighWithRunner/Itai_runner.connect("cutfinger",cut_finger)
 	pass
 
 func cut_finger(index):

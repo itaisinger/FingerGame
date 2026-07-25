@@ -165,4 +165,5 @@ func button6() -> void:
 
 
 func _print_active_buttons() -> void:
-	print(active_buttons)
+	pass
+	#print(active_buttons)
