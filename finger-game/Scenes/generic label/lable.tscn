@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bmej5oadebyst"]
+
+[ext_resource type="FontFile" uid="uid://b1lh7wtktea53" path="res://Fonts/fonts/arcade_ya/ARCADE_I.TTF" id="1_bqqos"]
+[ext_resource type="Script" uid="uid://c5cacpfteial1" path="res://Scenes/generic label/lable.gd" id="1_rgrlx"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rgrlx"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7x7bu"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_rgrlx")
+albedo_texture_force_srgb = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wfue5"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_7x7bu")
+size = Vector2(1, 0.8)
+
+[node name="Lable" type="Node3D" unique_id=2008522814]
+script = ExtResource("1_rgrlx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1502127947]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.24791843, 0.10088408, 0)
+mesh = SubResource("PlaneMesh_wfue5")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1482053929]
+transparent_bg = true
+
+[node name="Label" type="Label" parent="SubViewport" unique_id=1684504957]
+offset_right = 752.0
+offset_bottom = 781.0
+theme_override_fonts/font = ExtResource("1_bqqos")
+theme_override_font_sizes/font_size = 74
+text = "
+0001
+
+"

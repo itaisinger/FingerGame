@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://du3aenhy64ehq" path="res://Placeholderss/DirtyTable.jpg" id="6_y3v7k"]
 [ext_resource type="Texture2D" uid="uid://depvgeexxvrb7" path="res://Placeholderss/Floor.jpg" id="7_imbg2"]
 [ext_resource type="PackedScene" uid="uid://ccdv0tkot24ta" path="res://Scenes/itai stuff/hand.tscn" id="7_xlvfx"]
+[ext_resource type="PackedScene" uid="uid://bmej5oadebyst" path="res://Scenes/generic label/lable.tscn" id="9_1t20g"]
 [ext_resource type="PackedScene" uid="uid://ktx8eb0n0hdu" path="res://Scenes/itai stuff/handR.tscn" id="9_hryqi"]
 [ext_resource type="PackedScene" uid="uid://blg2aa8koac0h" path="res://Scenes/TV_WithGame/tv_with_game.tscn" id="11_4e4y2"]
 [ext_resource type="PackedScene" uid="uid://bii8oc2j82sxm" path="res://Scenes/TV_With_Permutations/tv_with_permutations.tscn" id="12_4e4y2"]
@@ -19,6 +20,21 @@
 [ext_resource type="PackedScene" uid="uid://r63qnig8f3rf" path="res://Scenes/itai stuff/new button.tscn" id="18_c4b4r"]
 [ext_resource type="PackedScene" uid="uid://dpexp25ukrj1s" path="res://Scenes/score_counter/score_counter.tscn" id="18_es6iu"]
 [ext_resource type="Texture2D" uid="uid://b86mbxnafx0rc" path="res://assets/button_button.png" id="19_c4b4r"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4o5wv"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4a3kt"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_4o5wv")
+albedo_texture_force_srgb = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ifk88"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_4a3kt")
+size = Vector2(1, 0.8)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hryqi"]
 albedo_texture = ExtResource("6_y3v7k")
@@ -41,6 +57,52 @@ size = Vector3(8, 10, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_imbg2"]
 size = Vector3(14, 10, 1)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_1t20g"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tdwxr"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("ViewportTexture_1t20g")
+albedo_texture_force_srgb = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4o5wv"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_tdwxr")
+size = Vector2(1, 0.8)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4a3kt"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifk88"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_4a3kt")
+albedo_texture_force_srgb = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8sujb"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ifk88")
+size = Vector2(1, 0.8)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tdwxr"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4o5wv"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_tdwxr")
+albedo_texture_force_srgb = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4a3kt"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_4o5wv")
+size = Vector2(1, 0.8)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c4b4r"]
 radius = 0.1
 height = 0.5
@@ -55,30 +117,6 @@ shader_parameter/darkening = 0.70000001043084
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1t20g"]
 radius = 0.05
 height = 0.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1t20g"]
-resource_local_to_scene = true
-albedo_texture = ExtResource("19_c4b4r")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tdwxr"]
-resource_local_to_scene = true
-albedo_texture = ExtResource("19_c4b4r")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4o5wv"]
-resource_local_to_scene = true
-albedo_texture = ExtResource("19_c4b4r")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4a3kt"]
-resource_local_to_scene = true
-albedo_texture = ExtResource("19_c4b4r")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifk88"]
-resource_local_to_scene = true
-albedo_texture = ExtResource("19_c4b4r")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sujb"]
-resource_local_to_scene = true
-albedo_texture = ExtResource("19_c4b4r")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tyqxl"]
 resource_local_to_scene = true
@@ -96,6 +134,30 @@ albedo_texture = ExtResource("19_c4b4r")
 resource_local_to_scene = true
 albedo_texture = ExtResource("19_c4b4r")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4agm"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("19_c4b4r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq0wg"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("19_c4b4r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbulw"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("19_c4b4r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_js8sm"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("19_c4b4r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u244o"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("19_c4b4r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1j4pb"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("19_c4b4r")
+
 [node name="Main" type="Node3D" unique_id=1211374868]
 script = ExtResource("1_main")
 
@@ -105,8 +167,20 @@ script = ExtResource("2_2ok46")
 [node name="Hourglass" parent="HourglassLogic" unique_id=2108876289 instance=ExtResource("2_5yls4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013845146, 0.8070133, -0.2990197)
 
-[node name="poles" parent="HourglassLogic/Hourglass" index="2" unique_id=134495557]
+[node name="poles" parent="HourglassLogic/Hourglass" index="2" unique_id=2040182625]
 transform = Transform3D(1.7736546, 0, 0, 0, 1, 0, 0, 0, 0.81095624, -0.00071503595, -0.26632798, 0.03342244)
+
+[node name="Lable" parent="HourglassLogic/Hourglass" unique_id=2008522814 instance=ExtResource("9_1t20g")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.055301905, 0.43749082, -0.016585827)
+
+[node name="MeshInstance3D" parent="HourglassLogic/Hourglass/Lable" index="0" unique_id=1502127947]
+transform = Transform3D(0.071574524, 0.9974353, -4.359928e-08, 0, -4.371139e-08, -1, -0.9974353, 0.071574524, -3.1286218e-09, 0.3348795, 0.10088408, 0.041471407)
+mesh = SubResource("PlaneMesh_ifk88")
+
+[node name="Label" parent="HourglassLogic/Hourglass/Lable/SubViewport" parent_id_path=PackedInt32Array(2008522814, 1482053929) index="0" unique_id=1684504957]
+text = "need
+ more
+  time?"
 
 [node name="HitTheMoleController" parent="." unique_id=295308992 node_paths=PackedStringArray("scisor1", "scisor2", "scisor3", "scisor4", "scisor5", "scisor6") instance=ExtResource("4_2a143")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47412032, 0)
@@ -173,14 +247,47 @@ transform = Transform3D(1.6206737, 0, -1.1719286, 0, 2, 0, 1.1719286, 0, 1.62067
 [node name="chair2" parent="TV_WithGame" unique_id=1666695269 instance=ExtResource("13_6t3k2")]
 transform = Transform3D(0.99764305, 0, -0.06861739, 0, 1, 0, 0.06861739, 0, 0.99764305, 2.4789174, -0.5407518, -0.22571611)
 
+[node name="Lable" parent="TV_WithGame" unique_id=455794729 instance=ExtResource("9_1t20g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.077501655, 0.7433061, -0.056042433)
+
+[node name="MeshInstance3D" parent="TV_WithGame/Lable" index="0" unique_id=1502127947]
+mesh = SubResource("PlaneMesh_4o5wv")
+
+[node name="Label" parent="TV_WithGame/Lable/SubViewport" parent_id_path=PackedInt32Array(455794729, 1482053929) index="0" unique_id=1684504957]
+text = "are
+you
+alone?"
+
 [node name="TV_WithPermutations" parent="." unique_id=682999096 instance=ExtResource("12_4e4y2")]
 transform = Transform3D(-8.742278e-08, 0, -3.804, 0, 2.3, 0, 2, 0, -1.6627811e-07, 0, 2.227273, -4.9701977)
+
+[node name="Lable" parent="TV_WithPermutations" unique_id=527355627 instance=ExtResource("9_1t20g")]
+transform = Transform3D(0.9897754, 0.14263447, 2.3497648e-10, -0.14263447, 0.9897755, 3.2779972e-09, 2.3498004e-10, -3.2779972e-09, 1, -0.4029765, 0.061928153, -0.12037555)
+
+[node name="MeshInstance3D" parent="TV_WithPermutations/Lable" index="0" unique_id=1502127947]
+transform = Transform3D(-4.315808e-08, 0.97330856, -0.2295013, 4.7574646e-09, -0.2295013, -0.9733083, -1, -4.3097977e-08, 5.274355e-09, 1.2365429, 0.6178651, 0)
+mesh = SubResource("PlaneMesh_8sujb")
+
+[node name="Label" parent="TV_WithPermutations/Lable/SubViewport" parent_id_path=PackedInt32Array(527355627, 1482053929) index="0" unique_id=1684504957]
+theme_override_font_sizes/font_size = 50
+text = "What`s
+the 
+number?"
 
 [node name="TV high" parent="." unique_id=744876569 instance=ExtResource("14_vk4q2")]
 transform = Transform3D(-8.742278e-08, 0, -3.8039358, 0, 2, 0, 2, 0, -1.6627531e-07, 0, 7.213948, -4.9701977)
 
 [node name="TVHighWithRunner" parent="." unique_id=1338397414 instance=ExtResource("15_wliom")]
 transform = Transform3D(-0.88818413, 0, -1.7919624, 0, 2, 0, 1.7919624, 0, -0.88818413, 2.8878856, -0.16685772, -3.0940473)
+
+[node name="Lable" parent="TVHighWithRunner" unique_id=1805743066 instance=ExtResource("9_1t20g")]
+transform = Transform3D(0.95362335, 0.26275522, -0.14684373, -0.2624798, 0.9646958, 0.021602174, 0.14733553, 0.017943189, 0.9889244, -0.08722782, 1.6982242, -0.17862672)
+
+[node name="MeshInstance3D" parent="TVHighWithRunner/Lable" index="0" unique_id=1502127947]
+mesh = SubResource("PlaneMesh_4a3kt")
+
+[node name="Label" parent="TVHighWithRunner/Lable/SubViewport" parent_id_path=PackedInt32Array(1805743066, 1482053929) index="0" unique_id=1684504957]
+text = "AVOID"
 
 [node name="Hand" parent="." unique_id=166837078 instance=ExtResource("7_xlvfx")]
 transform = Transform3D(0.0069071795, 0.86749846, -0.8290944, 1.1979977, -0.05261874, -0.045075588, -0.06894083, -0.82745194, -0.86635476, -0.51402676, 0.66091716, 0.21649973)
@@ -295,8 +402,8 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.29979366, 0.4671685,
 index = "Button_5"
 finger_i = 4
 
-[node name="in" parent="buttons/Button/button/out" parent_id_path=PackedInt32Array(1005044419, 2066741022, 108746461) index="0" unique_id=660064492]
-material_override = SubResource("StandardMaterial3D_1t20g")
+[node name="in" parent="buttons/Button/button/out" parent_id_path=PackedInt32Array(1005044419, 2066741022, 945601497) index="0" unique_id=1860463939]
+material_override = SubResource("StandardMaterial3D_tyqxl")
 
 [node name="Button2" parent="buttons" unique_id=630893113 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.2614053, 0.4671685, 0.0583075)
@@ -305,8 +412,8 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.2614053, 0.4671685, 
 index = "Button_4"
 finger_i = 3
 
-[node name="in" parent="buttons/Button2/button/out" parent_id_path=PackedInt32Array(630893113, 2066741022, 108746461) index="0" unique_id=660064492]
-material_override = SubResource("StandardMaterial3D_tdwxr")
+[node name="in" parent="buttons/Button2/button/out" parent_id_path=PackedInt32Array(630893113, 2066741022, 945601497) index="0" unique_id=1860463939]
+material_override = SubResource("StandardMaterial3D_4ohmo")
 
 [node name="Button3" parent="buttons" unique_id=1093522532 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.29189014, 0.4671685, -0.010565711)
@@ -315,8 +422,8 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.29189014, 0.4671685,
 index = "Button_3"
 finger_i = 2
 
-[node name="in" parent="buttons/Button3/button/out" parent_id_path=PackedInt32Array(1093522532, 2066741022, 108746461) index="0" unique_id=660064492]
-material_override = SubResource("StandardMaterial3D_4o5wv")
+[node name="in" parent="buttons/Button3/button/out" parent_id_path=PackedInt32Array(1093522532, 2066741022, 945601497) index="0" unique_id=1860463939]
+material_override = SubResource("StandardMaterial3D_8oboy")
 
 [node name="Button6" parent="buttons" unique_id=312969343 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.45216656, 0.4671685, 0.24686201)
@@ -325,8 +432,8 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.45216656, 0.4671685, 
 index = "Button_6"
 finger_i = 5
 
-[node name="in" parent="buttons/Button6/button/out" parent_id_path=PackedInt32Array(312969343, 2066741022, 108746461) index="0" unique_id=660064492]
-material_override = SubResource("StandardMaterial3D_4a3kt")
+[node name="in" parent="buttons/Button6/button/out" parent_id_path=PackedInt32Array(312969343, 2066741022, 945601497) index="0" unique_id=1860463939]
+material_override = SubResource("StandardMaterial3D_ah3if")
 
 [node name="Button7" parent="buttons" unique_id=936132977 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.4216816, 0.4671685, 0.049274936)
@@ -335,8 +442,8 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.4216816, 0.4671685, 0
 index = "Button_7"
 finger_i = 6
 
-[node name="in" parent="buttons/Button7/button/out" parent_id_path=PackedInt32Array(936132977, 2066741022, 108746461) index="0" unique_id=660064492]
-material_override = SubResource("StandardMaterial3D_ifk88")
+[node name="in" parent="buttons/Button7/button/out" parent_id_path=PackedInt32Array(936132977, 2066741022, 945601497) index="0" unique_id=1860463939]
+material_override = SubResource("StandardMaterial3D_v4agm")
 
 [node name="Button8" parent="buttons" unique_id=232180434 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.4510374, 0.4671685, -0.02185642)
@@ -345,8 +452,8 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.4510374, 0.4671685, -
 index = "Button_8"
 finger_i = 7
 
-[node name="in" parent="buttons/Button8/button/out" parent_id_path=PackedInt32Array(232180434, 2066741022, 108746461) index="0" unique_id=660064492]
-material_override = SubResource("StandardMaterial3D_8sujb")
+[node name="in" parent="buttons/Button8/button/out" parent_id_path=PackedInt32Array(232180434, 2066741022, 945601497) index="0" unique_id=1860463939]
+material_override = SubResource("StandardMaterial3D_aq0wg")
 
 [node name="Button9" parent="buttons" unique_id=1070708483 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.52442694, 0.4671685, -0.03766339)
@@ -355,8 +462,8 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.52442694, 0.4671685, 
 index = "Button_9"
 finger_i = 8
 
-[node name="in" parent="buttons/Button9/button/out" parent_id_path=PackedInt32Array(1070708483, 2066741022, 108746461) index="0" unique_id=660064492]
-material_override = SubResource("StandardMaterial3D_tyqxl")
+[node name="in" parent="buttons/Button9/button/out" parent_id_path=PackedInt32Array(1070708483, 2066741022, 945601497) index="0" unique_id=1860463939]
+material_override = SubResource("StandardMaterial3D_wbulw")
 
 [node name="Button10" parent="buttons" unique_id=1845216218 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.59442914, 0.4671685, -0.051212233)
@@ -365,8 +472,8 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.59442914, 0.4671685, 
 index = "Button_10"
 finger_i = 9
 
-[node name="in" parent="buttons/Button10/button/out" parent_id_path=PackedInt32Array(1845216218, 2066741022, 108746461) index="0" unique_id=660064492]
-material_override = SubResource("StandardMaterial3D_4ohmo")
+[node name="in" parent="buttons/Button10/button/out" parent_id_path=PackedInt32Array(1845216218, 2066741022, 945601497) index="0" unique_id=1860463939]
+material_override = SubResource("StandardMaterial3D_js8sm")
 
 [node name="Button4" parent="buttons" unique_id=1839510992 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.36866683, 0.4671685, -0.028630821)
@@ -375,17 +482,21 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.36866683, 0.4671685,
 index = "Button_2"
 finger_i = 1
 
-[node name="in" parent="buttons/Button4/button/out" parent_id_path=PackedInt32Array(1839510992, 2066741022, 108746461) index="0" unique_id=660064492]
-material_override = SubResource("StandardMaterial3D_8oboy")
+[node name="in" parent="buttons/Button4/button/out" parent_id_path=PackedInt32Array(1839510992, 2066741022, 945601497) index="0" unique_id=1860463939]
+material_override = SubResource("StandardMaterial3D_u244o")
 
 [node name="Button5" parent="buttons" unique_id=215435022 instance=ExtResource("18_c4b4r")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.44657263, 0.4671685, -0.029759893)
 
-[node name="in" parent="buttons/Button5/button/out" parent_id_path=PackedInt32Array(215435022, 2066741022, 108746461) index="0" unique_id=660064492]
-material_override = SubResource("StandardMaterial3D_ah3if")
+[node name="in" parent="buttons/Button5/button/out" parent_id_path=PackedInt32Array(215435022, 2066741022, 945601497) index="0" unique_id=1860463939]
+material_override = SubResource("StandardMaterial3D_1j4pb")
 
 [editable path="HourglassLogic/Hourglass"]
+[editable path="HourglassLogic/Hourglass/Lable"]
 [editable path="HitTheMoleController"]
+[editable path="TV_WithGame/Lable"]
+[editable path="TV_WithPermutations/Lable"]
+[editable path="TVHighWithRunner/Lable"]
 [editable path="Hand"]
 [editable path="HandR"]
 [editable path="Knife6"]
