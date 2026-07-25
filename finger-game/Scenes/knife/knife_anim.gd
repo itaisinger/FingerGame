@@ -11,10 +11,13 @@ var dest_height = 0;
 @export var test = false;
 var trans
 @export var StartFinger:Node3D
+var is_retract = false
+var progress = 0;
+
 func _ready():
 	if StartFinger!=null:
 		global_position=StartFinger.get_node("marker").global_position
-		rotation = StartFinger.rotation+Vector3(0,90,0)
+		#rotation = StartFinger.rotation+Vector3(0,90,0)
 	anim_player.play(anim_name)
 	anim_player.pause()
 	anim_length = anim_player.get_animation(anim_name).length
@@ -23,12 +26,23 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if(test): set_prec(my_prec)
+	if(is_retract):
+		progress = max(0,progress-delta)
+		set_prec(progress)
 
 func set_prec(prec):
-	anim_player.seek(prec * anim_length, true)
+	var _rot_prog = max(0,prec*2 - 1);
+	anim_player.seek(_rot_prog * anim_length, true)
 	
 	#move
-	var _move_prog = min(max(prec*1.3,0),1)
+	var _move_prog = min(max(prec*1.75,0),1)
 	position.y = (start_height * (1-_move_prog)) + (dest_height * _move_prog);
+	
+	#done
+	if(prec >= 1.0):
+		progress = 1.0;
+		print("-- RETRACT")
+		is_retract = true;
+			
 	
 	

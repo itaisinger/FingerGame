@@ -75,7 +75,6 @@ func update_scisors() -> void:
 			progress = 1.0 - (timer.time_left / timer.wait_time)
 		progress = clampf(progress, 0.0, 1.0)
 		if scisors[i].has_method("set_prec"):
-			print("-------progress  ",progress)
 			if progress!=0:
 				scisors[i].call("set_prec", progress)
 
