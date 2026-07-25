@@ -17,16 +17,16 @@ script/source = "extends Node3D
 
 @export var finger_hitbox: Shape3D
 @export var hitbox_position: Vector3 = Vector3.ZERO
-@export var hitbox_rotation: Vector3 = Vector3(0.0, 0.0, 90.0)
+@export var hitbox_rotation: Vector3 = Vector3(0.0, 90.0, 0)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed(\"Button_1\"):
+		cut_finger(1)
+		cut_finger(2)
+		cut_finger(3)
+		cut_finger(4)
+		cut_finger(5)
 		pass
-		#cut_finger(1)
-		#cut_finger(2)
-		#cut_finger(3)
-		#cut_finger(4)
-		#cut_finger(5)
 
 
 
@@ -57,15 +57,12 @@ func cut_finger(i: int) -> void:
 	body.mass = 0.2
 	body.continuous_cd = true
 	body.can_sleep = false
-
 	finger.reparent(body, true)
-
 	var collider := CollisionShape3D.new()
 	collider.shape = finger_hitbox.duplicate()
 	collider.position = hitbox_position
 	collider.rotation_degrees = hitbox_rotation
 	body.add_child(collider)
-
 	var throw_direction := (
 		global_transform.basis * throw_vector.normalized()
 	).normalized()

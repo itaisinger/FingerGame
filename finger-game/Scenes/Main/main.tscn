@@ -40,11 +40,13 @@ size = Vector3(8, 10, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_imbg2"]
 size = Vector3(14, 10, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wliom"]
-size = Vector3(0.6, 0.1, 0.1)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c4b4r"]
+radius = 0.1
+height = 0.5
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_es6iu"]
-size = Vector3(0.6, 0.1, 0.1)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1t20g"]
+radius = 0.05
+height = 0.5
 
 [node name="Main" type="Node3D" unique_id=1211374868]
 script = ExtResource("1_main")
@@ -101,13 +103,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.331011, 0, 0.12571648)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3510164, 0, 0.2905991)
 
 [node name="ButtonFinished6" parent="HitTheMoleController" index="9" unique_id=272825146]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3610716, 0, 0.33437264)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5224921, 0, 0.25490564)
 
 [node name="ButtonFinished7" parent="HitTheMoleController" index="10" unique_id=1424450462]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3027344, 0, 0.19810294)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48474342, 0, 0.110810444)
 
 [node name="ButtonFinished8" parent="HitTheMoleController" index="11" unique_id=708651543]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32811362, 0, 0.103863895)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5182788, 0, 0.031839013)
 
 [node name="Room" type="Node3D" parent="." unique_id=1129812981]
 
@@ -159,7 +161,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 3
 visible = false
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=648909123]
-transform = Transform3D(0.99919933, -0.014344404, 0.037348196, 0.0039798906, 0.9645226, 0.26396993, -0.039809674, -0.26360995, 0.96380746, -0.07397768, 1.718985, 1.0274419)
+transform = Transform3D(1, 0, 0, 0, 0.98504305, 0.17230836, 0, -0.17230836, 0.98504305, -0.07397768, 1.718985, 1.1921772)
 fov = 90.0
 
 [node name="TV_WithGame" parent="." unique_id=2092431692 instance=ExtResource("11_4e4y2")]
@@ -182,7 +184,7 @@ transform = Transform3D(0.0069071795, 0.86749846, -0.8290944, 1.1979977, -0.0526
 throw_vector = Vector3(0, 0.8, 0)
 throw_speed = 2.5
 flip_speed = 12.0
-finger_hitbox = SubResource("BoxShape3D_wliom")
+finger_hitbox = SubResource("CapsuleShape3D_c4b4r")
 
 [node name="hand palm" parent="Hand" index="0" unique_id=116127469]
 transform = Transform3D(1, 1.4901161e-08, 0, 0, 0.99999994, -2.9802322e-08, -1.4901161e-08, -5.9604645e-08, 1, -0.026261032, 0.004244864, 0.0030815303)
@@ -206,11 +208,14 @@ visible = false
 visible = false
 
 [node name="HandR" parent="." unique_id=774035066 instance=ExtResource("9_hryqi")]
-transform = Transform3D(-4.9240352e-08, -1.1264881, -0.4135514, 1.2, -5.2453668e-08, 3.3021338e-15, -1.8076905e-08, -0.4135514, 1.1264881, 0.5467719, 0.63913816, 0.20932345)
+transform = Transform3D(-3.7598756e-08, -0.86015946, -0.83673507, 1.1999999, -5.2453665e-08, 2.6021775e-15, -3.6574846e-08, -0.83673507, 0.86015946, 0.6777705, 0.63913816, 0.20955625)
 throw_vector = Vector3(0, 1, 0.1)
 throw_speed = 4.0
 flip_speed = 12.0
-finger_hitbox = SubResource("BoxShape3D_es6iu")
+finger_hitbox = SubResource("CapsuleShape3D_1t20g")
+
+[node name="hand palm R" parent="HandR" index="0" unique_id=1124762062]
+transform = Transform3D(1, 4.4408926e-16, -2.6645355e-15, -4.4408926e-16, 1, 5.0712493e-30, 2.6645355e-15, -3.8879575e-30, 1, 0, -0.037744045, -0.013856441)
 
 [node name="RayCast3D" parent="HandR/finger 5R/marker" parent_id_path=PackedInt32Array(774035066, 1398279236) index="0" unique_id=547222569]
 visible = false
@@ -228,20 +233,20 @@ visible = false
 visible = false
 
 [node name="Knife6" parent="." unique_id=1357551589 instance=ExtResource("15_2ok46")]
-transform = Transform3D(0.5428674, -5.349572e-09, -0.83981824, 9.854285e-09, 0.99999964, 3.5443511e-15, 0.83981824, -8.275808e-09, 0.5428674, 0.4685502, 0.5665058, 0.31101543)
+transform = Transform3D(0.15348437, -1.5124799e-09, -0.98815084, 9.854284e-09, 0.9999995, 3.0315326e-15, 0.98815084, -9.737519e-09, 0.15348437, 0.56489617, 0.5665058, 0.2705421)
 
 [node name="knife" parent="Knife6" index="0" unique_id=1657471252 node_paths=PackedStringArray("StartFinger")]
 StartFinger = NodePath("../../HandR/finger 1R")
 
 [node name="Knife8" parent="." unique_id=896374424 instance=ExtResource("15_2ok46")]
-transform = Transform3D(0.3612665, 0, 0.9324626, 0, 0.99999964, 0, -0.9324625, 0, 0.36126655, 0.37342125, 0.62268025, 0.136053)
+transform = Transform3D(0.7099167, 0, 0.70428556, 0, 0.99999964, 0, -0.7042855, 0, 0.70991683, 0.5493289, 0.62268025, 0.07199983)
 top_level = true
 
 [node name="knife" parent="Knife8" index="0" unique_id=1657471252 node_paths=PackedStringArray("StartFinger")]
 StartFinger = NodePath("../../HandR/finger 3R")
 
 [node name="Knife7" parent="." unique_id=673276146 instance=ExtResource("15_2ok46")]
-transform = Transform3D(-0.23841248, 2.3493854e-09, -0.9711635, 9.8542845e-09, 0.99999964, 9.365039e-15, 0.9711635, -9.570121e-09, -0.23841248, 0.3864381, 0.60058707, 0.2046374)
+transform = Transform3D(-0.6134999, 6.0456027e-09, -0.78969425, 9.8542845e-09, 0.99999964, 9.253514e-15, 0.78969425, -7.78187e-09, -0.6134999, 0.5332652, 0.60058707, 0.1399352)
 
 [node name="knife" parent="Knife7" index="0" unique_id=1657471252 node_paths=PackedStringArray("StartFinger")]
 StartFinger = NodePath("../../HandR/finger 2R")
@@ -276,6 +281,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53257155, 0.46423554, 0.08
 
 [node name="ButtonFinished2" parent="." unique_id=978736400 instance=ExtResource("19_c4b4r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44658104, 0.46423554, 0.016266376)
+
+[node name="ButtonFinished3" parent="." unique_id=750728808 instance=ExtResource("19_c4b4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60541564, 0.46423554, 0.012619421)
+
+[node name="ButtonFinished4" parent="." unique_id=1571273508 instance=ExtResource("19_c4b4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6791424, 0.46423554, 0.04564686)
 
 [editable path="HourglassLogic/Hourglass"]
 [editable path="HitTheMoleController"]
