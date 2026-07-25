@@ -7,25 +7,24 @@ lifetime_randomness = 0.03
 angle_min = -89.99999
 angle_max = 90.000015
 direction = Vector3(1, 0.3, 0)
-spread = 57.479
-initial_velocity_max = 1.0
+spread = 64.213
+gravity = Vector3(0, -1, 0)
+turbulence_noise_speed_random = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g65ms"]
 albedo_color = Color(0.53333336, 0, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_x6t36"]
 material = SubResource("StandardMaterial3D_g65ms")
-radius = 0.005
-height = 0.1
-radial_segments = 5
+radius = 0.03
+height = 0.06
 
 [node name="BloodManager" type="Node3D" unique_id=1113331797]
 script = ExtResource("1_6ceva")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=166913652]
-amount = 10
-randomness = 1.0
-transform_align = 2
+lifetime = 2.03
+randomness = 0.6
 trail_lifetime = 0.12
 process_material = SubResource("ParticleProcessMaterial_t2cyj")
 draw_pass_1 = SubResource("SphereMesh_x6t36")

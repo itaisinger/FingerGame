@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dgppqhsewprky" path="res://assets/hand palm.glb" id="2_610yf"]
 [ext_resource type="PackedScene" uid="uid://bpe26gd2qsvkn" path="res://Scenes/itai stuff/finger_3.tscn" id="2_mn63p"]
 [ext_resource type="PackedScene" uid="uid://brdp6e03ylmmi" path="res://Scenes/itai stuff/finger 2.tscn" id="2_y6t2t"]
-[ext_resource type="PackedScene" uid="uid://jm0mf0nsri5d" path="res://Scenes/Blood/blood_manager.tscn" id="3_0fcll"]
 [ext_resource type="PackedScene" uid="uid://clo6tnee808se" path="res://assets/finger 4.glb" id="4_0fcll"]
 [ext_resource type="Script" uid="uid://btc55x5lc3ep8" path="res://Scenes/itai stuff/finger_anim.gd" id="5_5k6su"]
 [ext_resource type="PackedScene" uid="uid://yd1mlgsqcese" path="res://assets/finger 5.glb" id="6_71v7i"]
@@ -35,6 +34,9 @@ func _process(delta: float) -> void:
 
 func cut_finger(i: int) -> void:
 	var finger := get_node_or_null(\"finger %d\" % i) as Node3D
+	var manager =get_node_or_null(\"BloodManager%d\" % (6-i)) as Node3D
+	if manager:
+		manager.set_rain_enabled(true)
 	if finger == null:
 		return
 	if finger.get_meta(\"cut\", false):
@@ -43,18 +45,13 @@ func cut_finger(i: int) -> void:
 	if throw_vector.is_zero_approx():
 		push_warning(\"throw_vector cannot be zero.\")
 		return
-
 	if finger_hitbox == null:
 		push_warning(\"finger_hitbox has not been assigned.\")
 		return
-
 	finger.set_meta(\"cut\", true)
-
 	var saved_transform := finger.global_transform
-
 	var body := RigidBody3D.new()
 	get_tree().current_scene.add_child(body)
-
 	body.global_transform = saved_transform
 	body.mass = 0.2
 	body.continuous_cd = true
@@ -68,14 +65,12 @@ func cut_finger(i: int) -> void:
 	var throw_direction := (
 		global_transform.basis * throw_vector.normalized()
 	).normalized()
-
 	var flip_axis := Vector3.UP.cross(throw_direction).normalized()
-
 	if flip_axis.is_zero_approx():
 		flip_axis = body.global_transform.basis.x.normalized()
-
 	body.linear_velocity = throw_direction * throw_speed
 	body.angular_velocity = flip_axis * flip_speed
+	print(\"HAND SEVERED FINGER\",i)
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t2cyj"]
@@ -94,8 +89,6 @@ index = "Button_4"
 
 [node name="marker" type="Node3D" parent="finger 2" unique_id=1201275988]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09523848, 0.04217817)
-
-[node name="BloodManager" parent="finger 2/marker" unique_id=1113331797 instance=ExtResource("3_0fcll")]
 
 [node name="finger 3" parent="." unique_id=1722894744 instance=ExtResource("2_mn63p")]
 
