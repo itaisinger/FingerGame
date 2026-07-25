@@ -16,8 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://cpfkbyfe1d6t3" path="res://Scenes/knife/knife.tscn" id="15_2ok46"]
 [ext_resource type="PackedScene" uid="uid://cmo0a7rpdcjrg" path="res://Scenes/TvWithRunner/tv_high_with_runner.tscn" id="15_wliom"]
 [ext_resource type="PackedScene" uid="uid://dcpl55f13ymuq" path="res://Scenes/ost_player.tscn" id="17_koken"]
+[ext_resource type="PackedScene" uid="uid://r63qnig8f3rf" path="res://Scenes/itai stuff/new button.tscn" id="18_c4b4r"]
 [ext_resource type="PackedScene" uid="uid://dpexp25ukrj1s" path="res://Scenes/score_counter/score_counter.tscn" id="18_es6iu"]
-[ext_resource type="PackedScene" uid="uid://bwqqda36dicl7" path="res://Scenes/FinishedButton/button_finished.tscn" id="19_c4b4r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hryqi"]
 albedo_texture = ExtResource("6_y3v7k")
@@ -69,48 +69,6 @@ scisor4 = NodePath("../Knife6/knife")
 scisor5 = NodePath("../Knife7/knife")
 scisor6 = NodePath("../Knife8/knife")
 
-[node name="Button3" parent="HitTheMoleController" index="0" unique_id=1658878431]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36871487, -0.029999733, -0.16152024)
-visible = false
-
-[node name="Button4" parent="HitTheMoleController" index="1" unique_id=1641990739]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28157377, -0.030000001, -0.126)
-visible = false
-
-[node name="Button5" parent="HitTheMoleController" index="2" unique_id=631352668]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19996136, -0.029798508, 0.05252239)
-visible = false
-
-[node name="Button6" parent="HitTheMoleController" index="3" unique_id=1456664243]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-visible = false
-
-[node name="Button7" parent="HitTheMoleController" index="4" unique_id=1061064310]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1.5)
-visible = false
-
-[node name="Button8" parent="HitTheMoleController" index="5" unique_id=1445881453]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -2.5)
-visible = false
-
-[node name="ButtonFinished3" parent="HitTheMoleController" index="6" unique_id=1917701011]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35395205, 0, 0.029906303)
-
-[node name="ButtonFinished4" parent="HitTheMoleController" index="7" unique_id=1083430698]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.331011, 0, 0.12571648)
-
-[node name="ButtonFinished5" parent="HitTheMoleController" index="8" unique_id=927015356]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3510164, 0, 0.2905991)
-
-[node name="ButtonFinished6" parent="HitTheMoleController" index="9" unique_id=272825146]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5224921, 0, 0.25490564)
-
-[node name="ButtonFinished7" parent="HitTheMoleController" index="10" unique_id=1424450462]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48474342, 0, 0.110810444)
-
-[node name="ButtonFinished8" parent="HitTheMoleController" index="11" unique_id=708651543]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5182788, 0, 0.031839013)
-
 [node name="Room" type="Node3D" parent="." unique_id=1129812981]
 
 [node name="Table" type="MeshInstance3D" parent="Room" unique_id=1298851474]
@@ -126,6 +84,7 @@ shape = SubResource("BoxShape3D_t2cyj")
 
 [node name="Floor2" type="MeshInstance3D" parent="Room" unique_id=2020271787]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.0620513, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_hfg1r")
 mesh = SubResource("BoxMesh_p6jpk")
 
@@ -276,17 +235,73 @@ StartFinger = NodePath("../../Hand/finger 5")
 [node name="ScoreCounter" parent="." unique_id=214095391 instance=ExtResource("18_es6iu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71103, 3.3196478, -0.41724634)
 
-[node name="ButtonFinished1" parent="." unique_id=484245556 instance=ExtResource("19_c4b4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53257155, 0.46423554, 0.08908799)
+[node name="buttons" type="Node" parent="." unique_id=7959829]
 
-[node name="ButtonFinished2" parent="." unique_id=978736400 instance=ExtResource("19_c4b4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44658104, 0.46423554, 0.016266376)
+[node name="Button" parent="buttons" unique_id=1005044419 instance=ExtResource("18_c4b4r")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.29979366, 0.4671685, 0.27283058)
 
-[node name="ButtonFinished3" parent="." unique_id=750728808 instance=ExtResource("19_c4b4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60541564, 0.46423554, 0.012619421)
+[node name="button" parent="buttons/Button" index="0" unique_id=2066741022]
+index = "Button_5"
+finger_i = 4
 
-[node name="ButtonFinished4" parent="." unique_id=1571273508 instance=ExtResource("19_c4b4r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6791424, 0.46423554, 0.04564686)
+[node name="Button2" parent="buttons" unique_id=630893113 instance=ExtResource("18_c4b4r")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.2614053, 0.4671685, 0.0583075)
+
+[node name="button" parent="buttons/Button2" index="0" unique_id=2066741022]
+index = "Button_4"
+finger_i = 3
+
+[node name="Button3" parent="buttons" unique_id=1093522532 instance=ExtResource("18_c4b4r")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.29189014, 0.4671685, -0.010565711)
+
+[node name="button" parent="buttons/Button3" index="0" unique_id=2066741022]
+index = "Button_3"
+finger_i = 2
+
+[node name="Button6" parent="buttons" unique_id=312969343 instance=ExtResource("18_c4b4r")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.45216656, 0.4671685, 0.24686201)
+
+[node name="button" parent="buttons/Button6" index="0" unique_id=2066741022]
+index = "Button_6"
+finger_i = 5
+
+[node name="Button7" parent="buttons" unique_id=936132977 instance=ExtResource("18_c4b4r")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.4216816, 0.4671685, 0.049274936)
+
+[node name="button" parent="buttons/Button7" index="0" unique_id=2066741022]
+index = "Button_7"
+finger_i = 6
+
+[node name="Button8" parent="buttons" unique_id=232180434 instance=ExtResource("18_c4b4r")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.4510374, 0.4671685, -0.02185642)
+
+[node name="button" parent="buttons/Button8" index="0" unique_id=2066741022]
+index = "Button_8"
+finger_i = 7
+
+[node name="Button9" parent="buttons" unique_id=1070708483 instance=ExtResource("18_c4b4r")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.52442694, 0.4671685, -0.03766339)
+
+[node name="button" parent="buttons/Button9" index="0" unique_id=2066741022]
+index = "Button_9"
+finger_i = 8
+
+[node name="Button10" parent="buttons" unique_id=1845216218 instance=ExtResource("18_c4b4r")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.59442914, 0.4671685, -0.051212233)
+
+[node name="button" parent="buttons/Button10" index="0" unique_id=2066741022]
+index = "Button_10"
+finger_i = 9
+
+[node name="Button4" parent="buttons" unique_id=1839510992 instance=ExtResource("18_c4b4r")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.36866683, 0.4671685, -0.028630821)
+
+[node name="button" parent="buttons/Button4" index="0" unique_id=2066741022]
+index = "Button_2"
+finger_i = 1
+
+[node name="Button5" parent="buttons" unique_id=215435022 instance=ExtResource("18_c4b4r")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.44657263, 0.4671685, -0.029759893)
 
 [editable path="HourglassLogic/Hourglass"]
 [editable path="HitTheMoleController"]
@@ -304,3 +319,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6791424, 0.46423554, 0.0456
 [editable path="Knife4/knife"]
 [editable path="Knife5"]
 [editable path="Knife5/knife"]
+[editable path="buttons/Button"]
+[editable path="buttons/Button/button"]
+[editable path="buttons/Button2"]
+[editable path="buttons/Button2/button"]
+[editable path="buttons/Button3"]
+[editable path="buttons/Button3/button"]
+[editable path="buttons/Button6"]
+[editable path="buttons/Button6/button"]
+[editable path="buttons/Button7"]
+[editable path="buttons/Button7/button"]
+[editable path="buttons/Button8"]
+[editable path="buttons/Button8/button"]
+[editable path="buttons/Button9"]
+[editable path="buttons/Button9/button"]
+[editable path="buttons/Button10"]
+[editable path="buttons/Button10/button"]
+[editable path="buttons/Button4"]
+[editable path="buttons/Button4/button"]
+[editable path="buttons/Button5"]
+[editable path="buttons/Button5/button"]
