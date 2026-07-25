@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://c8esuycewb6bb" path="res://assets/sounds/unclick.wav" id="5_kow1p"]
 
 [node name="Button" type="Node3D" unique_id=1005044419]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 
 [node name="button" parent="." unique_id=2066741022 instance=ExtResource("1_gmly2")]
 script = ExtResource("2_mj5e7")
@@ -22,11 +23,5 @@ stream = ExtResource("4_8y5e0")
 
 [node name="offSfx" type="AudioStreamPlayer3D" parent="button" unique_id=194967501]
 stream = ExtResource("5_kow1p")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1737952410]
-transform = Transform3D(1, 0, 0, 0, 0.9627226, 0.27049065, 0, -0.27049065, 0.9627226, 0, 0.16727027, 0.30917048)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1918995280]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37841463, 0)
 
 [editable path="button"]

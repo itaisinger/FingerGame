@@ -7,8 +7,8 @@ var progress = 0.0
 @export var tex_offset = 1.0
 @export var tresh = 0.8 
 @export var speed = 10.0 # Adjust this to change how fast it presses/releases
-@export var index = "finger2"
-
+@export var index = "finger2" #input name
+@export var finger_i = 0	#actual index
 var sfx_min = 0.6
 var sfx_max = 1.3
 func _ready():
@@ -31,7 +31,7 @@ func _process(delta) -> void:
 		progress = max(progress - (speed * delta * tresh), 0.0)
 		if(_prev > tresh and progress <= tresh):
 			$offSfx.play()
-			
+		
 		
 	# Multiply 0-1 progress by total length to get the correct time
 	var _p = max(0,(progress - 0.5)*2)
