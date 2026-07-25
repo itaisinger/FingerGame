@@ -21,7 +21,6 @@ size = Vector2(1, 0.8)
 
 [node name="ScoreCounter" type="Node3D" unique_id=214095391]
 script = ExtResource("1_gyqlq")
-start_val = 50
 rolf_range = 23
 
 [node name="TV" parent="." unique_id=727913060 instance=ExtResource("1_cx6sf")]
