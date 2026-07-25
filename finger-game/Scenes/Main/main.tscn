@@ -46,6 +46,9 @@ size = Vector3(0.6, 0.15, 0.15)
 [node name="Main" type="Node3D" unique_id=1211374868]
 script = ExtResource("1_main")
 
+[node name="OstPlayer_Camera3D#ScoreCounter" parent="." unique_id=214095391 instance=ExtResource("18_es6iu")]
+transform = Transform3D(0.29, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -0.12365794, 0.41141605, -2.1949415)
+
 [node name="HourglassLogic" type="Node3D" parent="." unique_id=504920833]
 script = ExtResource("2_2ok46")
 
@@ -215,10 +218,6 @@ transform = Transform3D(0.903279, 7.834648e-09, -0.42905337, -4.9521383e-09, 0.9
 StartFinger = NodePath("../../Hand/finger 5")
 
 [node name="OstPlayer" parent="." unique_id=692608484 instance=ExtResource("17_koken")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4670463, 7.034405)
-
-[node name="ScoreCounter" parent="OstPlayer/Camera3D" parent_id_path=PackedInt32Array(692608484, 1387183546) index="0" unique_id=214095391 instance=ExtResource("18_es6iu")]
-transform = Transform3D(0.29, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -0.12365794, 0.41141605, -2.1949415)
 
 [editable path="HitTheMoleController"]
 [editable path="HandR"]
@@ -235,4 +234,3 @@ transform = Transform3D(0.29, 0, 0, 0, 0.58, 0, 0, 0, 0.58, -0.12365794, 0.41141
 [editable path="Knife4/knife"]
 [editable path="Knife5"]
 [editable path="Knife5/knife"]
-[editable path="OstPlayer"]
