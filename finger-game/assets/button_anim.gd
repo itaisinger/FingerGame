@@ -43,5 +43,5 @@ func _process(delta) -> void:
 		mat.uv1_offset.x = tex_offset * progress
 	
 func finger_pressed():
-	var ret = Input.is_action_pressed(index)
+	var ret = Input.is_action_pressed(index) and playerData.finger_active(finger_i);
 	return ret

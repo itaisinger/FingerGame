@@ -12,7 +12,10 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 [node name="button" parent="." unique_id=2066741022 instance=ExtResource("1_gmly2")]
 script = ExtResource("2_mj5e7")
 tex_offset = 0.2
+tresh = null
+speed = null
 index = "Button_1"
+finger_i = null
 
 [node name="in" parent="button/out" parent_id_path=PackedInt32Array(2066741022, 108746461) index="0" unique_id=660064492]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2088173e-10, 0.017230485, -6.2088173e-10)
