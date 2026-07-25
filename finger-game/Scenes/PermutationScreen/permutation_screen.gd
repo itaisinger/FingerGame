@@ -82,6 +82,11 @@ func is_permutation_shown() -> bool:
 		#schedule_next_activation()
 
 func _process(delta: float) -> void:
+	
+	if(PlayerData.gg):
+		label.text = ""
+		timerlabel.text = ""
+	
 	if binary_number.is_empty():
 		rest_time_remain -= delta
 
