@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cn2sw2t87sh0j"
+path="res://.godot/imported/hourglass turn start.wav-ce9d2fcc8d892a9be244389c2c0e9a0a.sample"
+
+[deps]
+
+source_file="res://assets/sounds/hourglass turn start.wav"
+dest_files=["res://.godot/imported/hourglass turn start.wav-ce9d2fcc8d892a9be244389c2c0e9a0a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

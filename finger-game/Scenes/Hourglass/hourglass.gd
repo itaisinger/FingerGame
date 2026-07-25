@@ -1,6 +1,6 @@
 extends Node3D
 
-const TRANSFER_RATE := 20.0
+const TRANSFER_RATE := 5.0
 signal cutFinger(index)
 class HourglassPart:
 	var time: float

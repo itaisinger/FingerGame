@@ -48,9 +48,13 @@ func _process(delta: float) -> void:
 func flip():
 	rot += 180
 	upside_down = !upside_down
-	print("flip: " + str(upside_down))
+	$sfxStart.play()
 	var tween = create_tween()
 	tween.tween_property(self, "rotation_degrees", Vector3(rot,rotation_degrees.y,0), 1.25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-
+	tween.tween_callback(playEndSfx)
+	
+func playEndSfx():
+	$sfxEnd.play()
+	
 func update_prec(new_prec):
 	prec = new_prec
