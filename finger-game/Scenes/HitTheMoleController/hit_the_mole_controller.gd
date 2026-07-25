@@ -11,16 +11,13 @@ signal cutfinger(index)
 @export var scisor5:Node3D
 @export var scisor6:Node3D
 
-
 var active_buttons: Array[int] = [0, 0, 0, 0, 0, 0]
 var button_timers: Array[Timer] = []
 
 var random := RandomNumberGenerator.new()
 var turn_on_timer: Timer
 
-
 func _ready() -> void:
-	
 	random.randomize()
 	turn_on_timer = Timer.new()
 	turn_on_timer.wait_time = time_between_buttons
@@ -36,14 +33,6 @@ func _ready() -> void:
 	_print_active_buttons()
 	turn_on_timer.start()
 	
-func setScisorPosition():
-	pass
-	#for i in range(BUTTON_COUNT):
-		#var button := get_node_or_null("Button" + str(i + 3)) as Node3D
-		#var scisor := scisors[i]
-		#if is_instance_valid(button) and is_instance_valid(scisor):
-			#scisor.global_position = button.global_position+Vector3(0,0.56,0)
-
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Button_3"):
 		button1()
@@ -111,7 +100,6 @@ func _button_failed(index: int) -> void:
 	cutfinger.emit(index +3)
 	_print_active_buttons()
 
-
 func _turn_on_random_button() -> void:
 	var turned_off_buttons: Array[int] = []
 
@@ -129,8 +117,10 @@ func _turn_on_random_button() -> void:
 	turn_on_button(button_index)
 	button_timers[button_index].start()
 
-	_print_active_buttons()
+	# MULTIPLY THE TIMER'S WAIT TIME HERE
+	turn_on_timer.wait_time *= randf_range(0.7, 1.3)
 
+	_print_active_buttons()
 
 func turn_on_button(index: int) -> void:
 	var led = get_node_or_null("ButtonFinished" + str(index+3))
