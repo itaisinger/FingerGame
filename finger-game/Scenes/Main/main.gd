@@ -22,8 +22,8 @@ func cut_random_finger():
 				indexes.append(i)
 	if indexes.size()<1:
 		return
-	var random_num := randi_range(0, indexes.size())
-	cut_finger(indexes[random_num] +1)
+	var random_num := randi_range(1, indexes.size())
+	cut_finger(indexes[random_num-1] +1)
 	
 	
 	

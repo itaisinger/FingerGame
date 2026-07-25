@@ -34,8 +34,8 @@ theme_override_colors/font_color = Color(0.92044914, 0.97640556, 0.99909884, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_nxmj4")
 theme_override_font_sizes/font_size = 156
-text = "
-"
+text = "1233124
+10101010"
 
 [node name="timerLabel" type="Label" parent="SubViewport" unique_id=945968539]
 offset_right = 40.0
@@ -43,8 +43,11 @@ offset_bottom = 317.0
 theme_override_colors/font_color = Color(0.92044914, 0.97640556, 0.99909884, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_nxmj4")
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 64
 text = "
+
+
+11111111
 "
 vertical_alignment = 2
 
