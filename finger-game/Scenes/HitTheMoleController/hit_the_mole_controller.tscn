@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://rimiugw2vwpc" path="res://Scenes/HitTheMoleController/hit_the_mole_controller.gd" id="1_ogwy0"]
 [ext_resource type="PackedScene" uid="uid://bpl2wns1xcgbv" path="res://Scenes/Button/Button.tscn" id="2_70227"]
+[ext_resource type="PackedScene" uid="uid://bwqqda36dicl7" path="res://Scenes/FinishedButton/button_finished.tscn" id="3_nnamj"]
 
 [node name="HitTheMoleController" type="Node3D" unique_id=295308992]
 script = ExtResource("1_ogwy0")
@@ -19,3 +20,15 @@ button_timeout = 4.0
 [node name="Button7" parent="." unique_id=1061064310 instance=ExtResource("2_70227")]
 
 [node name="Button8" parent="." unique_id=1445881453 instance=ExtResource("2_70227")]
+
+[node name="ButtonFinished3" parent="." unique_id=1917701011 instance=ExtResource("3_nnamj")]
+
+[node name="ButtonFinished4" parent="." unique_id=1083430698 instance=ExtResource("3_nnamj")]
+
+[node name="ButtonFinished5" parent="." unique_id=927015356 instance=ExtResource("3_nnamj")]
+
+[node name="ButtonFinished6" parent="." unique_id=272825146 instance=ExtResource("3_nnamj")]
+
+[node name="ButtonFinished7" parent="." unique_id=1424450462 instance=ExtResource("3_nnamj")]
+
+[node name="ButtonFinished8" parent="." unique_id=708651543 instance=ExtResource("3_nnamj")]
