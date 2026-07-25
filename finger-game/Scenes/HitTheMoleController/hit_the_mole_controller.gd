@@ -45,17 +45,17 @@ func setScisorPosition():
 			#scisor.global_position = button.global_position+Vector3(0,0.56,0)
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("Button_3"):
+	if Input.is_action_just_pressed("Button_3") and PlayerData.FingerActive[2]:
 		button1()
-	elif Input.is_action_just_pressed("Button_4"):
+	elif Input.is_action_just_pressed("Button_4")and PlayerData.FingerActive[3]:
 		button2()
-	elif Input.is_action_just_pressed("Button_5"):
+	elif Input.is_action_just_pressed("Button_5")and PlayerData.FingerActive[4]:
 		button3()
-	elif Input.is_action_just_pressed("Button_6"):
+	elif Input.is_action_just_pressed("Button_6")and PlayerData.FingerActive[5]:
 		button4()
-	elif Input.is_action_just_pressed("Button_7"):
+	elif Input.is_action_just_pressed("Button_7")and PlayerData.FingerActive[6]:
 		button5()
-	elif Input.is_action_just_pressed("Button_8"):
+	elif Input.is_action_just_pressed("Button_8")and PlayerData.FingerActive[7]:
 		button6()
 	update_scisors()
 	

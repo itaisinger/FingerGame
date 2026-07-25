@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ghnxk1ew2g2j"
-path="res://.godot/imported/home tall man.png-e6b1d8cfad147a91f6ff0d6a28c8721d.ctex"
+path="res://.godot/imported/home tall man.png-df88d207c46d2cf5a4b5ab351148942e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pictures/home tall man.png"
-dest_files=["res://.godot/imported/home tall man.png-e6b1d8cfad147a91f6ff0d6a28c8721d.ctex"]
+source_file="res://PersonImages/People/home tall man.png"
+dest_files=["res://.godot/imported/home tall man.png-df88d207c46d2cf5a4b5ab351148942e.ctex"]
 
 [params]
 

@@ -13,7 +13,7 @@ var print_timer := 0.0
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Button_1"):
+	if Input.is_action_just_pressed("Button_1") and PlayerData.FingerActive[0]:
 		$Hourglass.flip()
 		part_1_is_up = not part_1_is_up
 	var upper := part_1 if part_1_is_up else part_2

@@ -20,9 +20,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Button_9"):
+	if Input.is_action_just_pressed("Button_9")and PlayerData.FingerActive[8]:
 		press2()
-	elif Input.is_action_just_pressed("Button_10"):
+	elif Input.is_action_just_pressed("Button_10")and PlayerData.FingerActive[9]:
 		press1()
 	timer += delta
 	if timer >= 1.0:

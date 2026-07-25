@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da1ucpiso7ih2"
-path="res://.godot/imported/red_512x512.jpg-a0d10cf90755e149bdbe0161841c5e0f.ctex"
+uid="uid://bx1obxvmnc8ao"
+path="res://.godot/imported/tunnel crawler.png-564313aa6efbfcd006e6da27f5fecd5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PersonImages/NotPeople/red_512x512.jpg"
-dest_files=["res://.godot/imported/red_512x512.jpg-a0d10cf90755e149bdbe0161841c5e0f.ctex"]
+source_file="res://PersonImages/People/tunnel crawler.png"
+dest_files=["res://.godot/imported/tunnel crawler.png-564313aa6efbfcd006e6da27f5fecd5e.ctex"]
 
 [params]
 

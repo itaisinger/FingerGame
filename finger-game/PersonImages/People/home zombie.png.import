@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjun00j0pyau3"
-path="res://.godot/imported/texas grandpa.png-28bafadff42f4224c53d69e4dfa3e622.ctex"
+uid="uid://b0lkbyq60qm87"
+path="res://.godot/imported/home zombie.png-bdcc29b9085c66adf7d9a29768a8349b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pictures/texas grandpa.png"
-dest_files=["res://.godot/imported/texas grandpa.png-28bafadff42f4224c53d69e4dfa3e622.ctex"]
+source_file="res://PersonImages/People/home zombie.png"
+dest_files=["res://.godot/imported/home zombie.png-bdcc29b9085c66adf7d9a29768a8349b.ctex"]
 
 [params]
 

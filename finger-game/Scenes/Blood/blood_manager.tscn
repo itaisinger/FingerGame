@@ -6,22 +6,17 @@
 lifetime_randomness = 0.03
 angle_min = -89.99999
 angle_max = 90.000015
-direction = Vector3(0.3, 1, 0)
+direction = Vector3(1, 0.3, 0)
 spread = 57.479
-initial_velocity_min = -1.0
-initial_velocity_max = 0.5
-angular_velocity_min = -3.000016
-angular_velocity_max = 2.9999838
-orbit_velocity_min = -10.0
-orbit_velocity_max = 10.000001
-radial_velocity_min = -2.0000224
-radial_velocity_max = 9.999977
+initial_velocity_max = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g65ms"]
 albedo_color = Color(0.53333336, 0, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_x6t36"]
 material = SubResource("StandardMaterial3D_g65ms")
+radius = 0.005
+height = 0.1
 radial_segments = 5
 
 [node name="BloodManager" type="Node3D" unique_id=1113331797]
