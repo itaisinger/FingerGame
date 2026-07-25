@@ -42,10 +42,9 @@ func is_permutation_shown() -> bool:
 func _process(_delta: float) -> void:
 	var matching := is_permutation_shown()
 	if matching and not was_matching:
-		print("99999999999999999999999999")
 		print("Correct permutation: ", binary_number)
-		print("99999999999999999999999999")
 		generate_binary(4)
+		$sfxWin.play()
 		#turn_off()
 	was_matching = matching
 

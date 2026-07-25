@@ -44,7 +44,7 @@ func _process(delta: float) -> void:
 		#bottom
 		mat = $sand.get_active_material(0)
 		if(mat): mat.uv1_offset.y = _y_prog  + (0.1 if upside_down else 0)
-		
+	
 func flip():
 	rot += 180
 	upside_down = !upside_down
