@@ -64,3 +64,9 @@ mesh = SubResource("ArrayMesh_pkr3h")
 
 [node name="sand_top" parent="." index="4" unique_id=174834668]
 transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, 0, -0.0033358783, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." index="5" unique_id=536144170]
+transform = Transform3D(0.9476046, 0, -0.31944567, 0, 1, 0, 0.31944567, 0, 0.9476046, -0.2270475, 0.06401616, 0.60849357)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="6" unique_id=1511474154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68159884, 0.6778153)

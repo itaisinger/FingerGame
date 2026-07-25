@@ -15,6 +15,7 @@ var print_timer := 0.0
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Button_1"):
 		part_1_is_up = not part_1_is_up
+		$hourglass.flip()
 	var upper := part_1 if part_1_is_up else part_2
 	var lower := part_2 if part_1_is_up else part_1
 	var transferred_time: float = min(delta * TRANSFER_RATE, upper.time)

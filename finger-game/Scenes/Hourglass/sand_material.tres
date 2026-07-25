@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cltk6qw258pjj"]
+
+[ext_resource type="Texture2D" uid="uid://dup46gatxe4l6" path="res://assets/hourglass_sand.png" id="1_6yncq"]
+
+[resource]
+albedo_texture = ExtResource("1_6yncq")
+metallic_specular = 0.0
+texture_filter = 0
