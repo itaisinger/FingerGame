@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://blg2aa8koac0h"]
+
+[ext_resource type="PackedScene" uid="uid://bbm8qt0wstyon" path="res://assets/TV.glb" id="1_0wjk3"]
+[ext_resource type="PackedScene" uid="uid://dpwrvrr2dqc2c" path="res://Scenes/FindPerson/find_person.tscn" id="2_sh4gy"]
+
+[node name="TV_WithGame" unique_id=2092431692 instance=ExtResource("1_0wjk3")]
+
+[node name="FindPerson" parent="." index="1" unique_id=1705497192 instance=ExtResource("2_sh4gy")]
+transform = Transform3D(0.0010689723, 0, -0.9925901, 0, 0.12213867, 0, 0.16975491, 0, 0.0062504904, 0.2431708, 0.46401036, 0)

@@ -5,3 +5,12 @@
 
 [node name="finger 3" unique_id=1722894744 instance=ExtResource("1_wmwfy")]
 script = ExtResource("2_m407q")
+index = "Button_3"
+
+[node name="Armature" parent="." index="0" unique_id=1837541965]
+transform = Transform3D(0.122976184, 0, 0, 0, 0.122976184, 0, 0, 0, 0.122976184, -0.011609491, 0.06322214, 0.007936154)
+
+[node name="Skeleton3D" parent="Armature" index="0" unique_id=2078334612]
+bones/0/rotation = Quaternion(0.015077907, 0.0003787497, -0.025108308, 0.99957097)
+bones/1/rotation = Quaternion(0.010863805, 0.0002728824, 0.025109679, 0.99962574)
+bones/2/rotation = Quaternion(-0.030838363, 0.00075540046, 0.024474915, 0.9992244)

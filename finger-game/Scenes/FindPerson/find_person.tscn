@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dpwrvrr2dqc2c"]
 
 [ext_resource type="Script" uid="uid://cb748w6dlovnc" path="res://Scenes/FindPerson/find_person.gd" id="1_find_person"]
-[ext_resource type="Texture2D" uid="uid://ftipxhhcfxx3" path="res://PersonImages/NotPeople/dog.jpg" id="2_ammrq"]
+[ext_resource type="Texture2D" uid="uid://lftrxurof5wo" path="res://PersonImages/People/green_512x512.jpg" id="2_ammrq"]
 
 [node name="FindPerson" type="Node3D" unique_id=1705497192]
 script = ExtResource("1_find_person")
@@ -9,8 +9,4 @@ people = "res://PersonImages/People/"
 notPeople = "res://PersonImages/NotPeople/"
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1630388591]
-billboard = 1
 texture = ExtResource("2_ammrq")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=950855364]
-light_energy = 5.375

@@ -8,7 +8,7 @@ var roll = 0
 var ret
 var display: Label
 func _ready() -> void:
-	for i in range(10):
+	for i in range(GRID_ROWS):
 		grid.append([0, 0, 0])
 
 
@@ -45,17 +45,24 @@ func update():
 	if(grid[0][pos] == 1): 
 		print("Game Over!")
 	else:
-		grid[0][pos]="P"
-
+		grid[0][pos]="s"
 	printgrid()
 	  ## die!   
 
-func printgrid():
-	print("#-----------------")
-	for row in grid:
-		print(row)
-	print("#-----------------")
+#func printgrid():
+	#print("#-----------------")
+	#for row in grid:
+		#print(row)
+	#print("#-----------------")
 
+func printgrid():
+	var lines: Array[String] = [""]
+	for row in grid:
+		var cells: Array[String] = []
+		for cell in row:
+			cells.append(str(cell))
+		lines.append("  [" + ",".join(cells) + "]")
+	$SubViewport/Label.text = "\n".join(lines)
 
 #PUBLIC
 #move

@@ -1,15 +1,12 @@
 extends Node3D
-# var rows_since_last_obstacle = 0
+func _ready() -> void:
+	$Hourglass.connect("cutFinger",cut_finger)
+	$TV_WithGame/FindPerson.connect("cutfinger",cut_finger)
+	$HitTheMoleController.connect("cutfinger",cut_finger)
+	pass
 
-# func gen_next_row -> Array[spot]:
-#     if(rows_since_last_obstacle < 2):
-#         rows_since_last_obstacle += 1
-#         return [0, 0, 0] # No obstacles in this row
-#     else:
-#         roll = randi_range(0, 2)
-#         if(roll == 0):
-#             rows_since_last_obstacle = 0
-#             return [roll(0,1), 0, 0]    #every cube has 50-50 to be obstacle # Obstacle in lane 0
-#         else
-#             rows_since_last_obstacle++
-#             return [0, 0, 0]    #every cube has 50-50 to be obstacle # Obstacle in lane 1
+func cut_finger(index):
+	if index>5:
+		$HandR.cut_finger((index-5))
+	else:
+		$Hand.cut_finger(6-index)
