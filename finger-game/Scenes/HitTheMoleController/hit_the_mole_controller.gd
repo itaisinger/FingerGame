@@ -10,14 +10,14 @@ signal cutfinger(index)
 @export var scisor4:Node3D
 @export var scisor5:Node3D
 @export var scisor6:Node3D
-
+var started=false
 var active_buttons: Array[int] = [0, 0, 0, 0, 0, 0]
 var button_timers: Array[Timer] = []
 
 var random := RandomNumberGenerator.new()
 var turn_on_timer: Timer
 
-func _ready() -> void:
+func _ready2() -> void:
 	random.randomize()
 	turn_on_timer = Timer.new()
 	turn_on_timer.wait_time = time_between_buttons
@@ -32,8 +32,13 @@ func _ready() -> void:
 		button_timers.append(timer)
 	_print_active_buttons()
 	turn_on_timer.start()
-	
+
 func _process(_delta: float) -> void:
+	if not PlayerData.GameStarted:
+		return
+	if not started:
+		started=true
+		_ready2()
 	if Input.is_action_just_pressed("Button_3") and PlayerData.FingerActive[2]:
 		button1()
 	elif Input.is_action_just_pressed("Button_4")and PlayerData.FingerActive[3]:

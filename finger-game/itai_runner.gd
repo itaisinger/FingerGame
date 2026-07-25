@@ -14,12 +14,17 @@ signal cutfinger(index)
 @export var obstacle_char: String = "X"
 @export var empty_char: String = "."
 @export var damaged_char: String="X"
-func _ready() -> void:
+func _ready2() -> void:
 	for i in range(GRID_ROWS):
 		grid.append([0, 0, 0])
 
-
+var started=false
 func _process(delta: float) -> void:
+	if not PlayerData.GameStarted:
+		return
+	if not started:
+		started=true
+		_ready2()
 	if Input.is_action_just_pressed("Button_9")and PlayerData.FingerActive[8]:
 		press2()
 	elif Input.is_action_just_pressed("Button_10")and PlayerData.FingerActive[9]:

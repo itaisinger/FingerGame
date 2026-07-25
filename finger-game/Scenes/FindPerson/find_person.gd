@@ -13,12 +13,17 @@ var time_left := 0.0
 var random := RandomNumberGenerator.new()
 
 
-func _ready() -> void:
+func _ready2() -> void:
 	random.randomize()
 	_start_round()
 
-
+var started =false
 func _process(delta: float) -> void:
+	if not PlayerData.GameStarted:
+		return
+	if not started:
+		started=true
+		_ready2()
 	if(!PlayerData.gg):
 		time_left -= delta
 	if Input.is_action_just_pressed("Button_2") and PlayerData.FingerActive[1]:

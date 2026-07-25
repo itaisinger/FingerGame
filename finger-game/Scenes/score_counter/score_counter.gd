@@ -8,11 +8,16 @@ var count = 0;
 var spd = 1
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _ready2() -> void:
 	count = start_val
-
+var started = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if not PlayerData.GameStarted:
+		return
+	if not started:
+		started=true
+		_ready2()
 	if(!PlayerData.gg):
 		current_remain -= delta*spd
 	if(current_remain <= 0):
