@@ -471,6 +471,7 @@ transform = Transform3D(1.7736546, 0, 0, 0, 1, 0, 0, 0, 0.81095624, -0.000715035
 
 [node name="Lable" parent="HourglassLogic/Hourglass" unique_id=1536726773 instance=ExtResource("9_1t20g")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.055301905, 0.43749082, -0.016585827)
+visible = false
 
 [node name="MeshInstance3D" parent="HourglassLogic/Hourglass/Lable" index="0" unique_id=1502127947]
 transform = Transform3D(0.071574524, 0.9974353, -4.359928e-08, 0, -4.371139e-08, -1, -0.9974353, 0.071574524, -3.1286218e-09, 0.3348795, 0.10088408, 0.041471407)
@@ -493,6 +494,7 @@ text = ""
 
 [node name="Lable3" parent="HourglassLogic/Hourglass" unique_id=2005373427 instance=ExtResource("9_1t20g")]
 transform = Transform3D(-5.2453668e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.2453668e-08, 0.06670976, 0.0060111284, -0.016585827)
+visible = false
 
 [node name="MeshInstance3D" parent="HourglassLogic/Hourglass/Lable3" index="0" unique_id=1502127947]
 transform = Transform3D(0.019026255, 0.99981886, -4.3703466e-08, 0, -4.371138e-08, -0.99999976, -0.99981886, 0.019026255, -8.3166335e-10, 0.11037105, -0.026168108, -0.24058622)
@@ -504,6 +506,7 @@ text = "(Q)"
 
 [node name="Lable2" parent="HourglassLogic/Hourglass" unique_id=1784162981 instance=ExtResource("9_1t20g")]
 transform = Transform3D(-0.6020763, 0, -0.7984386, 0, 1, 0, 0.7984386, 0, -0.6020763, 1.6740113, 0.43749082, -0.3920628)
+visible = false
 
 [node name="MeshInstance3D" parent="HourglassLogic/Hourglass/Lable2" index="0" unique_id=1502127947]
 transform = Transform3D(-0.114503995, 0.98326266, -0.1417168, 7.450581e-09, -0.14265507, -0.9897725, -0.99342287, -0.113332905, 0.016334565, -0.048720423, 0.8395637, 0.24580057)
@@ -533,6 +536,7 @@ transform = Transform3D(0.99764305, 0, -0.06861739, 0, 1, 0, 0.06861739, 0, 0.99
 
 [node name="Lable" parent="TV_WithGame" unique_id=455794729 instance=ExtResource("9_1t20g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.077501655, 0.7433061, -0.056042433)
+visible = false
 
 [node name="MeshInstance3D" parent="TV_WithGame/Lable" index="0" unique_id=1502127947]
 mesh = SubResource("PlaneMesh_u244o")
@@ -544,6 +548,7 @@ alone?"
 
 [node name="Lable2" parent="TV_WithGame" unique_id=1119039548 instance=ExtResource("9_1t20g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13619316, 0.221219, -0.098483205)
+visible = false
 
 [node name="MeshInstance3D" parent="TV_WithGame/Lable2" index="0" unique_id=1502127947]
 transform = Transform3D(1.7881393e-07, 1.2999997, -5.6824803e-08, 0, -5.6824803e-08, -1.3, -1.2999997, 1.7881393e-07, 0, 0.40488768, -0.1298967, -0.19548577)
@@ -558,6 +563,7 @@ transform = Transform3D(-8.742278e-08, 0, -3.804, 0, 2.3, 0, 2, 0, -1.6627811e-0
 
 [node name="Lable" parent="TV_WithPermutations" unique_id=527355627 instance=ExtResource("9_1t20g")]
 transform = Transform3D(0.9897754, 0.14263447, 2.3497648e-10, -0.14263447, 0.9897755, 3.2779972e-09, 2.3498004e-10, -3.2779972e-09, 1, -0.4029765, 0.061928153, -0.12037555)
+visible = false
 
 [node name="MeshInstance3D" parent="TV_WithPermutations/Lable" index="0" unique_id=1502127947]
 transform = Transform3D(-4.315808e-08, 0.97330856, -0.2295013, 4.7574646e-09, -0.2295013, -0.9733083, -1, -4.3097977e-08, 5.274355e-09, 1.2365429, 0.6178651, 0)
@@ -574,6 +580,7 @@ transform = Transform3D(-0.88818413, 0, -1.7919624, 0, 2, 0, 1.7919624, 0, -0.88
 
 [node name="Lable" parent="TVHighWithRunner" unique_id=1805743066 instance=ExtResource("9_1t20g")]
 transform = Transform3D(0.95362335, 0.26275522, -0.14684373, -0.2624798, 0.9646958, 0.021602174, 0.14733553, 0.017943189, 0.9889244, -0.08722782, 1.6982242, -0.17862672)
+visible = false
 
 [node name="MeshInstance3D" parent="TVHighWithRunner/Lable" index="0" unique_id=1502127947]
 mesh = SubResource("PlaneMesh_nsdex")
@@ -583,6 +590,7 @@ text = "AVOID"
 
 [node name="Lable2" parent="TVHighWithRunner" unique_id=605951680 instance=ExtResource("9_1t20g")]
 transform = Transform3D(1.0000005, 0, -2.9802322e-08, 0, 1.0000001, 0, 0, 0, 1.0000011, 0.10537624, -0.002485454, -0.09391761)
+visible = false
 
 [node name="MeshInstance3D" parent="TVHighWithRunner/Lable2" index="0" unique_id=1502127947]
 mesh = SubResource("PlaneMesh_h4gp5")
@@ -604,6 +612,7 @@ mesh = SubResource("BoxMesh_t2cyj")
 
 [node name="Lable" parent="Room/Table" unique_id=902706670 instance=ExtResource("9_1t20g")]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, -0.2271082, -0.029553413, -0.51668596)
+visible = false
 
 [node name="MeshInstance3D" parent="Room/Table/Lable" index="0" unique_id=1502127947]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.24791844, 0.10088408, 0.32547033)
@@ -615,6 +624,7 @@ USE IT"
 
 [node name="Lable3" parent="Room/Table" unique_id=1118378327 instance=ExtResource("9_1t20g")]
 transform = Transform3D(-3.1610263e-08, 3.0190673e-08, -0.99999994, 0.690682, 0.72315854, 0, 0.7231585, -0.69068205, -4.371139e-08, 0.17490456, -0.19986522, -0.0877994)
+visible = false
 
 [node name="MeshInstance3D" parent="Room/Table/Lable3" index="0" unique_id=1502127947]
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0.24791843, 0.03336321, -0.16802372)
@@ -626,6 +636,7 @@ or"
 
 [node name="Lable2" parent="Room/Table" unique_id=879122288 instance=ExtResource("9_1t20g")]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 0.69401366, -0.029553413, -0.5166859)
+visible = false
 
 [node name="MeshInstance3D" parent="Room/Table/Lable2" index="0" unique_id=1502127947]
 mesh = SubResource("PlaneMesh_n806l")
@@ -746,6 +757,7 @@ text = "w
 
 [node name="Lable3" parent="Hand" unique_id=980642068 instance=ExtResource("9_1t20g")]
 transform = Transform3D(0.7030881, 0.692587, 0.16121528, -0.18683682, 0.39866737, -0.897862, -0.68611896, 0.6011553, 0.40969902, -0.5419108, 0.5324134, -0.30601063)
+visible = false
 
 [node name="MeshInstance3D" parent="Hand/Lable3" index="0" unique_id=1502127947]
 mesh = SubResource("PlaneMesh_xbfr0")
@@ -758,6 +770,7 @@ text = "e
 
 [node name="Lable4" parent="Hand" unique_id=1101409244 instance=ExtResource("9_1t20g")]
 transform = Transform3D(0.7030881, 0.692587, 0.16121528, -0.18683682, 0.39866737, -0.897862, -0.68611896, 0.6011553, 0.40969902, -0.5374369, 0.46492696, -0.4179405)
+visible = false
 
 [node name="MeshInstance3D" parent="Hand/Lable4" index="0" unique_id=1502127947]
 mesh = SubResource("PlaneMesh_7bsre")
@@ -769,6 +782,7 @@ text = "r"
 
 [node name="Lable5" parent="Hand" unique_id=222024673 instance=ExtResource("9_1t20g")]
 transform = Transform3D(0.7030881, 0.692587, 0.16121528, -0.18683682, 0.39866737, -0.897862, -0.68611896, 0.6011553, 0.40969902, -0.62093997, 0.3680578, -0.47290862)
+visible = false
 
 [node name="MeshInstance3D" parent="Hand/Lable5" index="0" unique_id=1502127947]
 mesh = SubResource("PlaneMesh_ffe66")
@@ -806,6 +820,7 @@ visible = false
 
 [node name="Lable6" parent="HandR" unique_id=1994863260 instance=ExtResource("9_1t20g")]
 transform = Transform3D(0.7130097, 0.6602759, -0.23590769, -0.27797842, 0.57508314, 0.7694199, 0.64369637, -0.48302716, 0.59358215, -0.45741415, -0.39594117, -0.1260726)
+visible = false
 
 [node name="MeshInstance3D" parent="HandR/Lable6" index="0" unique_id=1502127947]
 mesh = SubResource("PlaneMesh_w4ti4")
@@ -818,6 +833,7 @@ text = "n
 
 [node name="Lable7" parent="HandR" unique_id=824510192 instance=ExtResource("9_1t20g")]
 transform = Transform3D(0.7130097, 0.6602759, -0.23590769, -0.27797842, 0.57508314, 0.7694199, 0.64369637, -0.48302716, 0.59358215, -0.340067, -0.31152162, -0.058179688)
+visible = false
 
 [node name="MeshInstance3D" parent="HandR/Lable7" index="0" unique_id=1502127947]
 mesh = SubResource("PlaneMesh_k5cnm")
@@ -830,6 +846,7 @@ text = "u
 
 [node name="Lable8" parent="HandR" unique_id=1425068127 instance=ExtResource("9_1t20g")]
 transform = Transform3D(0.7130097, 0.6602759, -0.23590769, -0.27797842, 0.57508314, 0.7694199, 0.64369637, -0.48302716, 0.59358215, -0.33265808, -0.26834878, -0.17613478)
+visible = false
 
 [node name="MeshInstance3D" parent="HandR/Lable8" index="0" unique_id=1502127947]
 mesh = SubResource("PlaneMesh_psit5")

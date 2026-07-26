@@ -10,19 +10,21 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Toturial"):
 		PlayerData.GameStarted=true
+		LabelsVisible(false)
 	
 
 	if not PlayerData.FingerActive.has(true) and not PlayerData.GameOver:
 		endGame()
 	elif PlayerData.GameOver:
 		runWhileDead()
-		
+
 	# if Input.is_action_just_pressed("Practice"):
 	# 	if PlayerData.Practice:
 	# 		PlayerData.Practice=false
 	# 		PlayerData.GameStarted=false
 	# 		# get_tree().get_root().reload_current_scene()
 	# 		get_tree().reload_current_scene()
+	#		return
 	# 	else:
 	# 		practice_mode()
 		# PlayerData.Practice=true
@@ -57,10 +59,20 @@ func practice_mode():
 		label.visible=false
 		print(label.name)
 
+func LabelsVisible(status: bool):
+	var labels := find_children("Lable*", "", true, false)
+	for label in labels:
+		label.visible=status
+		print(label.name)
+
 func runWhileDead():
 	pass
 
 func endGame():
 	pass
-
+func RestartGame():
+	PlayerData.FingerActive=[true,true,true,true,true,true,true,true,true,true]
+	PlayerData.GameOver=false
+	PlayerData.GameStarted=false
+	get_tree().reload_current_scene()
 #
