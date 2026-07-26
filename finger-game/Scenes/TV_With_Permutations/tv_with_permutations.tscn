@@ -7,3 +7,5 @@
 
 [node name="PermutationScreen" parent="." index="1" unique_id=1958407118 instance=ExtResource("2_3ag66")]
 transform = Transform3D(-1.8585808e-08, 0.9999999, -3.0099315e-08, 0, -4.3711385e-08, -0.6885921, -0.42519373, -4.3711385e-08, 1.3156828e-15, 0.24765325, 0.41752052, 0)
+min_time = 4.0
+max_time = 6.0

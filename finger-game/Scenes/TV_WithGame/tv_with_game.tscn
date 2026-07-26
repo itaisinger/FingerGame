@@ -7,3 +7,4 @@
 
 [node name="FindPerson" parent="." index="1" unique_id=1705497192 instance=ExtResource("2_sh4gy")]
 transform = Transform3D(0.0010689723, 0, -0.9925901, 0, 0.12213867, 0, 0.16975491, 0, 0.0062504904, 0.2431708, 0.46401036, 0)
+round_duration = 5.0
