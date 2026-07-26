@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 		PlayerData.GameStarted=true
 	
 
-	if PlayerData.FingerActive.not_has(true) and not PlayerData.GameOver:
+	if not PlayerData.FingerActive.has(true) and not PlayerData.GameOver:
 		endGame()
 	elif PlayerData.GameOver:
 		runWhileDead()
