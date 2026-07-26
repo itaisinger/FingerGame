@@ -37,6 +37,21 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ifk88")
 size = Vector2(1, 0.8)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_4o5wv"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8oboy"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_4o5wv")
+albedo_texture_force_srgb = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ah3if"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_8oboy")
+size = Vector2(1, 0.8)
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_tyqxl"]
 viewport_path = NodePath("SubViewport")
 
@@ -454,17 +469,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013845146, 0.8070133, -0.2
 [node name="poles" parent="HourglassLogic/Hourglass" index="2" unique_id=1746334307]
 transform = Transform3D(1.7736546, 0, 0, 0, 1, 0, 0, 0, 0.81095624, -0.00071503595, -0.26632798, 0.03342244)
 
-[node name="Lable" parent="HourglassLogic/Hourglass" unique_id=2008522814 instance=ExtResource("9_1t20g")]
+[node name="Lable" parent="HourglassLogic/Hourglass" unique_id=1536726773 instance=ExtResource("9_1t20g")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.055301905, 0.43749082, -0.016585827)
 
 [node name="MeshInstance3D" parent="HourglassLogic/Hourglass/Lable" index="0" unique_id=1502127947]
 transform = Transform3D(0.071574524, 0.9974353, -4.359928e-08, 0, -4.371139e-08, -1, -0.9974353, 0.071574524, -3.1286218e-09, 0.3348795, 0.10088408, 0.041471407)
 mesh = SubResource("PlaneMesh_8sujb")
 
-[node name="Label" parent="HourglassLogic/Hourglass/Lable/SubViewport" parent_id_path=PackedInt32Array(2008522814, 1482053929) index="0" unique_id=1684504957]
+[node name="Label" parent="HourglassLogic/Hourglass/Lable/SubViewport" parent_id_path=PackedInt32Array(1536726773, 1482053929) index="0" unique_id=1684504957]
 text = "need
  more
   time?"
+
+[node name="BackToMenu" parent="HourglassLogic/Hourglass" unique_id=2008522814 instance=ExtResource("9_1t20g")]
+transform = Transform3D(0.025231063, 0, -0.99968165, 0, 1, 0, 0.99968165, 0, 0.025231063, -0.054892182, 0.43749082, -0.016585827)
+
+[node name="MeshInstance3D" parent="HourglassLogic/Hourglass/BackToMenu" index="0" unique_id=1502127947]
+transform = Transform3D(0.071574524, 0.9974353, -4.359928e-08, 0, -4.371139e-08, -1, -0.9974353, 0.071574524, -3.1286218e-09, 0.3348795, 0.10088408, 0.041471407)
+mesh = SubResource("PlaneMesh_ah3if")
+
+[node name="Label" parent="HourglassLogic/Hourglass/BackToMenu/SubViewport" parent_id_path=PackedInt32Array(2008522814, 1482053929) index="0" unique_id=1684504957]
+text = ""
 
 [node name="Lable3" parent="HourglassLogic/Hourglass" unique_id=2005373427 instance=ExtResource("9_1t20g")]
 transform = Transform3D(-5.2453668e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.2453668e-08, 0.06670976, 0.0060111284, -0.016585827)
@@ -981,6 +1006,7 @@ material_override = SubResource("StandardMaterial3D_1mt81")
 
 [editable path="HourglassLogic/Hourglass"]
 [editable path="HourglassLogic/Hourglass/Lable"]
+[editable path="HourglassLogic/Hourglass/BackToMenu"]
 [editable path="HourglassLogic/Hourglass/Lable3"]
 [editable path="HourglassLogic/Hourglass/Lable2"]
 [editable path="HitTheMoleController"]
