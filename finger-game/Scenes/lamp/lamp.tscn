@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://jvcu6nssy3h5"]
+
+[ext_resource type="Script" uid="uid://dthqyfsbsl133" path="res://Scenes/lamp/lamp.gd" id="1_6v6fx"]
+[ext_resource type="PackedScene" uid="uid://wr23f7b7f0be" path="res://assets/florecent.glb" id="1_grp54"]
+
+[node name="Lamp" type="Node3D" unique_id=478822935]
+script = ExtResource("1_6v6fx")
+
+[node name="florecent" parent="." unique_id=12280399 instance=ExtResource("1_grp54")]
+
+[node name="Cylinder" parent="florecent" index="1" unique_id=273079817]
+cast_shadow = 0
+
+[node name="Cylinder_001" parent="florecent" index="2" unique_id=193241291]
+cast_shadow = 0
+
+[node name="light1" type="OmniLight3D" parent="." unique_id=2013040080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8532021, -0.09649658, 0)
+light_color = Color(1, 0.9673333, 0.86, 1)
+light_energy = 0.5
+omni_range = 20.0
+
+[node name="light2" type="OmniLight3D" parent="." unique_id=291898931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.096, 0)
+light_color = Color(1, 0.96862745, 0.85882354, 1)
+light_energy = 0.5
+shadow_enabled = true
+shadow_blur = 5.0
+omni_range = 20.0
+
+[node name="light3" type="OmniLight3D" parent="." unique_id=35137226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.853, -0.096, 0)
+light_color = Color(1, 0.96862745, 0.85882354, 1)
+light_energy = 0.5
+omni_range = 20.0
+
+[editable path="florecent"]
