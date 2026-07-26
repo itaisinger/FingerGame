@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cy2k1x6laat0k"
+path="res://.godot/imported/pics fail.wav-2a362ea7db61c2c1d36e4d195e121960.sample"
+
+[deps]
+
+source_file="res://assets/sounds/pics fail.wav"
+dest_files=["res://.godot/imported/pics fail.wav-2a362ea7db61c2c1d36e4d195e121960.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
