@@ -85,6 +85,8 @@ func update(gen_new_tile=true):
 	  ## die!   
 
 func hit():
+	if PlayerData.Practice:
+		return
 	hp-=1
 	grid[0][pos]=4
 	if hp==1:
