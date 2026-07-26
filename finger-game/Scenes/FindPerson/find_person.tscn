@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cb748w6dlovnc" path="res://Scenes/FindPerson/find_person.gd" id="1_find_person"]
 [ext_resource type="Texture2D" uid="uid://03djjhtxm8u0" path="res://PersonImages/NotPeople/home sofa.png" id="2_ammrq"]
+[ext_resource type="AudioStream" uid="uid://bpytvf61v2muw" path="res://assets/sounds/pics success.wav" id="3_we6ls"]
+[ext_resource type="AudioStream" uid="uid://cy2k1x6laat0k" path="res://assets/sounds/pics fail.wav" id="4_ldin2"]
 
 [node name="FindPerson" type="Node3D" unique_id=1705497192]
 script = ExtResource("1_find_person")
@@ -11,3 +13,9 @@ round_duration = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1630388591]
 texture = ExtResource("2_ammrq")
+
+[node name="Sucsses" type="AudioStreamPlayer3D" parent="." unique_id=1929497456]
+stream = ExtResource("3_we6ls")
+
+[node name="Fail" type="AudioStreamPlayer3D" parent="." unique_id=1156668235]
+stream = ExtResource("4_ldin2")

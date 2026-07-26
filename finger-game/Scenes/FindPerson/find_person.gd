@@ -48,11 +48,19 @@ func _start_round() -> void:
 	time_left = round_duration
 	#print("Person: ", "YES" if has_person else "NO")
 
+var sfx_min = 0.6
+var sfx_max = 1.3
 
 func _finish_round() -> void:
 	var succeeded := has_person == clicked_this_round
 	if not succeeded:
 		cutfinger.emit(2)
+	var player = $Sucsses if succeeded else $Fail
+	var pitch = randf_range(sfx_min, sfx_max)
+	player.pitch_scale = pitch
+	player.play()
+
+
 	#round_finished.emit(succeeded, has_person, clicked_this_round)
 	#print("FIND_PERSON == SUCCESS" if succeeded else "FIND_PERSON == FAIL")
 
