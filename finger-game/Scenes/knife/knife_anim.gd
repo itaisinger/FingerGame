@@ -15,12 +15,19 @@ var is_retract = false
 var progress = 0;
 var _delta = 0;
 
+#rotation
+var rot_dest = 0.0
+var rot_start = 0.0
+
 func _ready():
 	anim_player.play(anim_name)
 	anim_player.pause()
 	anim_length = anim_player.get_animation(anim_name).length
 	dest_height = position.y;
 	position.y = start_height;
+	rot_start = randf_range(-360,360);
+	rot_dest = rotation_degrees.y;
+	rotation_degrees.y = rot_start;
 
 func _process(delta: float) -> void:
 	_delta = delta
@@ -32,7 +39,8 @@ func _process(delta: float) -> void:
 	#move
 	var _move_prog = min(max(progress*1.45,0),1)
 	position.y = (start_height * (1-_move_prog)) + (dest_height * _move_prog);
-	
+	_move_prog = min(1,_move_prog+0.15)
+	rotation_degrees.y = (rot_start * (1-_move_prog)) + (rot_dest * _move_prog);
 	
 func set_prec(prec):
 	progress = max(progress-_delta*0.4,prec);
