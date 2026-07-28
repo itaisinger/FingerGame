@@ -655,6 +655,7 @@ shape = SubResource("BoxShape3D_t2cyj")
 
 [node name="Floor2" type="MeshInstance3D" parent="Room" unique_id=2020271787]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.4677253, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_hfg1r")
 mesh = SubResource("BoxMesh_p6jpk")
 
@@ -692,7 +693,7 @@ transform = Transform3D(1, 0, 0, 0, -0.60722923, -0.7945267, 0, 0.7945267, -0.60
 light_energy = 0.02
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=648909123]
-transform = Transform3D(1, 0, 0, 0, 0.98504305, 0.17230836, 0, -0.17230836, 0.98504305, -0.07397768, 1.718985, 1.1921772)
+transform = Transform3D(1, 0, 0, 0, 0.98504305, 0.17230839, 0, -0.17230839, 0.98504305, -0.07397768, 1.7189941, 1.1920166)
 fov = 90.0
 
 [node name="TV high" parent="." unique_id=744876569 instance=ExtResource("14_vk4q2")]
@@ -708,6 +709,12 @@ finger_hitbox = SubResource("CapsuleShape3D_c4b4r")
 [node name="hand palm" parent="Hand" index="0" unique_id=116127469]
 transform = Transform3D(1, 1.4901161e-08, 0, 0, 0.99999994, -2.9802322e-08, -1.4901161e-08, -5.9604645e-08, 1, -0.026261032, 0.004244864, 0.0030815303)
 
+[node name="Skeleton3D" parent="Hand/finger 2/Armature_004" parent_id_path=PackedInt32Array(166837078, 1922095107, 490486989) index="0" unique_id=834695889]
+bones/0/position = Vector3(-0.0856135, -0.009175079, -0.020233532)
+bones/0/rotation = Quaternion(-0.09511879, -0.14715928, 0.1569962, 0.9719304)
+bones/1/rotation = Quaternion(0.075214565, 0.04689265, 0.056692053, 0.99444956)
+bones/2/rotation = Quaternion(-0.05923339, -0.08067622, 0.19192334, 0.9762931)
+
 [node name="finger 3" parent="Hand" index="2" unique_id=1722894744]
 transform = Transform3D(0.9999998, -1.4901161e-08, -4.4703484e-08, 0, 1, 2.9802322e-08, 0, 0, 1, 0, 0, 0)
 
@@ -720,7 +727,20 @@ visible = false
 [node name="marker" parent="Hand/finger 5" parent_id_path=PackedInt32Array(166837078, 888112693) index="2" unique_id=338188155]
 visible = false
 
-[node name="marker" parent="Hand/finger 1" parent_id_path=PackedInt32Array(166837078, 825521593) index="2" unique_id=127504323]
+[node name="finger 1" parent="Hand" index="5" unique_id=825521593]
+transform = Transform3D(0.0069071795, 0.86749846, -0.8290944, 1.1979977, -0.05261874, -0.045075588, -0.06894083, -0.82745194, -0.86635476, -0.51402676, 0.66091716, 0.21649973)
+top_level = true
+
+[node name="Armature_003" parent="Hand/finger 1" index="0" unique_id=1870746823]
+transform = Transform3D(0.122976184, 0, 0, 0, 0.122976184, 0, 0, 0, 0.122976184, -0.055660307, -0.0033408143, -0.06656146)
+
+[node name="Skeleton3D" parent="Hand/finger 1/Armature_003" index="0" unique_id=1170421474]
+bones/0/position = Vector3(-0.084009096, -0.02767167, 4.656613e-10)
+bones/0/rotation = Quaternion(-0.44532856, -0.054665282, 0.25712916, 0.8559082)
+bones/1/rotation = Quaternion(0.18276477, 0.024207754, 0.061419483, 0.98093766)
+bones/2/rotation = Quaternion(0.08053, -0.13284133, 0.20034699, 0.967331)
+
+[node name="marker" parent="Hand/finger 1" index="2" unique_id=127504323]
 visible = false
 
 [node name="postProccess" type="CanvasLayer" parent="Hand" unique_id=414414839]
@@ -929,19 +949,25 @@ StartFinger = NodePath("../../Hand/finger 5")
 [node name="buttons" type="Node" parent="." unique_id=7959829]
 
 [node name="Button" parent="buttons" unique_id=1005044419 instance=ExtResource("18_c4b4r")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.29979366, 0.4671685, 0.27283058)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.34237912, 0.4671685, 0.31233993)
 
 [node name="button" parent="buttons/Button" index="0" unique_id=2066741022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05857843, 0, -0.054673195)
 index = "Button_5"
 finger_i = 4
 
-[node name="in" parent="buttons/Button/button/out" parent_id_path=PackedInt32Array(1005044419, 2066741022, 108746461) index="0" unique_id=660064492]
+[node name="out" parent="buttons/Button/button" index="0" unique_id=108746461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022129595, 0, -0.036448717)
+
+[node name="in" parent="buttons/Button/button/out" index="0" unique_id=660064492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2088173e-10, -0.007373014, -6.2088173e-10)
 material_override = SubResource("StandardMaterial3D_ff7xd")
 
 [node name="Button2" parent="buttons" unique_id=630893113 instance=ExtResource("18_c4b4r")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.2614053, 0.4671685, 0.0583075)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.3238889, 0.4671685, 0.11647174)
 
 [node name="button" parent="buttons/Button2" index="0" unique_id=2066741022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0052068233, 0, 0.045560956)
 index = "Button_4"
 finger_i = 3
 
@@ -949,7 +975,7 @@ finger_i = 3
 material_override = SubResource("StandardMaterial3D_4vdw8")
 
 [node name="Button3" parent="buttons" unique_id=1093522532 instance=ExtResource("18_c4b4r")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.29189014, 0.4671685, -0.010565711)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.3484105, 0.4671685, 0.05922758)
 
 [node name="button" parent="buttons/Button3" index="0" unique_id=2066741022]
 index = "Button_3"
@@ -959,7 +985,7 @@ finger_i = 2
 material_override = SubResource("StandardMaterial3D_pt420")
 
 [node name="Button6" parent="buttons" unique_id=312969343 instance=ExtResource("18_c4b4r")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.45216656, 0.4671685, 0.24686201)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.50131905, 0.4671685, 0.23626049)
 
 [node name="button" parent="buttons/Button6" index="0" unique_id=2066741022]
 index = "Button_6"
@@ -969,7 +995,7 @@ finger_i = 5
 material_override = SubResource("StandardMaterial3D_lgjqy")
 
 [node name="Button7" parent="buttons" unique_id=936132977 instance=ExtResource("18_c4b4r")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.4216816, 0.4671685, 0.049274936)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.46119633, 0.4671685, 0.07915194)
 
 [node name="button" parent="buttons/Button7" index="0" unique_id=2066741022]
 index = "Button_7"
@@ -979,7 +1005,7 @@ finger_i = 6
 material_override = SubResource("StandardMaterial3D_vkja6")
 
 [node name="Button8" parent="buttons" unique_id=232180434 instance=ExtResource("18_c4b4r")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.4510374, 0.4671685, -0.02185642)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.48573327, 0.4671685, 0.008984366)
 
 [node name="button" parent="buttons/Button8" index="0" unique_id=2066741022]
 index = "Button_8"
@@ -989,7 +1015,7 @@ finger_i = 7
 material_override = SubResource("StandardMaterial3D_juxqm")
 
 [node name="Button9" parent="buttons" unique_id=1070708483 instance=ExtResource("18_c4b4r")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.52442694, 0.4671685, -0.03766339)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.55559665, 0.4671685, -0.029162554)
 
 [node name="button" parent="buttons/Button9" index="0" unique_id=2066741022]
 index = "Button_9"
@@ -999,7 +1025,7 @@ finger_i = 8
 material_override = SubResource("StandardMaterial3D_1mt81")
 
 [node name="Button10" parent="buttons" unique_id=1845216218 instance=ExtResource("18_c4b4r")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.59442914, 0.4671685, -0.051212233)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.6248905, 0.4671685, -0.042711396)
 
 [node name="button" parent="buttons/Button10" index="0" unique_id=2066741022]
 index = "Button_10"
@@ -1009,17 +1035,18 @@ finger_i = 9
 material_override = SubResource("StandardMaterial3D_6h4e3")
 
 [node name="Button4" parent="buttons" unique_id=1839510992 instance=ExtResource("18_c4b4r")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.36866683, 0.4671685, -0.028630821)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.3862788, 0.4671685, -0.0020410484)
 
 [node name="button" parent="buttons/Button4" index="0" unique_id=2066741022]
 index = "Button_2"
 finger_i = 1
 
 [node name="in" parent="buttons/Button4/button/out" parent_id_path=PackedInt32Array(1839510992, 2066741022, 108746461) index="0" unique_id=660064492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2088173e-10, 0.0052188793, -6.2088173e-10)
 material_override = SubResource("StandardMaterial3D_mc37m")
 
 [node name="Button5" parent="buttons" unique_id=215435022 instance=ExtResource("18_c4b4r")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.44657263, 0.4671685, -0.029759893)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.4597815, 0.4671685, -0.018722454)
 
 [node name="in" parent="buttons/Button5/button/out" parent_id_path=PackedInt32Array(215435022, 2066741022, 108746461) index="0" unique_id=660064492]
 material_override = SubResource("StandardMaterial3D_ksp86")
@@ -1041,6 +1068,8 @@ material_override = SubResource("StandardMaterial3D_ksp86")
 [editable path="Room/Floor2/Lamp"]
 [editable path="Room/Floor2/Lamp/florecent"]
 [editable path="Hand"]
+[editable path="Hand/finger 2"]
+[editable path="Hand/finger 1"]
 [editable path="Hand/Lable"]
 [editable path="Hand/Lable2"]
 [editable path="Hand/Lable3"]
